@@ -1,0 +1,31 @@
+/* Header */
+#header {
+}
+
+.start__title {
+	padding: 1rem 0;
+	text-align: center;
+}
+
+/* Story */
+#story {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.cartoon {
+}
+.cartoon img {
+	display: block;
+	height: 300px;
+	margin-bottom: 0.4rem;
+}
+.cartoon__button {
+	cursor: pointer;
+	padding: 0.2rem 0.4rem;
+}
+
+/* Quest-question */
+#quest {
+	display: none;
+}

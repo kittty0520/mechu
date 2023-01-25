@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>직메추</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>직메추</title>
 
-    <script
-    src="https://code.jquery.com/jquery-3.6.1.min.js"integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="crossorigin="anonymous">
-</script>
-</head>
-<body>
-    <header id="header">
-        <h1 class="start__title">직메추</h1>
-    </header>
-    <main>
-        <section id="story">
-        </section>
-        <section id="game">
-            <div class="start">
-                <button class="start__button">시작하기</button>
-            </div>
-            <div class="questions">
-                <div class="question__container">
-                </div>
-                <div class="answer__container">
-                    <div class="answers__list"></div>
-                    <button class="answer__button">다음으로</button>
-                    <button class="rice part">쌀</button>
-                    <button class="seafood part">해산물</button>
-                    <button class="flour part">밀가루</button>
-                    <button class="meat part">육류</button>
-                    <button class="vegetable part">채소</button>
-                </div>
-            </div>
-            <div class="result">  
-            </div> 
-        </section>
-    </main>
-    <script src="./assets/js/filter.js"></script>
-    <script src="./assets/js/question.js"></script>
-</body>
+		<script
+			src="https://code.jquery.com/jquery-3.6.1.min.js"
+			integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+			crossorigin="anonymous"
+		></script>
+
+		<script src="./assets/js/filter.js" defer></script>
+		<script src="./assets/js/question.js" defer></script>
+	</head>
+	<body>
+		<header id="header">
+			<h1 class="start__title">직메추</h1>
+		</header>
+		<main>
+			<section id="story"></section>
+			<section id="quest">
+				<div class="start">
+					<button class="start__button">시작하 기</button>
+				</div>
+				<div class="questions">
+					<div class="question__container"></div>
+					<div class="answer__container">
+						<div class="answers__list"></div>
+						<button class="answer__button">다음으로</button>
+						<button class="rice part">쌀</button>
+						<button class="seafood part">해산물</button>
+						<button class="flour part">밀가루</button>
+						<button class="meat part">육류</button>
+						<button class="vegetable part">채소</button>
+					</div>
+				</div>
+			</section>
+			<section id="result"></section>
+		</main>
+	</body>
 </html>

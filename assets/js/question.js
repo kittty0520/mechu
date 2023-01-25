@@ -15,6 +15,8 @@ const  answerList = [
     ['쌀','밀가루','육류','해산물','채소'],
 ]
 
+const questField = document.querySelector('#quest');
+
 const startBtn = document.querySelector('.start__button');
 const startTitle = document.querySelector('.start__title');
 const startPage = document.querySelector('.start');
