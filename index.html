@@ -6,6 +6,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>직메추</title>
 
+		<!-- CSS -->
+		<link rel="stylesheet" href="./assets/css/style.css" />
+		<link rel="stylesheet" href="./assets/css/reset.css" />
+
 		<!--페이스북 API-->
 		<meta property="og:url" content="http://mechu.dothome.co.kr/" />
 		<meta property="og:type" content="website" />
@@ -30,33 +34,46 @@
 		></script>
 
 		<!-- 자바스크립트 -->
-		<script src="./assets/js/filter.js" defer></script>
+		<!-- <script src="./assets/js/filter.js" defer></script> -->
 		<script src="./assets/js/question.js" defer></script>
 		<script type="text/javascript" src="./assets/js/last.js" defer></script>
+		<script src="./assets/js/story.js" defer></script>
 	</head>
 	<body>
 		<header id="header">
-			<h1 class="start__title">직메추</h1>
+			<h1 class="start__title ir_pm"><a href="#"></a>직메추</h1>
 		</header>
 		<!-- Header -->
 		<main>
 			<section id="story">
 				<div class="cartoon">
-					<div class="cartton__img">img</div>
-					<div class="cartton__img">img</div>
-					<button class="story__button">다음으로</button>
+					<div class="cartoon-first">
+						<div class="cartoon__img">img1</div>
+						<div class="cartoon__img">img2</div>
+					</div>
+					<div class="cartoon-second">
+						<div class="cartoon__img">img3</div>
+						<div class="cartoon__img">img4</div>
+					</div>
+					<div class="cartoon-final">
+						<p>
+							바쁜 현대인들의 점심메뉴 고민 이제 즐겁게 골라봐요!<br />
+							직장인 메뉴 추천! <br />직·메·추
+						</p>
+						<span>오늘 점심 메뉴가 뭐야~~?</span>
+						<div class="cartoon__img-final"><img src="" alt="병아리" /></div>
+					</div>
+					<button class="cartoon__button">다음으로</button>
 				</div>
 			</section>
 			<!-- Story -->
 			<section id="quest">
-				<div class="start">
-					<button class="start__button">시작하기</button>
-				</div>
 				<div class="questions">
 					<div class="question__container"></div>
 					<div class="answer__container">
 						<div class="answers__list"></div>
 						<button class="answer__button">다음으로</button>
+
 						<!-- <button class="rice part">쌀</button>
 						<button class="seafood part">해산물</button>
 						<button class="flour part">밀가루</button>
@@ -97,8 +114,5 @@
 			</section>
 			<!-- Result -->
 		</main>
-		<script>
-			Kakao.init('0eaa5ffe9b60880336267d180d93bed0'); // 사용하려는 앱의 JavaScript 키 입력
-		</script>
 	</body>
 </html>

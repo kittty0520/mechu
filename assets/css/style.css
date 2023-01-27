@@ -1,10 +1,44 @@
+:root {
+	/* Color */
+	--color-white: #ffffff;
+	--color-text: #777;
+	--color-orange: #ff924d;
+	--color-green: #78c030;
+	--color-grey: #989797;
+
+	/* Font Size */
+	--font-large: 48px;
+	--font-medium: 36px;
+	--font-regular: 24px;
+	--font-small: 16px;
+	--font-micro: 12px;
+}
+
+body {
+	font-size: var(--font-small);
+}
+button {
+	width: 330px;
+	height: 40px;
+	cursor: pointer;
+	padding: 0.2rem 0.8rem;
+	border-radius: 10px;
+	color: var(--color-orange);
+}
+
 /* Header */
 #header {
 }
 
 .start__title {
-	padding: 1rem 0;
-	text-align: center;
+	text-indent: -9999px;
+}
+.start__title a {
+	display: block;
+	margin: 24px auto;
+	background: url(../img/logo.png) no-repeat;
+	width: 258px;
+	height: 156px;
 }
 
 /* Story */
@@ -16,19 +50,55 @@
 .cartoon {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }
+.cartoon > div {
+	height: 394px;
+	box-sizing: border-box;
+}
+.cartoon-first {
+}
+.cartoon-second {
+	display: none;
+}
+.cartoon-final {
+	display: none;
+	text-align: center;
+}
+.cartoon-final p {
+	font-size: var(--font-regular);
+}
+.cartoon-final span {
+	color: var(--color-orange);
+	margin-top: 12px;
+}
+.cartoon__img-final {
+	width: 215px;
+	height: 215px;
+	margin: 0 auto;
+	margin-top: 12px;
+	border-radius: 100%;
+	background: var(--color-grey);
+}
+
 .cartoon__img {
 	display: block;
-	height: 300px;
-	margin-bottom: 0.4rem;
+	width: 330px;
+	height: 185px;
+	margin-bottom: 12px;
+	background-color: var(--color-grey);
 }
 .cartoon__button {
-	cursor: pointer;
-	padding: 0.2rem 0.4rem;
+	margin-top: 24px;
 }
 
 /* Quest-question */
 #quest {
+	display: none;
+}
+
+/* Result */
+#result {
 	display: none;
 }
 
@@ -53,6 +123,12 @@ p {
 	color: #fd8e49;
 	margin: 0 auto;
 	padding-top: 20px;
+}
+#foodtype > img {
+	display: block;
+	width: 250px;
+	height: 250px;
+	margin: 0 auto;
 }
 #imgs {
 	width: 250px;
