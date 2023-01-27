@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label><input type="checkbox" value="korea" id="korea" name="checking_food" >한식</label>    
+    <label><input type="checkbox" value="china" id="china" name="checking_food" >중식</label>
+    <label><input type="checkbox" value="america" id="ws" name="checking_food" >양식</label>
+    <button type="button" onclick="next();">다음단계</button>
+    <script>
+    
+        let korea=[
+                    {country : 'korea', name:'비빔밥', ingredient:'쌀', quality:'',cooking:'' },
+                    {country : 'korea', name:'비빔밥', ingredient:'채소', quality:'',cooking:'' },
+                    {country : 'korea',name:'김치찌개', ingredient:'육류', quality:'',cooking:'' },
+                    {country : 'korea',name:'김치찌개', ingredient:'채소', quality:'',cooking:'' },
+                    {country : 'korea',name:'된장찌개', ingredient:'해산물', quality:'',cooking:'' },
+                    {country : 'korea',name:'된장찌개', ingredient:'채소', quality:'',cooking:'' },
+                    {country : 'korea',name:'동태찌개', ingredient:'해산물', quality:'',cooking:'' },
+                    {country : 'korea',name:'동태찌개', ingredient:'채소', quality:'',cooking:'' },
+                    {country : 'korea',name:'순대국', ingredient:'육류', quality:'',cooking:'' },
+                    {country : 'korea',name:'뼈해장국', ingredient:'육류', quality:'',cooking:'' },
+                    {country : 'korea',name:'청국장', ingredient:'채소', quality:'',cooking:'' },
+                    {country : 'korea',name:'부대찌개', ingredient:'육류', quality:'',cooking:'' }
+                ] 
+        let china=[
+            {country:'china', name:'마파두부', ingredient:'육류', quality:'',cooking:'' },
+            {country:'china',name:'탕수육', ingredient:'육류', quality:'',cooking:'' },
+            {country:'china',name:'자장면', ingredient:'밀가루', quality:'',cooking:'' },
+            {country:'china',name:'우육면', ingredient:'밀가루', quality:'',cooking:'찜' },
+            {country:'china',name:'쇠고기국수스프', ingredient:'밀가루', quality:'',cooking:'' },
+            {country:'china',name:'양장피', ingredient:'채소', quality:'',cooking:'' },
+            {country:'china',name:'쉬이 현 랍스터', ingredient:'해산물', quality:'',cooking:'' },
+            {country:'china',name:'생선스프', ingredient:'해산물', quality:'',cooking:'' },
+            {country:'china',name:'양주볶음밥', ingredient:'쌀', quality:'',cooking:'' },
+            {country:'china',name:'깐풍기', ingredient:'해산물', quality:'',cooking:'' }
+        ]
+        let america =[
+            {country:'america',name:'수제햄버거', ingredient:'밀가루', quality:'',cooking:'' },
+            {country:'america',name:'스테이크', ingredient:'밀가루', quality:'',cooking:'' },
+            {country:'america',name:'파스타', ingredient:'밀가루', quality:'',cooking:'' },
+            {country:'america',name:'립', ingredient:'밀가루', quality:'',cooking:'' },
+            {country:'america',name:'필라프', ingredient:'밀가루', quality:'',cooking:'' },
+            {country:'america',name:'리조또', ingredient:'밀가루', quality:'',cooking:'' },
+            {country:'america',name:'피자', ingredient:'밀가루', quality:'',cooking:'' }
+        ]
+        let country_food=[...korea, ...china, ...america];
+        
+        // const countries=document.getElementsByClassName("checklist");
+
+    function next(){
+        let checking_c=document.getElementsByName('checking_food');
+        let chk_country=[];
+        let country_data=[];
+
+        for(let j=0; j<checking_c.length; j++){
+            if(checking_c[j].checked){
+                chk_country.push(checking_c[j].value);
+                console.log(checking_c[j].value);
+                
+                for(let h=0; h<chk_country.length; h++){
+
+                    for(let w=0; w<country_food.length; w++){
+
+                        if(chk_country[h]===country_food[w].country){
+                        country_data.push(country_food[w]);
+                        console.log(country_data);
+                    
+                    }} 
+                }
+                
+                // if(chk_country[i]===country_food[i].country){
+                //     for(let i=0; i<country_food.length; i++){
+                //         chk_country.push(country_food[i]);
+                //         console.log(chk_country);
+                //     }
+                // }else{
+                //         chk_country.pop(country_food[i]);
+                //         console.log(chk_country);
+                //     }
+                // }
+                }}
+                
+    }   
+               // country_food.forEach(element => {
+                //     if(country_food[i].country===chk_country[i]){
+                //         chk_country.push(country_food[i]);
+                        
+                //     }console.log(chk_country);
+                // });
+                // for(let i=0; i<country_food.length; i++){
+                //     if(chk_country[i]===country_food[i].country){
+                //     chk_country.push(country_food[i]);
+                //     console.log(chk_country);
+                // }}
+        
+                // country_food.forEach(element => {
+                //     if(country_food[i].country===chk_country[i]){
+                //         chk_country.push(country_food[i]);
+                        
+                //     }console.log(chk_country);
+                // });
+    
+
+
+        // for(let i=0; i<country.length; i++){
+        //     if( country[i] == 1 ) {
+        //         country[i].checked = true;
+        //     }
+        //     console.log(country);
+        // }
+        
+
+    
+        // for(let checklist of countries){
+        //     checklist.addEventListener('click',function(){
+        //         if(this.checked===true && country_food.values!==1){
+        //             country_food.push();
+        //             console.log(this.value);
+        //         }else if(this.checked===false && country_food.values===-1){
+        //             country_food.pop();
+        //             console.log('클릭안해서 추천안함');
+        //         }
+        //     })
+        // }
+        
+        // document.getElementById('korea').addEventListener('click',function(){
+        //     country_food.push(korea);
+        //     console.log(country_food);
+        // })
+        // document.getElementById('china').addEventListener('click',function(){
+        //     country_food.push(china);
+            
+        //     console.log(country_food);
+        // })
+        // document.getElementById('ws').addEventListener('click',function(){
+        //     country_food.push(ws);
+            
+        //     console.log(country_food);
+        // })
+    </script>
+</body>
+</html>
