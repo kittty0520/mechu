@@ -26,25 +26,17 @@ const answerList = [
 
 const questField = document.querySelector('#quest');
 
-const startBtn = document.querySelector('.start__button');
-const startTitle = document.querySelector('.start__title');
-const startPage = document.querySelector('.start');
-
 const questionField = document.querySelector('.questions');
 const question = document.querySelector('.question__container');
 const answer = document.querySelector('.answers__list');
 const nextButton = document.querySelector('.answer__button');
 
+const result = document.querySelector('#result');
+
 const inputAll = document.querySelectorAll('input');
 
 let questionNum = 0;
 let answerNum = 0;
-
-startBtn.addEventListener('click', () => {
-	closeStart();
-	questionField.style.display = 'block';
-	startQuestion();
-});
 
 nextButton.addEventListener('click', () => {
 	nextQuestion();
@@ -72,8 +64,8 @@ function nextQuestion() {
 }
 
 function endQuestion() {
-	alert('질문 끝! 결과를 보여주세요');
 	questionField.style.display = 'none';
+	result.style.display = 'block';
 }
 
 function questionSet() {
@@ -104,5 +96,3 @@ function answerSet() {
 	answerNum++;
 	return newAnswer;
 }
-
-console.log(inputAll);
