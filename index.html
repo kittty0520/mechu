@@ -6,25 +6,48 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>직메추</title>
 
+		<!--페이스북 API-->
+		<meta property="og:url" content="http://mechu.dothome.co.kr/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="직장인 점심메뉴 추천" />
+		<meta property="og:description" content="점심메뉴 추천" />
+		<meta property="og:image" content="logo.gif" />
+
+		<!-- 카카오톡 API -->
+		<script
+			src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+			integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx"
+			crossorigin="anonymous"
+			defer
+		></script>
+
+		<!-- 제이쿼리 -->
 		<script
 			src="https://code.jquery.com/jquery-3.6.1.min.js"
 			integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
 			crossorigin="anonymous"
+			defer
 		></script>
 
+		<!-- 자바스크립트 -->
 		<script src="./assets/js/filter.js" defer></script>
 		<script src="./assets/js/question.js" defer></script>
+		<script type="text/javascript" src="./assets/js/last.js" defer></script>
 	</head>
 	<body>
 		<header id="header">
 			<h1 class="start__title">직메추</h1>
 		</header>
+		<!-- Header -->
 		<main>
 			<section id="story">
-				<img src="" alt="cartoon" />
-				<img src="" alt="cartton" />
-				<button class="story__button">다음으로</button>
+				<div class="cartoon">
+					<div class="cartton__img">img</div>
+					<div class="cartton__img">img</div>
+					<button class="story__button">다음으로</button>
+				</div>
 			</section>
+			<!-- Story -->
 			<section id="quest">
 				<div class="start">
 					<button class="start__button">시작하기</button>
@@ -34,15 +57,48 @@
 					<div class="answer__container">
 						<div class="answers__list"></div>
 						<button class="answer__button">다음으로</button>
-						<button class="rice part">쌀</button>
+						<!-- <button class="rice part">쌀</button>
 						<button class="seafood part">해산물</button>
 						<button class="flour part">밀가루</button>
 						<button class="meat part">육류</button>
-						<button class="vegetable part">채소</button>
+						<button class="vegetable part">채소</button> -->
 					</div>
 				</div>
 			</section>
-			<section id="result"></section>
+			<!-- Quest -->
+			<section id="result">
+				<div id="foodtype">
+					<h1>
+						<a><img src="img/logo.gif" alt="logo" id="logo" /></a>
+					</h1>
+					<div id="imgs"><img /></div>
+					<p></p>
+					<div>
+						<button type="button" id="btn">다시보기</button>
+						<a id="kakaotalk-sharing-btn" href="javascript:;">
+							<img
+								src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
+								alt="카카오톡 공유 보내기 버튼"
+							/>
+						</a>
+					</div>
+					<div id="fb-root"></div>
+					<div
+						class="fb-share-button"
+						data-href="http://mechu.dothome.co.kr/"
+						data-layout="button_count"
+					></div>
+					<div>
+						<a id="clip-btn" href="javascript:clipboardShare()">
+							<img src="img/link_icon.png" />
+						</a>
+					</div>
+				</div>
+			</section>
+			<!-- Result -->
 		</main>
+		<script>
+			Kakao.init('0eaa5ffe9b60880336267d180d93bed0'); // 사용하려는 앱의 JavaScript 키 입력
+		</script>
 	</body>
 </html>
