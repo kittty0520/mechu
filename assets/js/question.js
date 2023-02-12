@@ -1,4 +1,4 @@
-/*질문을 바꾸는 함수*/
+/*질문 배열*/
 
 export const questionList = [
 	'당신의 직급은  무엇입니까?',
@@ -12,90 +12,17 @@ export const questionList = [
 
 export const answerList = [
 	// 1.position
-	['신입', '대리', '과장', '부장', '대표'],
+	{ answers: ['신입', '대리', '과장', '부장', '대표'], multiSeleted: false },
 	// 2.recommendation
-	['랜덤추천', '맞춤추천'],
+	{ answers: ['랜덤추천', '맞춤추천'], multiSeleted: false },
 	// 3.country
-	['한식', '양식', '중식', '일식', '기타'],
+	{ answers: ['한식', '양식', '중식', '일식', '기타'], multiSeleted: true },
 	// 4. ingre
-	['쌀', '밀가루', '육류', '해산물', '채소'],
+	{ answers: ['쌀', '밀가루', '육류', '해산물', '채소'], multiSeleted: true },
 	//5. cook
-	['튀김', '구이', '찜', '볶음', '기타'],
+	{ answers: ['튀김', '구이', '찜', '볶음', '기타'], multiSeleted: true },
 	//6. spicy
-	['매움', '안매움'],
+	{ answers: ['매움', '안매움'], multiSeleted: false },
 	//7. temp
-	['따뜻함', '차가움'],
+	{ answers: ['따뜻함', '차가움'], multiSeleted: false },
 ];
-
-const questField = document.querySelector('#quest');
-
-const questionField = document.querySelector('.questions');
-const question = document.querySelector('.question__container');
-const answer = document.querySelector('.answers__list');
-const nextButton = document.querySelector('.answer__button');
-
-const result = document.querySelector('#result');
-
-const inputAll = document.querySelectorAll('input');
-
-let questionNum = 0;
-let answerNum = 0;
-
-nextButton.addEventListener('click', () => {
-	nextQuestion();
-});
-
-// function closeStart() {
-// 	startPage.style.display = 'none';
-// }
-
-function startQuestion() {
-	question.innerHTML = '';
-	questionSet();
-	answerSet();
-}
-
-function nextQuestion() {
-	question.innerHTML = '';
-	answer.innerHTML = '';
-	if (questionNum < questionList.length) {
-		questionSet();
-		answerSet();
-	} else {
-		endQuestion();
-	}
-}
-
-function endQuestion() {
-	questionField.style.display = 'none';
-	result.style.display = 'block';
-}
-
-function questionSet() {
-	const item = document.createElement('div');
-	item.setAttribute('class', 'newQuestion');
-	const newQuestion = questionList[questionNum].toString();
-	questionNum++;
-	item.innerHTML = newQuestion;
-	question.appendChild(item);
-	console.log(questionNum);
-}
-
-//input : checkbox 태그로 수정해야함
-function answerSet() {
-	const getAnswerList = answerList[answerNum];
-	const newAnswer = getAnswerList.map((item, index) => {
-		const input = document.createElement('input');
-		input.setAttribute('type', 'checkbox');
-		input.setAttribute('id', `answer${index}`);
-		input.setAttribute('name', 'answer');
-		// input.innerHTML= item;
-		const answerOption = document.createElement('label');
-		answerOption.setAttribute('for', `answer${index}`);
-		answerOption.innerHTML = item;
-		answer.appendChild(input);
-		answer.appendChild(answerOption);
-	});
-	answerNum++;
-	return newAnswer;
-}
