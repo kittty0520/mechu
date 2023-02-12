@@ -1,6 +1,6 @@
 /*질문을 바꾸는 함수*/
 
-const questionList = [
+export const questionList = [
 	'당신의 직급은  무엇입니까?',
 	'랜덤추천 vs 맞춤추천 중 어떤 추천을 원하세요?',
 	'오늘은 어느 나라 음식이 끌리시나요?',
@@ -10,7 +10,7 @@ const questionList = [
 	'따뜻한 음식 ? 차가운 음식?',
 ];
 
-const answerList = [
+export const answerList = [
 	// 1.position
 	['신입', '대리', '과장', '부장', '대표'],
 	// 2.recommendation
@@ -45,9 +45,9 @@ nextButton.addEventListener('click', () => {
 	nextQuestion();
 });
 
-function closeStart() {
-	startPage.style.display = 'none';
-}
+// function closeStart() {
+// 	startPage.style.display = 'none';
+// }
 
 function startQuestion() {
 	question.innerHTML = '';

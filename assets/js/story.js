@@ -9,16 +9,19 @@ const quest = document.querySelector('#quest');
 let order = 0;
 const storyList = [firstStory, secondStory, finalStory];
 
-storyBtn.addEventListener('click', () => {
+storyBtn.addEventListener('click', () => nextStory());
+
+function nextStory() {
 	if (order === 2) {
 		storyList[0].style.display = 'block';
 		storyList[2].style.display = 'none';
 		story.style.display = 'none';
 		quest.style.display = 'block';
+		order = 0;
 	}
 	storyList[order].style.display = 'none';
 	storyList[order + 1].style.display = 'block';
 	console.log(order);
 	order++;
 	return order;
-});
+}
