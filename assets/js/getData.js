@@ -1,16 +1,6 @@
 // *******Fetch*******
 
-const sample = {
-	name: '비빔밥',
-	country: '한식',
-	ingre: '쌀,채소',
-	cook: '볶음,기타',
-	spicy: '매움',
-	temp: '온',
-	src: 'ko_01',
-};
-
-async function getData() {
+export async function getData() {
 	return fetch('assets/data/foodDB.json')
 		.then((res) => res.json())
 		.then((data) => {
@@ -22,8 +12,6 @@ async function getData() {
 		})
 		.catch(console.error);
 }
-
-const food = getData();
 
 // *********Mysql************
 // var mysql = require('mysql');

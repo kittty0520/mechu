@@ -1,12 +1,13 @@
+import { getData } from './getData.js';
 import { questionList, answerList } from './question.js';
 
 const story = document.querySelector('#story');
-const storyList = [firstStory, secondStory, finalStory];
 
 const storyBtn = document.querySelector('.cartoon__button');
 const firstStory = document.querySelector('.cartoon-first');
 const secondStory = document.querySelector('.cartoon-second');
 const finalStory = document.querySelector('.cartoon-final');
+const storyList = [firstStory, secondStory, finalStory];
 
 const quest = document.querySelector('#quest');
 const questionField = document.querySelector('.questions');
@@ -21,6 +22,10 @@ const inputAll = document.querySelectorAll('input');
 let STORY_ORDER = 0;
 let QUESTION_NUM = 0;
 let ANSWER_NUM = 0;
+
+//데이터 불러오기 -비동기 함수(프로미스 객체)
+const foodData = getData();
+console.log(foodData);
 
 // 스토리
 storyBtn.addEventListener('click', nextStory);
@@ -74,10 +79,14 @@ function questionSet() {
 }
 
 function answerSet() {
-	const getAnswerList = answerList[ANSWER_NUM];
-	const newAnswer = getAnswerList.map((item, index) => {
+	const { answers, multiSeleted } = answerList[ANSWER_NUM];
+	const newAnswer = answers.map((item, index) => {
 		const input = document.createElement('input');
-		input.setAttribute('type', 'checkbox');
+		if (multiSeleted === false) {
+			input.setAttribute('type', 'radio');
+		} else {
+			input.setAttribute('type', 'checkbox');
+		}
 		input.setAttribute('id', `answer${index}`);
 		input.setAttribute('name', 'answer');
 		// input.innerHTML= item;
