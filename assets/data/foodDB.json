@@ -1,0 +1,1190 @@
+[
+	{
+		"name": "비빔밥",
+		"country": "한식",
+		"ingre": "쌀,채소",
+		"cook": "볶음,기타",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ko_01"
+	},
+	{
+		"name": "김치찌개",
+		"country": "한식",
+		"ingre": "쌀,육류,채소",
+		"cook": "탕",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ko_02"
+	},
+	{
+		"name": "된장찌개",
+		"country": "한식",
+		"ingre": "쌀,해산물,채소",
+		"cook": "탕",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ko_03"
+	},
+	{
+		"name": "동태찌개",
+		"country": "한식",
+		"ingre": "쌀,해산물,채소",
+		"cook": "탕",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ko_04"
+	},
+	{
+		"name": "순대국",
+		"country": "한식",
+		"ingre": "쌀,육류",
+		"cook": "탕",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ko_05"
+	},
+	{
+		"name": "뼈해장국",
+		"country": "한식",
+		"ingre": "쌀,육류",
+		"cook": "탕",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ko_06"
+	},
+	{
+		"name": "청국장",
+		"country": "한식",
+		"ingre": "쌀,채소",
+		"cook": "탕",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ko_07"
+	},
+	{
+		"name": "부대찌개",
+		"country": "한식",
+		"ingre": "쌀,육류",
+		"cook": "탕",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ko_08"
+	},
+	{
+		"name": "보쌈",
+		"country": "한식",
+		"ingre": "육류,채소",
+		"cook": "찜",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ko_09"
+	},
+	{
+		"name": "족발",
+		"country": "한식",
+		"ingre": "육류",
+		"cook": "찜",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ko_10"
+	},
+	{
+		"name": "칼국수",
+		"country": "한식",
+		"ingre": "밀가루,해산물",
+		"cook": "탕",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ko_11"
+	},
+	{
+		"name": "수제비",
+		"country": "한식",
+		"ingre": "밀가루,해산물",
+		"cook": "탕",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ko_12"
+	},
+	{
+		"name": "콩국수",
+		"country": "한식",
+		"ingre": "밀가루,채소",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "냉",
+		"src": "ko_13"
+	},
+	{
+		"name": "순두부찌개",
+		"country": "한식",
+		"ingre": "쌀,해산물,채소",
+		"cook": "탕",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ko_14"
+	},
+	{
+		"name": "설렁탕",
+		"country": "한식",
+		"ingre": "쌀,육류",
+		"cook": "탕",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ko_15"
+	},
+	{
+		"name": "갈비탕",
+		"country": "한식",
+		"ingre": "쌀,육류",
+		"cook": "탕",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ko_16"
+	},
+	{
+		"name": "삼계탕",
+		"country": "한식",
+		"ingre": "쌀,육류",
+		"cook": "탕",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ko_17"
+	},
+	{
+		"name": "낙지볶음",
+		"country": "한식",
+		"ingre": "해산물",
+		"cook": "볶음",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ko_18"
+	},
+	{
+		"name": "묵밥",
+		"country": "한식",
+		"ingre": "쌀,채소",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "냉",
+		"src": "ko_19"
+	},
+	{
+		"name": "닭갈비",
+		"country": "한식",
+		"ingre": "육류,채소",
+		"cook": "볶음",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ko_20"
+	},
+	{
+		"name": "간장게장",
+		"country": "한식",
+		"ingre": "해산물",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "냉",
+		"src": "ko_21"
+	},
+	{
+		"name": "삼겹살구이",
+		"country": "한식",
+		"ingre": "육류",
+		"cook": "구이",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ko_22"
+	},
+	{
+		"name": "찜닭",
+		"country": "한식",
+		"ingre": "육류,채소",
+		"cook": "찜",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ko_23"
+	},
+	{
+		"name": "갈비찜",
+		"country": "한식",
+		"ingre": "육류,채소",
+		"cook": "찜",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ko_24"
+	},
+	{
+		"name": "냉면",
+		"country": "한식",
+		"ingre": "밀가루",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "냉",
+		"src": "ko_25"
+	},
+	{
+		"name": "갈치조림",
+		"country": "한식",
+		"ingre": "쌀,해산물,채소",
+		"cook": "기타",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ko_26"
+	},
+	{
+		"name": "떡만두국(만두국)",
+		"country": "한식",
+		"ingre": "쌀,밀가루,육류",
+		"cook": "탕",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ko_27"
+	},
+	{
+		"name": "전복죽(죽)",
+		"country": "한식",
+		"ingre": "쌀,해산물",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ko_28"
+	},
+	{
+		"name": "콩나물국밥",
+		"country": "한식",
+		"ingre": "쌀,채소",
+		"cook": "탕",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ko_29"
+	},
+	{
+		"name": "쌈밥정식",
+		"country": "한식",
+		"ingre": "쌀,육류,채소",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ko_30"
+	},
+	{
+		"name": "닭볶음탕",
+		"country": "한식",
+		"ingre": "육류,채소",
+		"cook": "탕",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ko_31"
+	},
+	{
+		"name": "돼지두루치기",
+		"country": "한식",
+		"ingre": "육류,채소",
+		"cook": "볶음",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ko_32"
+	},
+	{
+		"name": "불고기",
+		"country": "한식",
+		"ingre": "육류",
+		"cook": "볶음",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ko_33"
+	},
+	{
+		"name": "한정식",
+		"country": "한식",
+		"ingre": "쌀,밀가루,육류,해산물,채소",
+		"cook": "튀김,구이,찜,볶음,탕,기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ko_34"
+	},
+	{
+		"name": "떡국",
+		"country": "한식",
+		"ingre": "쌀,육류",
+		"cook": "탕",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ko_35"
+	},
+	{
+		"name": "꽃게탕",
+		"country": "한식",
+		"ingre": "쌀,해산물",
+		"cook": "탕",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ko_36"
+	},
+	{
+		"name": "생선구이",
+		"country": "한식",
+		"ingre": "해산물",
+		"cook": "구이",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ko_37"
+	},
+	{
+		"name": "마파두부",
+		"country": "중식",
+		"ingre": "채소",
+		"cook": "볶음",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ch_01"
+	},
+	{
+		"name": "탕수육",
+		"country": "중식",
+		"ingre": "육류",
+		"cook": "튀김",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ch_02"
+	},
+	{
+		"name": "짜장면",
+		"country": "중식",
+		"ingre": "밀가루",
+		"cook": "볶음",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ch_03"
+	},
+	{
+		"name": "우육면",
+		"country": "중식",
+		"ingre": "밀가루",
+		"cook": "기타",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ch_04"
+	},
+	{
+		"name": "쇠고기국수스프",
+		"country": "중식",
+		"ingre": "육류,밀가루",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ch_05"
+	},
+	{
+		"name": "양장피",
+		"country": "중식",
+		"ingre": "해산물,채소",
+		"cook": "볶음",
+		"spicy": "안매움",
+		"temp": "냉",
+		"src": "ch_06"
+	},
+	{
+		"name": "쉬이 현 랍스터",
+		"country": "중식",
+		"ingre": "해산물",
+		"cook": "찜",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ch_07"
+	},
+	{
+		"name": "생선스프",
+		"country": "중식",
+		"ingre": "해산물",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ch_08"
+	},
+	{
+		"name": "양주볶음밥",
+		"country": "중식",
+		"ingre": "쌀",
+		"cook": "볶음",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ch_09"
+	},
+	{
+		"name": "깐풍기",
+		"country": "중식",
+		"ingre": "해산물,밀가루",
+		"cook": "튀김",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ch_10"
+	},
+	{
+		"name": "샤오롱바오",
+		"country": "중식",
+		"ingre": "밀가루",
+		"cook": "찜",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ch_11"
+	},
+	{
+		"name": "가지오물렛",
+		"country": "중식",
+		"ingre": "채소",
+		"cook": "볶음",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ch_12"
+	},
+	{
+		"name": "가지칠리소스찜",
+		"country": "중식",
+		"ingre": "채소",
+		"cook": "찜",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ch_13"
+	},
+	{
+		"name": "고추치킨",
+		"country": "중식",
+		"ingre": "육류,채소",
+		"cook": "튀김",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ch_14"
+	},
+	{
+		"name": "궁바오지딩",
+		"country": "중식",
+		"ingre": "육류",
+		"cook": "구이",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ch_15"
+	},
+	{
+		"name": "낙지볶음",
+		"country": "중식",
+		"ingre": "해산물",
+		"cook": "볶음",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ch_16"
+	},
+	{
+		"name": "마라탕",
+		"country": "중식",
+		"ingre": "육류,해산물,채소",
+		"cook": "기타",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ch_17"
+	},
+	{
+		"name": "냄비사천요리",
+		"country": "중식",
+		"ingre": "육류,해산물,채소",
+		"cook": "볶음",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ch_18"
+	},
+	{
+		"name": "닭고기스프",
+		"country": "중식",
+		"ingre": "육류",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ch_19"
+	},
+	{
+		"name": "레드카레",
+		"country": "중식",
+		"ingre": "채소",
+		"cook": "기타",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ch_20"
+	},
+	{
+		"name": "생선미트볼스프",
+		"country": "중식",
+		"ingre": "육류,해산물",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ch_21"
+	},
+	{
+		"name": "오이 푸 아그라",
+		"country": "중식",
+		"ingre": "채소",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "냉",
+		"src": "ch_22"
+	},
+	{
+		"name": "짬뽕",
+		"country": "중식",
+		"ingre": "밀가루,해산물,채소",
+		"cook": "볶음",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "ch_23"
+	},
+	{
+		"name": "춘권",
+		"country": "중식",
+		"ingre": "밀가루",
+		"cook": "구이",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ch_24"
+	},
+	{
+		"name": "칠리생선튀김",
+		"country": "중식",
+		"ingre": "해산물,밀가루",
+		"cook": "튀김",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ch_25"
+	},
+	{
+		"name": "쿵파오치킨",
+		"country": "중식",
+		"ingre": "육류,밀가루",
+		"cook": "튀김",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ch_26"
+	},
+	{
+		"name": "토마토 계란볶음",
+		"country": "중식",
+		"ingre": "채소",
+		"cook": "볶음",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ch_27"
+	},
+	{
+		"name": "표고버섯찜",
+		"country": "중식",
+		"ingre": "채소",
+		"cook": "찜",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ch_28"
+	},
+	{
+		"name": "해물볶음면",
+		"country": "중식",
+		"ingre": "밀가루,해산물",
+		"cook": "볶음",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ch_29"
+	},
+	{
+		"name": "해삼음식볶음밥",
+		"country": "중식",
+		"ingre": "쌀",
+		"cook": "볶음",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ch_30"
+	},
+	{
+		"name": "수제햄버거",
+		"country": "양식",
+		"ingre": "채소,밀가루,육류",
+		"cook": "구이",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ws_01"
+	},
+	{
+		"name": "스테이크",
+		"country": "양식",
+		"ingre": "육류",
+		"cook": "구이",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ws_02"
+	},
+	{
+		"name": "파스타",
+		"country": "양식",
+		"ingre": "밀가루",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ws_03"
+	},
+	{
+		"name": "립",
+		"country": "양식",
+		"ingre": "육류",
+		"cook": "구이",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ws_04"
+	},
+	{
+		"name": "필라프",
+		"country": "양식",
+		"ingre": "쌀,채소,육류",
+		"cook": "볶음",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ws_05"
+	},
+	{
+		"name": "리조또",
+		"country": "양식",
+		"ingre": "쌀,채소",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ws_06"
+	},
+	{
+		"name": "피자",
+		"country": "양식",
+		"ingre": "밀가루,육류,채소",
+		"cook": "구이",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ws_07"
+	},
+	{
+		"name": "샐러드",
+		"country": "양식",
+		"ingre": "채소",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ws_08"
+	},
+	{
+		"name": "감바스",
+		"country": "양식",
+		"ingre": "해산물,채소",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ws_09"
+	},
+	{
+		"name": "오믈렛",
+		"country": "양식",
+		"ingre": "쌀,채소",
+		"cook": "볶음",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ws_10"
+	},
+	{
+		"name": "스프",
+		"country": "양식",
+		"ingre": "밀가루",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ws_11"
+	},
+	{
+		"name": "스튜",
+		"country": "양식",
+		"ingre": "육류,채소",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ws_12"
+	},
+	{
+		"name": "핫도그",
+		"country": "양식",
+		"ingre": "밀가루,육류",
+		"cook": "튀김",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "ws_13"
+	},
+	{
+		"name": "스시",
+		"country": "일식",
+		"ingre": "쌀,해산물",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "jp_01"
+	},
+	{
+		"name": "텐동",
+		"country": "일식",
+		"ingre": "쌀,해산물,채소",
+		"cook": "튀김",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "jp_02"
+	},
+	{
+		"name": "오뎅",
+		"country": "일식",
+		"ingre": "해산물",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "jp_03"
+	},
+	{
+		"name": "라멘",
+		"country": "일식",
+		"ingre": "밀가루",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "jp_04"
+	},
+	{
+		"name": "일본카레",
+		"country": "일식",
+		"ingre": "쌀,채소",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "jp_05"
+	},
+	{
+		"name": "돈카츠",
+		"country": "일식",
+		"ingre": "쌀,육류",
+		"cook": "튀김",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "jp_06"
+	},
+	{
+		"name": "메밀소바",
+		"country": "일식",
+		"ingre": "밀가루",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "냉,온",
+		"src": "jp_07"
+	},
+	{
+		"name": "마제소바",
+		"country": "일식",
+		"ingre": "밀가루,채소",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "jp_08"
+	},
+	{
+		"name": "우동",
+		"country": "일식",
+		"ingre": "밀가루",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "냉,온",
+		"src": "jp_09"
+	},
+	{
+		"name": "사시미",
+		"country": "일식",
+		"ingre": "해산물",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "jp_10"
+	},
+	{
+		"name": "나베",
+		"country": "일식",
+		"ingre": "해산물,채소",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "jp_11"
+	},
+	{
+		"name": "규동",
+		"country": "일식",
+		"ingre": "쌀,육류",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "jp_12"
+	},
+	{
+		"name": "오코노미야끼",
+		"country": "일식",
+		"ingre": "해산물,채소",
+		"cook": "볶음",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "jp_13"
+	},
+	{
+		"name": "가쓰동",
+		"country": "일식",
+		"ingre": "쌀,육류",
+		"cook": "튀김",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "jp_14"
+	},
+	{
+		"name": "타코야끼",
+		"country": "일식",
+		"ingre": "밀가루,해산물",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "jp_15"
+	},
+	{
+		"name": "야끼소바",
+		"country": "일식",
+		"ingre": "밀가루,채소",
+		"cook": "볶음",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "jp_16"
+	},
+	{
+		"name": "오므라이스",
+		"country": "일식",
+		"ingre": "쌀,채소",
+		"cook": "볶음",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "jp_17"
+	},
+	{
+		"name": "팟타이",
+		"country": "기타",
+		"ingre": "면,해산물,채소",
+		"cook": "볶음",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_01"
+	},
+	{
+		"name": "쌀국수",
+		"country": "기타",
+		"ingre": "면,육류,채소",
+		"cook": "탕",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_02"
+	},
+	{
+		"name": "샌드위치",
+		"country": "기타",
+		"ingre": "밀가루,채소",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "냉",
+		"src": "etc_03"
+	},
+	{
+		"name": "떡볶이",
+		"country": "기타",
+		"ingre": "밀가루",
+		"cook": "기타",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "etc_04"
+	},
+	{
+		"name": "김밥",
+		"country": "기타",
+		"ingre": "쌀,채소",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_05"
+	},
+	{
+		"name": "타코",
+		"country": "기타",
+		"ingre": "밀가루,채소",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_06"
+	},
+	{
+		"name": "부리또",
+		"country": "기타",
+		"ingre": "쌀,밀가루,채소",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_07"
+	},
+	{
+		"name": "나시고랭",
+		"country": "기타",
+		"ingre": "쌀,채소",
+		"cook": "볶음",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_08"
+	},
+	{
+		"name": "햄버거",
+		"country": "기타",
+		"ingre": "밀가루,채소",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_09"
+	},
+	{
+		"name": "브런치",
+		"country": "기타",
+		"ingre": "밀가루,채소,육류",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_10"
+	},
+	{
+		"name": "빠에야",
+		"country": "기타",
+		"ingre": "쌀,해산물",
+		"cook": "볶음",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_11"
+	},
+	{
+		"name": "샐러드",
+		"country": "기타",
+		"ingre": "채소,육류,해산물",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "냉",
+		"src": "etc_12"
+	},
+	{
+		"name": "카레",
+		"country": "기타",
+		"ingre": "쌀",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_13"
+	},
+	{
+		"name": "피자",
+		"country": "기타",
+		"ingre": "밀가루",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_14"
+	},
+	{
+		"name": "편의점 도시락",
+		"country": "기타",
+		"ingre": "쌀",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_15"
+	},
+	{
+		"name": "토스트",
+		"country": "기타",
+		"ingre": "밀가루",
+		"cook": "구이",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_16"
+	},
+	{
+		"name": "돈까스",
+		"country": "기타",
+		"ingre": "육류",
+		"cook": "튀김",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_17"
+	},
+	{
+		"name": "제육덮밥",
+		"country": "기타",
+		"ingre": "쌀,육류",
+		"cook": "볶음",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "etc_18"
+	},
+	{
+		"name": "쫄면",
+		"country": "기타",
+		"ingre": "밀가루,채소",
+		"cook": "기타",
+		"spicy": "매움",
+		"temp": "냉",
+		"src": "etc_19"
+	},
+	{
+		"name": "짜조",
+		"country": "기타",
+		"ingre": "채소",
+		"cook": "튀김",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_20"
+	},
+	{
+		"name": "분짜",
+		"country": "기타",
+		"ingre": "채소,쌀,육류",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "냉",
+		"src": "etc_21"
+	},
+	{
+		"name": "똠양꿍",
+		"country": "기타",
+		"ingre": "해산물",
+		"cook": "탕",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_22"
+	},
+	{
+		"name": "분식세트",
+		"country": "기타",
+		"ingre": "밀가루,채소,해산물",
+		"cook": "튀김,기타",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "etc_23"
+	},
+	{
+		"name": "유부초밥",
+		"country": "기타",
+		"ingre": "쌀,채소",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_24"
+	},
+	{
+		"name": "월남쌈",
+		"country": "기타",
+		"ingre": "육류,채소,해산물",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "냉",
+		"src": "etc_25"
+	},
+	{
+		"name": "포케",
+		"country": "기타",
+		"ingre": "채소,쌀",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "냉",
+		"src": "etc_26"
+	},
+	{
+		"name": "오므라이스",
+		"country": "기타",
+		"ingre": "쌀",
+		"cook": "볶음",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_27"
+	},
+	{
+		"name": "푸팟퐁커리",
+		"country": "기타",
+		"ingre": "쌀,해산물,채소",
+		"cook": "볶음",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_28"
+	},
+	{
+		"name": "컵밥",
+		"country": "기타",
+		"ingre": "쌀,채소,육류",
+		"cook": "볶음",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_29"
+	},
+	{
+		"name": "잔치국수",
+		"country": "기타",
+		"ingre": "밀가루,해산물",
+		"cook": "탕",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_30"
+	},
+	{
+		"name": "라면",
+		"country": "기타",
+		"ingre": "밀가루",
+		"cook": "탕",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "etc_31"
+	},
+	{
+		"name": "반미",
+		"country": "기타",
+		"ingre": "밀가루,채소,육류",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_32"
+	},
+	{
+		"name": "오징어덮밥",
+		"country": "기타",
+		"ingre": "쌀,해산물",
+		"cook": "볶음",
+		"spicy": "매움",
+		"temp": "온",
+		"src": "etc_33"
+	},
+	{
+		"name": "껌승",
+		"country": "기타",
+		"ingre": "쌀,해산물",
+		"cook": "볶음",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_34"
+	},
+	{
+		"name": "밥버거",
+		"country": "기타",
+		"ingre": "쌀,채소",
+		"cook": "기타",
+		"spicy": "안매움",
+		"temp": "온",
+		"src": "etc_35"
+	}
+]
