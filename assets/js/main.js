@@ -23,8 +23,6 @@ const nextButton = document.querySelector('.answer__button');
 
 const result = document.querySelector('#result');
 
-const inputAll = document.querySelectorAll('input');
-
 let STORY_ORDER = 0;
 let QUESTION_NUM = 0;
 let ANSWER_NUM = 0;
