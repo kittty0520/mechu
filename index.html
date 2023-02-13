@@ -11,11 +11,11 @@
 		<link rel="stylesheet" href="./assets/css/reset.css" />
 
 		<!--페이스북 API-->
-		<meta property="og:url" content="http://mechu.dothome.co.kr/" />
+		<!-- <meta property="og:url" content="http://mechu.dothome.co.kr/" />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="직장인 점심메뉴 추천" />
 		<meta property="og:description" content="점심메뉴 추천" />
-		<meta property="og:image" content="logo.gif" />
+		<meta property="og:image" content="logo.gif" /> -->
 
 		<!-- 카카오톡 API -->
 		<script
@@ -60,36 +60,32 @@
 							직장인 메뉴 추천! <br />직·메·추
 						</p>
 						<span>오늘 점심 메뉴가 뭐야~~?</span>
-						<div class="cartoon__img-final"><img src="" alt="병아리" /></div>
+						<img
+							class="cartoon__img-final"
+							src="assets/img/Staff.png"
+							alt="병아리"
+						/>
 					</div>
 					<button class="cartoon__button">다음으로</button>
 				</div>
 			</section>
 			<!-- Story -->
 			<section id="start">
-				<div class="start__question"></div>
-				<div class="start__answer">
-					<label for="Staff"
-						>신입
-						<input type="radio" id="Staff" />
-					</label>
-					<label for="AssistantManager"
-						>대리
-						<input type="text" id="AssistantManager" />
-					</label>
-					<label for="Manager"
-						>과장
-						<input type="text" id="Manager" />
-					</label>
-					<label for="Director"
-						>부장
-						<input type="text" id="Director" />
-					</label>
-					<label for="President"
-						>대표
-						<input type="text" id="President" />
-					</label>
+				<div class="start__question">당신의 직급은 무엇인가요?</div>
+				<div class="start__answers">
+					<input type="radio" id="Staff" name="position_chk" />
+					<label for="Staff">신입 </label>
+					<input type="radio" id="AssistantManager" name="position_chk" />
+					<label for="AssistantManager">대리 </label>
+					<input type="radio" id="Manager" name="position_chk" />
+					<label for="Manager">과장 </label>
+					<input type="radio" id="Director" name="position_chk" />
+					<label for="Director">부장 </label>
+					<input type="radio" id="President" name="position_chk" />
+					<label for="President">대표 </label>
 				</div>
+				<div class="start__selectedPosition"></div>
+				<button class="start__button">다음으로</button>
 			</section>
 			<!-- Start -->
 			<section id="quest">
@@ -103,14 +99,14 @@
 			</section>
 			<!-- Quest -->
 			<section id="loading">
-				<h1>오늘의 <br>점심메뉴는?</h1>
-				<img src="img/food_circle.png" alt="음식circle">
+				<h1>오늘의 <br />점심메뉴는?</h1>
+				<img src="assets/img/food_circle.png" alt="음식circle" />
 			</section>
 			<!-- loading -->
 			<section id="result">
 				<div id="foodtype">
 					<h1>
-						<a><img src="img/logo.gif" alt="logo" id="logo" /></a>
+						<a><img src="assets/img/logo.png" alt="logo" id="logo" /></a>
 					</h1>
 					<div id="imgs"><img /></div>
 					<p></p>
@@ -131,7 +127,7 @@
 					></div>
 					<div>
 						<a id="clip-btn" href="javascript:clipboardShare()">
-							<img src="img/link_icon.png" />
+							<img src="assets/img/link_icon.png" />
 						</a>
 					</div>
 				</div>
