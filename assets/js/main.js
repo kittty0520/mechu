@@ -9,6 +9,12 @@ const secondStory = document.querySelector('.cartoon-second');
 const finalStory = document.querySelector('.cartoon-final');
 const storyList = [firstStory, secondStory, finalStory];
 
+const start = document.querySelector('#start');
+const startQuestion = document.querySelector('.start__question');
+const startAnswers = document.querySelector('.start__answers');
+const selectedPosition = document.querySelector('.start__selectedPosition');
+const startButton = document.querySelector('.start__button');
+
 const quest = document.querySelector('#quest');
 const questionField = document.querySelector('.questions');
 const question = document.querySelector('.question__container');
@@ -35,9 +41,9 @@ function nextStory() {
 		storyList[0].style.display = 'block';
 		storyList[2].style.display = 'none';
 		story.style.display = 'none';
-		quest.style.display = 'block';
+		// quest.style.display = 'block';
 		STORY_ORDER = 0;
-		nextQuestion();
+		start.style.display = 'block';
 	}
 	storyList[STORY_ORDER].style.display = 'none';
 	storyList[STORY_ORDER + 1].style.display = 'block';
@@ -46,6 +52,43 @@ function nextStory() {
 }
 
 //시작
+startButton.addEventListener('click', selectPosition);
+
+function selectPosition() {
+	if (startAnswers.style.display === 'none') {
+		startAnswers.style.display = 'block';
+		start.style.display = 'none';
+		quest.style.display = 'block';
+		nextQuestion();
+		return;
+	}
+
+	const positionList = document.getElementsByName('position_chk');
+
+	preventNotSelected(positionList);
+
+	startAnswers.style.display = 'none';
+
+	[...positionList].map((position) => {
+		if (position.checked) {
+			startQuestion.textContent = `${position.labels[0].innerHTML}님! 오늘 점심 추천해 드릴게요`;
+			const positionImg = document.createElement('img');
+			positionImg.setAttribute('class', 'start__selected__img');
+			positionImg.setAttribute('src', `assets/img/${position.id}.png`);
+			positionImg.setAttribute('alt', position.value);
+			selectedPosition.appendChild(positionImg);
+		} else {
+			return position;
+		}
+	});
+}
+
+function preventNotSelected(array) {
+	if ([...array].filter((item) => item.checked).length === 0) {
+		alert('한 개 이상의 옵션을 선택하세요');
+		return;
+	}
+}
 
 //질문
 nextButton.addEventListener('click', () => {
@@ -89,7 +132,6 @@ function answerSet() {
 		}
 		input.setAttribute('id', `answer${index}`);
 		input.setAttribute('name', 'answer');
-		// input.innerHTML= item;
 		const answerOption = document.createElement('label');
 		answerOption.setAttribute('for', `answer${index}`);
 		answerOption.innerHTML = item;
