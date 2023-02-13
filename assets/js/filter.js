@@ -177,6 +177,54 @@ $(function(){
         {country:'etc',name:'밥버거', ingredient:'밀가루', quality:'',cooking:'' },
     ]
 
+    let btn_count=0; 
+	let next_parameter=[]
+    let check_data = {
+		countryFood:[...korea, ...china, ...america],
+		country: [],
+		ingredient: [],
+		cooking: [],
+		spicy: [],
+	};
+
+    function btn_parameter(a, b){
+        btn_count++;
+        if(btn_count===1){
+            next_parameter.splice('0',0,'country','countryFood');
+            console.log(next_parameter);
+        }
+        if(btn_count===2){
+            next_parameter.splice(0,2)
+            next_parameter.splice('0',0,'ingredient','country');
+            console.log(next_parameter);
+        }
+        if(btn_count===3){
+            next_parameter.splice(0,2)
+            next_parameter.splice('0',0,'cooking','ingredient');
+            console.log(next_parameter);
+        }
+        if(btn_count===4){
+            next_parameter.splice(0,2)
+            next_parameter.splice('0',0,'spicy','cooking');
+            console.log(next_parameter);
+        }
+    
+    }
+    
+    function filter(value, check){
+    let check_element=document.getElementsByName(value);
+    for(let i=0; i<check_element.length; i++){
+        if(check_element[i].checked){
+            for(let j=0; j<check_data[check].length; j++){
+                if(check_element[i].value===check_data[check][j][value]){
+                    check_data[value].push(check_data[check][j]);
+                    console.log(check_data[value]);                    
+                }
+            } 
+        }
+    }
+}
+
    // let foods = korea.concat(china,america,etc,japan);
     
     // let foods=[];
@@ -187,45 +235,45 @@ $(function(){
     // foods.push(japan);
     // console.log(foods);
 
-let choice=[];
-let  cty=[];
+// let choice=[];
+// let  cty=[];
 
-    $('#ko').click(function(){
-        for( let j=0;  j<=cty.length; j++){
-            if( cty.indexOf( $(this).text()  )==-1){
-                cty.push( $(this).text() );
-                for( let i=0; i<korea.length;i++){
-                    choice.push(korea[i]);
-            }
-            }
-        }
-    console.log( choice )
-    });
-    $('#chi').click(function(){
-        //for(let i = 0; i<foods.length; i++){               return console.log(chinaFood);            }
-        for( let i=0; i<china.length;i++){
-            choice.push(china[i]);
-    }
-        console.log( choice )
-    });
-    $('#america').click(function(){
-        for( let i=0; i<america.length;i++){
-            choice.push(america[i]);
-    }
-        console.log( choice )
-    });
-    $('#japan').click(function(){
-        for( let i=0; i<japan.length;i++){
-            choice.push(japan[i]);
-    }
-        console.log( choice )
-    });
-    $('#etc').click(function(){
-        for( let i=0; i<etc.length;i++){
-            choice.push(etc[i]);
-    }
-    console.log( choice )
-    });
+//     $('#ko').click(function(){
+//         for( let j=0;  j<=cty.length; j++){
+//             if( cty.indexOf( $(this).text()  )==-1){
+//                 cty.push( $(this).text() );
+//                 for( let i=0; i<korea.length;i++){
+//                     choice.push(korea[i]);
+//             }
+//             }
+//         }
+//     console.log( choice )
+//     });
+//     $('#chi').click(function(){
+//         //for(let i = 0; i<foods.length; i++){               return console.log(chinaFood);            }
+//         for( let i=0; i<china.length;i++){
+//             choice.push(china[i]);
+//     }
+//         console.log( choice )
+//     });
+//     $('#america').click(function(){
+//         for( let i=0; i<america.length;i++){
+//             choice.push(america[i]);
+//     }
+//         console.log( choice )
+//     });
+//     $('#japan').click(function(){
+//         for( let i=0; i<japan.length;i++){
+//             choice.push(japan[i]);
+//     }
+//         console.log( choice )
+//     });
+//     $('#etc').click(function(){
+//         for( let i=0; i<etc.length;i++){
+//             choice.push(etc[i]);
+//     }
+//     console.log( choice )
+//     });
     
 
     
@@ -238,17 +286,17 @@ let  cty=[];
 
     //let rice = foods.filter((value) => value.ingredient == '쌀')
 */
-let result=[];
- $('.part').click(function(){ 
-    let val=$(this).text();
-   console.log(val)
-    for(let k=0; k<choice.length;k++){
-        if( choice[k].ingredient==val){
-            result.push(choice[k]);
-            console.log( result);
-        }            
-    }        
-});
+// let result=[];
+//     $('.part').click(function(){ 
+//     let val=$(this).text();
+//     console.log(val)
+//     for(let k=0; k<choice.length;k++){
+//         if( choice[k].ingredient==val){
+//             result.push(choice[k]);
+//             console.log( result);
+//         }            
+//     }        
+// });
 
 /*
 $('.reset').click(function(){
@@ -260,4 +308,3 @@ $('.reset').click(function(){
 
 });
 let 예시배열=[{country:'etc',name:'밥버거', ingredient:'쌀', cooking:'', spicy:'', temperature:''}]       
-</script>
