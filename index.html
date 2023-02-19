@@ -94,7 +94,12 @@
 					<div class="answer__container">
 						<div class="answers__list"></div>
 					</div>
-					<button class="answer__button" onclick="btn_parameter('a', 'b'); filter(next_parameter[0],next_parameter[1]); ">다음으로</button>
+					<button
+						class="answer__button"
+						onclick="btn_parameter('a', 'b'); filter(next_parameter[0],next_parameter[1]); console.log(check_data);"
+					>
+						다음으로
+					</button>
 				</div>
 			</section>
 			<!-- Quest -->
@@ -107,19 +112,25 @@
 				<div id="result_wrap">
 					<div id="country_food">
 						<!-- <p id="result_txt"></p> -->
-						<img src="img/loading_g.png" alt="로딩이미지">
+						<img src="img/loading_g.png" alt="로딩이미지" />
 					</div>
 					<div class="btns">
 						<button type="button" id="btn_re">결과보기</button>
 						<a id="kakaotalk-sharing-btn" href="javascript:;">
-							<img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
-							alt="카카오톡 공유 보내기 버튼" />
+							<img
+								src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
+								alt="카카오톡 공유 보내기 버튼"
+							/>
 						</a>
 						<div id="fb-root"></div>
-						<div class="fb-share-button" data-href="http://mechu.dothome.co.kr/" data-layout="button_count"></div>
+						<div
+							class="fb-share-button"
+							data-href="http://mechu.dothome.co.kr/"
+							data-layout="button_count"
+						></div>
 						<div>
 							<a id="clip-btn" href="javascript:clipboardShare()">
-								<img src="img/link_icon.png" alt="클립보드이미지">
+								<img src="img/link_icon.png" alt="클립보드이미지" />
 							</a>
 						</div>
 					</div>
