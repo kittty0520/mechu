@@ -21,6 +21,8 @@ const question = document.querySelector('.question__container');
 const answer = document.querySelector('.answers__list');
 const nextButton = document.querySelector('.answer__button');
 
+const loading = document.querySelector('#loading');
+
 const result = document.querySelector('#result');
 
 let STORY_ORDER = 0;
@@ -106,7 +108,11 @@ function nextQuestion() {
 
 function endQuestion() {
 	questionField.style.display = 'none';
-	result.style.display = 'block';
+	loading.style.display = 'block';
+	setTimeout(() => {
+		loading.style.display = 'none';
+		result.style.display = 'block';
+	}, 3000);
 }
 
 function questionSet() {
@@ -116,10 +122,15 @@ function questionSet() {
 	QUESTION_NUM++;
 	item.innerHTML = newQuestion;
 	question.appendChild(item);
-	console.log(QUESTION_NUM);
+	// console.log(QUESTION_NUM);
 }
+const answerName = ['random', 'country', 'ingre', 'cook', 'spicy', 'temp'];
+let answerNameOrder = 0;
 
 function answerSet() {
+	if (answerNameOrder === 6) {
+		answerName = 0;
+	}
 	const { answers, multiSeleted } = answerList[ANSWER_NUM];
 	const newAnswer = answers.map((item, index) => {
 		const input = document.createElement('input');
@@ -129,13 +140,73 @@ function answerSet() {
 			input.setAttribute('type', 'checkbox');
 		}
 		input.setAttribute('id', `answer${index}`);
-		input.setAttribute('name', 'answer');
+		input.setAttribute('value', item);
+		input.setAttribute('name', answerName[answerNameOrder]);
 		const answerOption = document.createElement('label');
 		answerOption.setAttribute('for', `answer${index}`);
 		answerOption.innerHTML = item;
 		answer.appendChild(input);
 		answer.appendChild(answerOption);
 	});
+	answerNameOrder++;
 	ANSWER_NUM++;
 	return newAnswer;
+}
+
+// 필터함수
+
+let btn_count = 0;
+let next_parameter = [];
+let check_data = {
+	countryFood: [...korea, ...china, ...america],
+	country: [],
+	ingredient: [],
+	cooking: [],
+	spicy: [],
+	temp: [],
+};
+
+function btn_parameter(a, b) {
+	btn_count++;
+	if (btn_count === 1) {
+		next_parameter.splice('0', 0, 'country', 'countryFood');
+		console.log(next_parameter);
+	}
+	if (btn_count === 2) {
+		next_parameter.splice(0, 2);
+		next_parameter.splice('0', 0, 'ingredient', 'country');
+		console.log(next_parameter);
+	}
+	if (btn_count === 3) {
+		next_parameter.splice(0, 2);
+		next_parameter.splice('0', 0, 'cooking', 'ingredient');
+		console.log(next_parameter);
+	}
+	if (btn_count === 4) {
+		next_parameter.splice(0, 2);
+		next_parameter.splice('0', 0, 'spicy', 'cooking');
+		console.log(next_parameter);
+	}
+	if (btn_count === 5) {
+		next_parameter.splice(0, 2);
+		next_parameter.splice('0', 0, 'temp', 'spicy');
+		console.log(next_parameter);
+	}
+}
+
+function filter(value, check) {
+	//value값과 동일한 name을 가진 input요소를 가져와 배열로 반환한다.
+	let check_element = document.getElementsByName(value);
+
+	//배열을 순회하면서 체크된 input가 있다면
+	for (let i = 0; i < check_element.length; i++) {
+		if (check_element[i].checked) {
+			for (let j = 0; j < check_data[check].length; j++) {
+				if (check_element[i].value === check_data[check][j][value]) {
+					check_data[value].push(check_data[check][j]);
+					console.log(check_data[value]);
+				}
+			}
+		}
+	}
 }
