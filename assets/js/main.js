@@ -21,6 +21,8 @@ const question = document.querySelector('.question__container');
 const answer = document.querySelector('.answers__list');
 const nextButton = document.querySelector('.answer__button');
 
+const loading = document.querySelector('#loading');
+
 const result = document.querySelector('#result');
 
 let STORY_ORDER = 0;
@@ -106,7 +108,11 @@ function nextQuestion() {
 
 function endQuestion() {
 	questionField.style.display = 'none';
-	result.style.display = 'block';
+	loading.style.display = 'block';
+	setTimeout(() => {
+		loading.style.display = 'none';
+		result.style.display = 'block';
+	}, 3000);
 }
 
 function questionSet() {
@@ -122,7 +128,7 @@ const answerName = ['random', 'country', 'ingre', 'cook', 'spicy', 'temp'];
 let answerNameOrder = 0;
 
 function answerSet() {
-	if (answerNameOrder === 5) {
+	if (answerNameOrder === 6) {
 		answerName = 0;
 	}
 	const { answers, multiSeleted } = answerList[ANSWER_NUM];
@@ -145,14 +151,6 @@ function answerSet() {
 	answerNameOrder++;
 	ANSWER_NUM++;
 	return newAnswer;
-}
-//로딩함수
-const loading = document.querySelector('#loading');
-
-function closeLoading() {
-	setTimeout(() => {
-		loading.style.display = 'none';
-	}, 3000);
 }
 
 // 필터함수

@@ -45,97 +45,112 @@
 		<!-- Header -->
 		<main>
 			<section id="story">
-				<div class="cartoon">
-					<div class="cartoon-first">
-						<div class="cartoon__img">img1</div>
-						<div class="cartoon__img">img2</div>
+				<div class="container">
+					<div class="cartoon">
+						<div class="cartoon-first">
+							<div class="cartoon__img">img1</div>
+							<div class="cartoon__img">img2</div>
+						</div>
+						<div class="cartoon-second">
+							<div class="cartoon__img">img3</div>
+							<div class="cartoon__img">img4</div>
+						</div>
+						<div class="cartoon-final">
+							<p>
+								바쁜 현대인들의 점심메뉴 고민 이제 즐겁게 골라봐요!<br />
+								직장인 메뉴 추천! <br />직·메·추
+							</p>
+							<span>오늘 점심 메뉴가 뭐야~~?</span>
+							<img
+								class="cartoon__img-final"
+								src="assets/img/Staff.png"
+								alt="병아리"
+							/>
+						</div>
+						<button class="cartoon__button">다음으로</button>
 					</div>
-					<div class="cartoon-second">
-						<div class="cartoon__img">img3</div>
-						<div class="cartoon__img">img4</div>
-					</div>
-					<div class="cartoon-final">
-						<p>
-							바쁜 현대인들의 점심메뉴 고민 이제 즐겁게 골라봐요!<br />
-							직장인 메뉴 추천! <br />직·메·추
-						</p>
-						<span>오늘 점심 메뉴가 뭐야~~?</span>
-						<img
-							class="cartoon__img-final"
-							src="assets/img/Staff.png"
-							alt="병아리"
-						/>
-					</div>
-					<button class="cartoon__button">다음으로</button>
 				</div>
 			</section>
 			<!-- Story -->
 			<section id="start">
-				<div class="start__question">당신의 직급은 무엇인가요?</div>
-				<div class="start__answers">
-					<input type="radio" id="Staff" name="position_chk" />
-					<label for="Staff">신입 </label>
-					<input type="radio" id="AssistantManager" name="position_chk" />
-					<label for="AssistantManager">대리 </label>
-					<input type="radio" id="Manager" name="position_chk" />
-					<label for="Manager">과장 </label>
-					<input type="radio" id="Director" name="position_chk" />
-					<label for="Director">부장 </label>
-					<input type="radio" id="President" name="position_chk" />
-					<label for="President">대표 </label>
+				<div class="container">
+					<div class="start__question">당신의 직급은 무엇인가요?</div>
+					<div class="start__answers">
+						<input type="radio" id="Staff" name="position_chk" />
+						<label for="Staff">신입 </label>
+						<input type="radio" id="AssistantManager" name="position_chk" />
+						<label for="AssistantManager">대리 </label>
+						<input type="radio" id="Manager" name="position_chk" />
+						<label for="Manager">과장 </label>
+						<input type="radio" id="Director" name="position_chk" />
+						<label for="Director">부장 </label>
+						<input type="radio" id="President" name="position_chk" />
+						<label for="President">대표 </label>
+					</div>
+					<div class="start__selectedPosition"></div>
+					<button class="start__button">다음으로</button>
 				</div>
-				<div class="start__selectedPosition"></div>
-				<button class="start__button">다음으로</button>
 			</section>
 			<!-- Start -->
-			<section id="quest">
-				<div class="questions">
-					<div class="question__container"></div>
-					<div class="answer__container">
-						<div class="answers__list"></div>
+			<section id="quest" class="section">
+				<div class="container">
+					<div class="questions">
+						<div class="question__container"></div>
+						<div class="answer__container">
+							<div class="answers__list"></div>
+						</div>
+						<button
+							class="answer__button"
+							onclick="btn_parameter('a', 'b'); filter(next_parameter[0],next_parameter[1]); console.log(check_data);"
+						>
+							다음으로
+						</button>
 					</div>
-					<button
-						class="answer__button"
-						onclick="btn_parameter('a', 'b'); filter(next_parameter[0],next_parameter[1]); console.log(check_data);"
-					>
-						다음으로
-					</button>
 				</div>
 			</section>
 			<!-- Quest -->
 			<section id="loading">
-				<h1>오늘의 <br />점심메뉴는?</h1>
-				<img src="assets/img/food_circle.png" alt="음식circle" />
+				<div class="container">
+					<h2 class="loading__title">오늘의 <br />점심메뉴는?</h2>
+					<div class="loading__image__container">
+						<img
+							class="loading__image"
+							src="assets/img/food_circle.png"
+							alt="음식circle"
+						/>
+					</div>
+				</div>
 			</section>
 			<!-- loading -->
 			<section id="result">
-				<div id="result_wrap">
-					<div id="country_food">
-						<!-- <p id="result_txt"></p> -->
-						<img src="img/loading_g.png" alt="로딩이미지" />
-					</div>
-					<div class="btns">
-						<button type="button" id="btn_re">결과보기</button>
-						<a id="kakaotalk-sharing-btn" href="javascript:;">
-							<img
-								src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
-								alt="카카오톡 공유 보내기 버튼"
-							/>
-						</a>
-						<div id="fb-root"></div>
-						<div
-							class="fb-share-button"
-							data-href="http://mechu.dothome.co.kr/"
-							data-layout="button_count"
-						></div>
-						<div>
-							<a id="clip-btn" href="javascript:clipboardShare()">
-								<img src="img/link_icon.png" alt="클립보드이미지" />
+				<div class="container">
+					<div id="result_wrap">
+						<div id="country_food">
+							<!-- <p id="result_txt"></p> -->
+							<img src="img/loading_g.png" alt="로딩이미지" />
+						</div>
+						<div class="btns">
+							<button type="button" id="btn_re">결과보기</button>
+							<a id="kakaotalk-sharing-btn" href="javascript:;">
+								<img
+									src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
+									alt="카카오톡 공유 보내기 버튼"
+								/>
 							</a>
+							<div id="fb-root"></div>
+							<div
+								class="fb-share-button"
+								data-href="http://mechu.dothome.co.kr/"
+								data-layout="button_count"
+							></div>
+							<div>
+								<a id="clip-btn" href="javascript:clipboardShare()">
+									<img src="img/link_icon.png" alt="클립보드이미지" />
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
-				<script type="text/javascript" src="js/last.js"></script>
 			</section>
 			<!-- Result -->
 		</main>

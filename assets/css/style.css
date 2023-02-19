@@ -26,10 +26,19 @@ button {
 	color: var(--color-orange);
 }
 @font-face {
-    font-family: 'GangwonEdu_OTFBoldA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'GangwonEdu_OTFBoldA';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+/* 레이아웃 */
+.container {
+	width: 700px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 /* Input */
@@ -140,24 +149,32 @@ input[type='checkbox']:checked + label {
 	width: 250px;
 	height: 250px;
 	position: relative;
-	margin: 100px auto;
-	border: 1px solid orange;
-	border-radius: 100%;
-	background-color: orange;
+	margin: 0 auto;
+	display: none;
 }
-#loading > h1 {
-	width: 95px;
-	height: 20px;
-	margin: 105px auto;
-	color: white;
+.loading__title {
+	text-align: center;
+	color: var(--color-orange);
 	font-size: 16px;
 }
-#loading > img {
+.loading__image__container {
+	position: relative;
+	width: 225px;
+	height: 225px;
+	padding: 25px;
+	/* border: 1px solid var(--color-orange); */
+	border-radius: 100%;
+	background-color: var(--color-orange);
+}
+.loading__image {
+	position: absolute;
+	top: 25px;
+	left: 25px;
 	width: 225px;
 	height: 225px;
 	position: absolute;
-	top: 15px;
-	left: 14px;
+	/* top: 15px; */
+	/* left: 14px; */
 	animation: spin 5s linear infinite;
 }
 @keyframes spin {
@@ -175,28 +192,46 @@ input[type='checkbox']:checked + label {
 }
 
 /* result_wrap */
-#result_wrap{
-                width: 300px; height: 360px; margin: 0 auto;
-                padding:20px 0px 20px 0px;
-                background: #fff; position: relative;
-            }
-            #result_txt{
-                text-align: center; font-size: 40px; font-weight: bold; 
-                color: #fd8e49; margin:0 auto;
-            }
-            #country_food{
-                width: 250px; height: 250px; margin:0 auto;
-            }
-            #country_food> img{
-                width: 250px; height: 250px; margin:0 auto;
-                display:block; object-fit: cover;
-            }
-            #btn_re{
-                width: 190px; height: 40px;
-                text-align: center; border: none; border-radius: 5px;
-                background: #fd8e49; color: #fff; font-weight: bold;
-                position: absolute; bottom: 80px; left: 60px;
-            }
+#result_wrap {
+	width: 300px;
+	height: 360px;
+	margin: 0 auto;
+	padding: 20px 0px 20px 0px;
+	background: #fff;
+	position: relative;
+}
+#result_txt {
+	text-align: center;
+	font-size: 40px;
+	font-weight: bold;
+	color: #fd8e49;
+	margin: 0 auto;
+}
+#country_food {
+	width: 250px;
+	height: 250px;
+	margin: 0 auto;
+}
+#country_food > img {
+	width: 250px;
+	height: 250px;
+	margin: 0 auto;
+	display: block;
+	object-fit: cover;
+}
+#btn_re {
+	width: 190px;
+	height: 40px;
+	text-align: center;
+	border: none;
+	border-radius: 5px;
+	background: #fd8e49;
+	color: #fff;
+	font-weight: bold;
+	position: absolute;
+	bottom: 80px;
+	left: 60px;
+}
 
 /* 카카오톡 API */
 #kakaotalk-sharing-btn {
