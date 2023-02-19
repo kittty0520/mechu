@@ -161,7 +161,7 @@ const foodData = getData();
 let btn_count = 0;
 let next_parameter = [];
 let check_data = {
-	countryFood: [],
+	countryFood: [foodData],
 	country: [],
 	ingredient: [],
 	cooking: [],
