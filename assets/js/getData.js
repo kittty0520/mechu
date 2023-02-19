@@ -13,6 +13,9 @@ export async function getData() {
 		.catch(console.error);
 }
 
+const food = getData();
+console.log(food);
+
 // *********Mysql************
 // var mysql = require('mysql');
 

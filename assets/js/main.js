@@ -29,10 +29,6 @@ let STORY_ORDER = 0;
 let QUESTION_NUM = 0;
 let ANSWER_NUM = 0;
 
-//데이터 불러오기 -비동기 함수(프로미스 객체)
-const foodData = getData();
-console.log(foodData);
-
 // 스토리
 storyBtn.addEventListener('click', nextStory);
 
@@ -107,12 +103,12 @@ function nextQuestion() {
 }
 
 function endQuestion() {
-	questionField.style.display = 'none';
+	quest.style.display = 'none';
 	loading.style.display = 'block';
 	setTimeout(() => {
 		loading.style.display = 'none';
 		result.style.display = 'block';
-	}, 3000);
+	}, 5000);
 }
 
 function questionSet() {
@@ -153,12 +149,19 @@ function answerSet() {
 	return newAnswer;
 }
 
+//데이터 불러오기 -비동기 함수(프로미스 객체)
+//수정하기 - foodData에 getData 프로미스 결과값을 바로 배열에 집어넣는 방법은???
+const foodData = getData();
+// let food = [];
+// foodData.then((res) => res.map((item) => food.push(item)));
+// console.log(food);
+
 // 필터함수
 
 let btn_count = 0;
 let next_parameter = [];
 let check_data = {
-	countryFood: [...korea, ...china, ...america],
+	countryFood: [],
 	country: [],
 	ingredient: [],
 	cooking: [],
@@ -174,17 +177,17 @@ function btn_parameter(a, b) {
 	}
 	if (btn_count === 2) {
 		next_parameter.splice(0, 2);
-		next_parameter.splice('0', 0, 'ingredient', 'country');
+		next_parameter.splice('0', 0, 'ingre', 'country');
 		console.log(next_parameter);
 	}
 	if (btn_count === 3) {
 		next_parameter.splice(0, 2);
-		next_parameter.splice('0', 0, 'cooking', 'ingredient');
+		next_parameter.splice('0', 0, 'cook', 'ingre');
 		console.log(next_parameter);
 	}
 	if (btn_count === 4) {
 		next_parameter.splice(0, 2);
-		next_parameter.splice('0', 0, 'spicy', 'cooking');
+		next_parameter.splice('0', 0, 'spicy', 'cook');
 		console.log(next_parameter);
 	}
 	if (btn_count === 5) {

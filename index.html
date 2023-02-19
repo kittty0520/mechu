@@ -74,25 +74,27 @@
 			<!-- Story -->
 			<section id="start">
 				<div class="container">
-					<div class="start__question">당신의 직급은 무엇인가요?</div>
-					<div class="start__answers">
-						<input type="radio" id="Staff" name="position_chk" />
-						<label for="Staff">신입 </label>
-						<input type="radio" id="AssistantManager" name="position_chk" />
-						<label for="AssistantManager">대리 </label>
-						<input type="radio" id="Manager" name="position_chk" />
-						<label for="Manager">과장 </label>
-						<input type="radio" id="Director" name="position_chk" />
-						<label for="Director">부장 </label>
-						<input type="radio" id="President" name="position_chk" />
-						<label for="President">대표 </label>
+					<div class="start__container">
+						<div class="start__question">당신의 직급은 무엇인가요?</div>
+						<div class="start__answers">
+							<input type="radio" id="Staff" name="position_chk" />
+							<label for="Staff">신입 </label>
+							<input type="radio" id="AssistantManager" name="position_chk" />
+							<label for="AssistantManager">대리 </label>
+							<input type="radio" id="Manager" name="position_chk" />
+							<label for="Manager">과장 </label>
+							<input type="radio" id="Director" name="position_chk" />
+							<label for="Director">부장 </label>
+							<input type="radio" id="President" name="position_chk" />
+							<label for="President">대표 </label>
+						</div>
+						<div class="start__selectedPosition"></div>
+						<button class="start__button">다음으로</button>
 					</div>
-					<div class="start__selectedPosition"></div>
-					<button class="start__button">다음으로</button>
 				</div>
 			</section>
 			<!-- Start -->
-			<section id="quest" class="section">
+			<section id="quest">
 				<div class="container">
 					<div class="questions">
 						<div class="question__container"></div>
@@ -154,5 +156,8 @@
 			</section>
 			<!-- Result -->
 		</main>
+		<footer id="footer">
+			<p>All right are reserved.</p>
+		</footer>
 	</body>
 </html>
