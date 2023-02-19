@@ -158,7 +158,7 @@ function answerSet() {
 let btn_count = 0;
 let next_parameter = [];
 let check_data = {
-	countryFood: [...korea, ...china, ...america],
+	countryFood: [foodData],
 	country: [],
 	ingredient: [],
 	cooking: [],
