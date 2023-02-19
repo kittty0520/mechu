@@ -43,7 +43,7 @@ document.getElementById("foodtype").innerHTML =
     "<img src='" + bibimbap.image + "' alt='비빔밥 이미지'>";
 */
 
-/* 음식 이미지를 랜덤으로 보여주는 함수 */
+/* 음식 이미지를 랜덤으로 보여주는 함수
 function displayRandomFood() {
 	let randomIndex = Math.floor(Math.random() * foodtype.length);
 	let randomFood = foodtype[randomIndex];
@@ -58,6 +58,25 @@ function displayRandomFood() {
 		" 이미지'>";
 }
 document.getElementById('btn').addEventListener('click', displayRandomFood);
+*/
+
+/* 클릭시 필터링된 음식 이미지를 보여주는 함수 */
+function displayResultFood(){
+    let filterFood = check_data.countryFood;
+    for (let key in check_data) {
+        if (key !== "countryFood" && check_data[key].length > 0){
+            filterFood = check_data[key].filter(function(food){
+                return filterFood.includes(food);
+            });
+        }}
+    let randomIndex = Math.floor(Math.random() * filterFood.length);
+    let resultFood = filterFood[randomIndex];
+    document.getElementById("country_food").innerHTML =
+    "<p>" + resultFood.name + "</p>" +
+    "<img src='" + resultFood.image + "' alt='음식이미지'>";
+}
+
+document.getElementById("btn_re").addEventListener("click", displayResultFood);
 
 /* 카카오톡 공유하기*/
 Kakao.init('0eaa5ffe9b60880336267d180d93bed0'); // 사용하려는 앱의 JavaScript 키 입력

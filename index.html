@@ -34,7 +34,7 @@
 		></script>
 
 		<!-- 자바스크립트 -->
-		<!-- <script src="./assets/js/filter.js" defer></script> -->
+		<script src="./assets/js/filter.js" defer></script>
 		<script type="module" src="./assets/js/main.js" defer></script>
 		<script type="text/javascript" src="./assets/js/last.js" defer></script>
 	</head>
@@ -104,33 +104,27 @@
 			</section>
 			<!-- loading -->
 			<section id="result">
-				<div id="foodtype">
-					<h1>
-						<a><img src="assets/img/logo.png" alt="logo" id="logo" /></a>
-					</h1>
-					<div id="imgs"><img /></div>
-					<p></p>
-					<div>
-						<button type="button" id="btn">다시보기</button>
-						<a id="kakaotalk-sharing-btn" href="javascript:;">
-							<img
-								src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
-								alt="카카오톡 공유 보내기 버튼"
-							/>
-						</a>
+				<div id="result_wrap">
+					<div id="country_food">
+						<!-- <p id="result_txt"></p> -->
+						<img src="img/loading_g.png" alt="로딩이미지">
 					</div>
-					<div id="fb-root"></div>
-					<div
-						class="fb-share-button"
-						data-href="http://mechu.dothome.co.kr/"
-						data-layout="button_count"
-					></div>
-					<div>
-						<a id="clip-btn" href="javascript:clipboardShare()">
-							<img src="assets/img/link_icon.png" />
+					<div class="btns">
+						<button type="button" id="btn_re">결과보기</button>
+						<a id="kakaotalk-sharing-btn" href="javascript:;">
+							<img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
+							alt="카카오톡 공유 보내기 버튼" />
 						</a>
+						<div id="fb-root"></div>
+						<div class="fb-share-button" data-href="http://mechu.dothome.co.kr/" data-layout="button_count"></div>
+						<div>
+							<a id="clip-btn" href="javascript:clipboardShare()">
+								<img src="img/link_icon.png" alt="클립보드이미지">
+							</a>
+						</div>
 					</div>
 				</div>
+				<script type="text/javascript" src="js/last.js"></script>
 			</section>
 			<!-- Result -->
 		</main>

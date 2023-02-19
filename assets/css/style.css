@@ -25,6 +25,12 @@ button {
 	border-radius: 10px;
 	color: var(--color-orange);
 }
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* Input */
 input[type='radio'],
@@ -168,58 +174,29 @@ input[type='checkbox']:checked + label {
 	display: none;
 }
 
-/* FoodType */
-#foodtype {
-	width: 360px;
-	height: 640px;
-	margin: 10px auto;
-	background: #fff;
-	position: relative;
-	border: 3px solid #fd8e49;
-}
-#logo {
-	width: 150px;
-	height: 150px;
-	margin: 0 auto;
-}
-p {
-	text-align: center;
-	font-size: 40px;
-	font-weight: bold;
-	color: #fd8e49;
-	margin: 0 auto;
-	padding-top: 20px;
-}
-#foodtype > img {
-	display: block;
-	width: 250px;
-	height: 250px;
-	margin: 0 auto;
-}
-#imgs {
-	width: 250px;
-	height: 250px;
-	margin: 0 auto;
-}
-#imgs img {
-	display: block;
-	width: 250px;
-	height: 250px;
-	margin: 0 auto;
-	object-fit: scale-down;
-}
-#btn {
-	width: 100px;
-	height: 50px;
-	border: 3px solid #fd8e49;
-	text-align: center;
-	background: #fff;
-	color: #fd8e49;
-	font-weight: bold;
-	position: absolute;
-	bottom: 120px;
-	left: 130px;
-}
+/* result_wrap */
+#result_wrap{
+                width: 300px; height: 360px; margin: 0 auto;
+                padding:20px 0px 20px 0px;
+                background: #fff; position: relative;
+            }
+            #result_txt{
+                text-align: center; font-size: 40px; font-weight: bold; 
+                color: #fd8e49; margin:0 auto;
+            }
+            #country_food{
+                width: 250px; height: 250px; margin:0 auto;
+            }
+            #country_food> img{
+                width: 250px; height: 250px; margin:0 auto;
+                display:block; object-fit: cover;
+            }
+            #btn_re{
+                width: 190px; height: 40px;
+                text-align: center; border: none; border-radius: 5px;
+                background: #fd8e49; color: #fff; font-weight: bold;
+                position: absolute; bottom: 80px; left: 60px;
+            }
 
 /* 카카오톡 API */
 #kakaotalk-sharing-btn {
