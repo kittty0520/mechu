@@ -11,58 +11,64 @@
     <label><input type="checkbox" value="korea" id="korea" name="country" >한식</label>    
     <label><input type="checkbox" value="china" id="china" name="country" >중식</label>
     <label><input type="checkbox" value="america" id="ws" name="country" >양식</label>
-	<button type="button" onclick="filter('country', 'countryFood');">다음단계</button>	
+	<!-- <button type="button" onclick="filter('country', 'countryFood');">다음단계</button>	 -->
     <label><input type="checkbox" value="쌀" name="ingredient">쌀</label>
     <label><input type="checkbox" value="채소" name="ingredient">채소</label>
     <label><input type="checkbox" value="밀가루" name="ingredient">밀가루</label>
     <label><input type="checkbox" value="해산물" name="ingredient">해산물</label>
     <label><input type="checkbox" value="육류" name="ingredient">육류</label>
-	<button type="button" onclick="filter('ingredient', 'country');">다음단계</button>	
+	<!-- <button type="button" onclick="filter('ingredient', 'country');">다음단계</button>	 -->
     <label><input type="checkbox" value="튀김" name="cooking">튀김</label>
     <label><input type="checkbox" value="구이" name="cooking">구이</label>
     <label><input type="checkbox" value="볶음" name="cooking">볶음</label>
     <label><input type="checkbox" value="찜" name="cooking">찜</label>
     <label><input type="checkbox" value="기타" name="cooking">기타</label>
-	<button type="button" onclick="filter('cooking', 'ingredient');">다음단계</button>	
+	<!-- <button type="button" onclick="filter('cooking', 'ingredient');">다음단계</button>	 -->
     <label><input type="radio" value="맵기" name="spicy">맵기</label>
     <label><input type="radio" value="안맵기" name="spicy">안맵</label>
-	<button type="button" onclick="filter('spicy', 'cooking');">다음단계</button>	
+	
+	<label><input type="radio" value="온" name="temp">온</label>
+	<label><input type="radio" value="냉" name="temp">냉</label>
+
+	<button type="button" onclick="btn_parameter('a', 'b'); filter(next_parameter[0],next_parameter[1]); ">다음으로</button>	
     <script>
     
+	let btn_count=0; 
+	let next_parameter=[]
 	let korea=[
-		{country : 'korea', name:'비빔밥', ingredient:'쌀', quality:'',cooking:'기타', spicy:'맵기' },
-		{country : 'korea', name:'비빔밥', ingredient:'채소', quality:'',cooking:'기타', spicy:'맵기' },
-		{country : 'korea',name:'김치찌개', ingredient:'육류', quality:'',cooking:'찜' , spicy:'맵기'},
-		{country : 'korea',name:'김치찌개', ingredient:'채소', quality:'',cooking:'찜', spicy:'맵기' },
-		{country : 'korea',name:'된장찌개', ingredient:'해산물', quality:'',cooking:'찜', spicy:'맵기' },
-		{country : 'korea',name:'된장찌개', ingredient:'채소', quality:'',cooking:'구이', spicy:'맵기' },
-		{country : 'korea',name:'동태찌개', ingredient:'해산물', quality:'',cooking:'구이', spicy:'안맵기' },
-		{country : 'korea',name:'동태찌개', ingredient:'채소', quality:'',cooking:'볶음' , spicy:'안맵기' },
-		{country : 'korea',name:'순대국', ingredient:'육류', quality:'',cooking:'볶음', spicy:'안맵기'  },
-		{country : 'korea',name:'뼈해장국', ingredient:'육류', quality:'',cooking:'기타', spicy:'안맵기'  },
-		{country : 'korea',name:'청국장', ingredient:'채소', quality:'',cooking:'볶음' , spicy:'안맵기' },
-		{country : 'korea',name:'부대찌개', ingredient:'육류', quality:'',cooking:'기타', spicy:'안맵기'  }
+		{country : 'korea', name:'비빔밥', ingredient:'쌀', quality:'',cooking:'기타', spicy:'맵기', temp:'온' },
+		{country : 'korea', name:'비빔밥', ingredient:'채소', quality:'',cooking:'기타', spicy:'맵기',temp:'온' },
+		{country : 'korea',name:'김치찌개', ingredient:'육류', quality:'',cooking:'찜' , spicy:'맵기', temp:'온'},
+		{country : 'korea',name:'김치찌개', ingredient:'채소', quality:'',cooking:'찜', spicy:'맵기', temp:'온' },
+		{country : 'korea',name:'된장찌개', ingredient:'해산물', quality:'',cooking:'찜', spicy:'맵기',temp:'온' },
+		{country : 'korea',name:'된장찌개', ingredient:'채소', quality:'',cooking:'구이', spicy:'맵기',temp:'냉' },
+		{country : 'korea',name:'동태찌개', ingredient:'해산물', quality:'',cooking:'구이', spicy:'안맵기',temp:'냉' },
+		{country : 'korea',name:'동태찌개', ingredient:'채소', quality:'',cooking:'볶음' , spicy:'안맵기',temp:'냉' },
+		{country : 'korea',name:'순대국', ingredient:'육류', quality:'',cooking:'볶음', spicy:'안맵기' ,temp:'냉' },
+		{country : 'korea',name:'뼈해장국', ingredient:'육류', quality:'',cooking:'기타', spicy:'안맵기' ,temp:'냉' },
+		{country : 'korea',name:'청국장', ingredient:'채소', quality:'',cooking:'볶음' , spicy:'안맵기',temp:'냉' },
+		{country : 'korea',name:'부대찌개', ingredient:'육류', quality:'',cooking:'기타', spicy:'안맵기' ,temp:'냉' }
 	] 
 	let china=[
-		{country:'china', name:'마파두부', ingredient:'육류', quality:'',cooking:'볶음' , spicy:'맵기'},
-		{country:'china',name:'탕수육', ingredient:'육류', quality:'',cooking:'튀김', spicy:'맵기' },
-		{country:'china',name:'자장면', ingredient:'밀가루', quality:'',cooking:'기타' , spicy:'맵기'},
-		{country:'china',name:'우육면', ingredient:'밀가루', quality:'',cooking:'기타' , spicy:'맵기'},
-		{country:'china',name:'쇠고기국수스프', ingredient:'밀가루', quality:'',cooking:'기타' , spicy:'맵기'},
-		{country:'china',name:'양장피', ingredient:'채소', quality:'',cooking:'볶음' , spicy:'안맵기' },
-		{country:'china',name:'쉬이 현 랍스터', ingredient:'해산물', quality:'',cooking:'구이', spicy:'안맵기'  },
-		{country:'china',name:'생선스프', ingredient:'해산물', quality:'',cooking:'기타', spicy:'안맵기'  },
-		{country:'china',name:'양주볶음밥', ingredient:'쌀', quality:'',cooking:'볶음', spicy:'안맵기'  },
-		{country:'china',name:'깐풍기', ingredient:'해산물', quality:'',cooking:'튀김', spicy:'안맵기'  }
+		{country:'china', name:'마파두부', ingredient:'육류', quality:'',cooking:'볶음' , spicy:'맵기',temp:'온'},
+		{country:'china',name:'탕수육', ingredient:'육류', quality:'',cooking:'튀김', spicy:'맵기',temp:'온' },
+		{country:'china',name:'자장면', ingredient:'밀가루', quality:'',cooking:'기타' , spicy:'맵기',temp:'온'},
+		{country:'china',name:'우육면', ingredient:'밀가루', quality:'',cooking:'기타' , spicy:'맵기',temp:'온'},
+		{country:'china',name:'쇠고기국수스프', ingredient:'밀가루', quality:'',cooking:'기타' , spicy:'맵기',temp:'온'},
+		{country:'china',name:'양장피', ingredient:'채소', quality:'',cooking:'볶음' , spicy:'안맵기' ,temp:'냉'},
+		{country:'china',name:'쉬이 현 랍스터', ingredient:'해산물', quality:'',cooking:'구이', spicy:'안맵기',temp:'냉'  },
+		{country:'china',name:'생선스프', ingredient:'해산물', quality:'',cooking:'기타', spicy:'안맵기' ,temp:'냉' },
+		{country:'china',name:'양주볶음밥', ingredient:'쌀', quality:'',cooking:'볶음', spicy:'안맵기' ,temp:'냉' },
+		{country:'china',name:'깐풍기', ingredient:'해산물', quality:'',cooking:'튀김', spicy:'안맵기' ,temp:'냉' }
 	]
 	let america =[
-		{country:'america',name:'수제햄버거', ingredient:'밀가루', quality:'',cooking:'구이', spicy:'맵기'},
-		{country:'america',name:'스테이크', ingredient:'밀가루', quality:'',cooking:'구이', spicy:'맵기' },
-		{country:'america',name:'파스타', ingredient:'밀가루', quality:'',cooking:'찜' , spicy:'맵기'},
-		{country:'america',name:'립', ingredient:'밀가루', quality:'',cooking:'튀김', spicy:'안맵기'  },
-		{country:'america',name:'필라프', ingredient:'밀가루', quality:'',cooking:'볶음', spicy:'맵기' },
-		{country:'america',name:'리조또', ingredient:'밀가루', quality:'',cooking:'기타', spicy:'안맵기'  },
-		{country:'america',name:'피자', ingredient:'밀가루', quality:'',cooking:'볶음', spicy:'안맵기'  }
+		{country:'america',name:'수제햄버거', ingredient:'밀가루', quality:'',cooking:'구이', spicy:'맵기',temp:'온'},
+		{country:'america',name:'스테이크', ingredient:'밀가루', quality:'',cooking:'구이', spicy:'맵기',temp:'온' },
+		{country:'america',name:'파스타', ingredient:'밀가루', quality:'',cooking:'찜' , spicy:'맵기',temp:'온'},
+		{country:'america',name:'립', ingredient:'밀가루', quality:'',cooking:'튀김', spicy:'안맵기' ,temp:'냉' },
+		{country:'america',name:'필라프', ingredient:'밀가루', quality:'',cooking:'볶음', spicy:'맵기',temp:'냉' },
+		{country:'america',name:'리조또', ingredient:'밀가루', quality:'',cooking:'기타', spicy:'안맵기' ,temp:'냉' },
+		{country:'america',name:'피자', ingredient:'밀가루', quality:'',cooking:'볶음', spicy:'안맵기',temp:'냉'  }
 	]
 	let check_data = {
 		countryFood:[...korea, ...china, ...america],
@@ -70,8 +76,39 @@
 		ingredient: [],
 		cooking: [],
 		spicy: [],
+		temp: [],
 	};
-    function filter(value, check){
+
+	function btn_parameter(a, b){
+        btn_count++;
+        if(btn_count===1){
+            next_parameter.splice('0',0,'country','countryFood');
+            console.log(next_parameter);
+        }
+        if(btn_count===2){
+            next_parameter.splice(0,2)
+            next_parameter.splice('0',0,'ingredient','country');
+            console.log(next_parameter);
+        }
+        if(btn_count===3){
+            next_parameter.splice(0,2)
+            next_parameter.splice('0',0,'cooking','ingredient');
+            console.log(next_parameter);
+        }
+        if(btn_count===4){
+            next_parameter.splice(0,2)
+            next_parameter.splice('0',0,'spicy','cooking');
+            console.log(next_parameter);
+        }
+		if(btn_count===5){
+            next_parameter.splice(0,2)
+            next_parameter.splice('0',0,'temp','spicy');
+            console.log(next_parameter);
+        }
+    
+    }
+
+	function filter(value, check){
         let check_element=document.getElementsByName(value);
         for(let i=0; i<check_element.length; i++){
             if(check_element[i].checked){
@@ -84,6 +121,19 @@
 			}
 		}
 	}
+    // function filter(value, check){
+    //     let check_element=document.getElementsByName(value);
+    //     for(let i=0; i<check_element.length; i++){
+    //         if(check_element[i].checked){
+	// 			for(let j=0; j<check_data[check].length; j++){
+	// 				if(check_element[i].value===check_data[check][j][value]){
+	// 					check_data[value].push(check_data[check][j]);
+	// 					console.log(check_data[value]);                    
+	// 				}
+    //             } 
+	// 		}
+	// 	}
+	// }
     </script>
 </body>
 </html>
