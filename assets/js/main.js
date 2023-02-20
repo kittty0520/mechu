@@ -151,17 +151,20 @@ function answerSet() {
 
 //데이터 불러오기 -비동기 함수(프로미스 객체)
 //수정하기 - foodData에 getData 프로미스 결과값을 바로 배열에 집어넣는 방법은???
+const food = [];
 const foodData = getData();
-// let food = [];
-// foodData.then((res) => res.map((item) => food.push(item)));
-// console.log(food);
+console.log(foodData);
+foodData.then((res) => {
+	res.map(async (item) => await food.push(item));
+});
+console.log(food);
 
 // 필터함수
 
 let btn_count = 0;
 let next_parameter = [];
 let check_data = {
-	countryFood: [foodData],
+	countryFood: food,
 	country: [],
 	ingredient: [],
 	cooking: [],
@@ -203,7 +206,7 @@ function btn_parameter(a, b) {
 	}
 }
 
-function filter(value, check) {
+async function filter(value, check) {
 	//value값과 동일한 name을 가진 input요소를 가져와 배열로 반환한다.
 	let check_element = document.getElementsByName(value);
 

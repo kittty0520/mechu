@@ -1,7 +1,7 @@
 // *******Fetch*******
 
 export async function getData() {
-	return fetch('assets/data/foodDB.json')
+	let foodData = await fetch('assets/data/foodDB.json')
 		.then((res) => res.json())
 		.then((data) => {
 			return data.map((food) => {
@@ -11,6 +11,7 @@ export async function getData() {
 			});
 		})
 		.catch(console.error);
+	return foodData;
 }
 
 const food = getData();
