@@ -153,11 +153,9 @@ function answerSet() {
 //수정하기 - foodData에 getData 프로미스 결과값을 바로 배열에 집어넣는 방법은???
 const food = [];
 const foodData = getData();
-console.log(foodData);
 foodData.then((res) => {
 	res.map(async (item) => await food.push(item));
 });
-console.log(food);
 
 // 필터함수
 
@@ -174,11 +172,12 @@ let check_data = {
 
 nextButton.addEventListener('click', () => {
 	btn_parameter();
-	filter(next_parameter[0], next_parameter[1]);
-	console.log(check_data);
+	filter(next_parameter[0]);
+	// console.log(check_data);
+	// console.log(food);
 });
 
-function btn_parameter(a, b) {
+function btn_parameter() {
 	btn_count++;
 	if (btn_count === 1) {
 		next_parameter.splice('0', 0, 'country', 'countryFood');
@@ -205,20 +204,28 @@ function btn_parameter(a, b) {
 		console.log(next_parameter);
 	}
 }
-
-async function filter(value, check) {
+//input에 체크하기 전에 먼저 filter함수가 도는 것 같음...😭
+async function filter(value) {
 	//value값과 동일한 name을 가진 input요소를 가져와 배열로 반환한다.
 	let check_element = document.getElementsByName(value);
-
-	//배열을 순회하면서 체크된 input가 있다면
 	for (let i = 0; i < check_element.length; i++) {
 		if (check_element[i].checked) {
-			for (let j = 0; j < check_data[check].length; j++) {
-				if (check_element[i].value === check_data[check][j][value]) {
-					check_data[value].push(check_data[check][j]);
-					console.log(check_data[value]);
-				}
-			}
+			console.log(check_element[i]);
+			// food.filter((item) => item.check_element[i].value);
+			console.log(food);
 		}
 	}
+	return food;
+
+	// //배열을 순회하면서 체크된 input가 있다면
+	// for (let i = 0; i < check_element.length; i++) {
+	// 	if (check_element[i].checked) {
+	// 		for (let j = 0; j < check_data[check].length; j++) {
+	// 			if (check_element[i].value === check_data[check][j][value]) {
+	// 				check_data[value].push(check_data[check][j]);
+	// 				console.log(check_data[value]);
+	// 			}
+	// 		}
+	// 	}
+	// }
 }
