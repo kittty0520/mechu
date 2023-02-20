@@ -169,6 +169,12 @@ let check_data = {
 	temp: [],
 };
 
+nextButton.addEventListener('click', () => {
+	btn_parameter();
+	filter(next_parameter[0], next_parameter[1]);
+	console.log(check_data);
+});
+
 function btn_parameter(a, b) {
 	btn_count++;
 	if (btn_count === 1) {
