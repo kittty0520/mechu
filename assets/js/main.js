@@ -165,6 +165,7 @@ let check_data = {
 	spicy: [],
 	temp: [],
 };
+console.log(check_data.countryFood);
 
 function btn_parameter(a, b) {
 	btn_count++;
@@ -210,3 +211,20 @@ function filter(value, check) {
 		}
 	}
 }
+// async function loadData() {
+// 	try {
+// 	   const data = await getData();
+// 	   check_data.countryFood = data;
+// 	   console.log(check_data);
+// 	} catch (error) {
+// 	   console.error(error);
+// 	}
+//  }
+
+//  loadData();
+document.querySelector('.answer__button').addEventListener('click',()=>{
+    btn_parameter('a', 'b');
+    filter(next_parameter[0],next_parameter[1]);
+    console.log(filter(next_parameter[0],next_parameter[1]));
+})
+
