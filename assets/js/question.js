@@ -1,7 +1,7 @@
 /*질문 배열*/
 
 export const questionList = [
-	'랜덤추천 vs 맞춤추천 중 어떤 추천을 원하세요?',
+	// '랜덤추천 vs 맞춤추천 중 어떤 추천을 원하세요?',
 	'오늘은 어느 나라 음식이 끌리시나요?',
 	'어떤 식재료가 좋을까요?',
 	'어떤 요리 방법이 좋으세요?',
@@ -11,7 +11,7 @@ export const questionList = [
 
 export const answerList = [
 	// 1.recommendation
-	{ answers: ['랜덤추천', '맞춤추천'], multiSeleted: false },
+	// { answers: ['랜덤추천', '맞춤추천'], multiSeleted: false },
 	// 2.country
 	{ answers: ['한식', '양식', '중식', '일식', '기타'], multiSeleted: true },
 	// 3. ingre
