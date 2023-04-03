@@ -1,6 +1,6 @@
 // *******Fetch*******
 
-export async function getData() {
+export default async function getData() {
 	let foodData = await fetch('assets/data/foodDB.json')
 		.then((res) => res.json())
 		.then((data) => {
