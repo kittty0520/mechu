@@ -1,4 +1,4 @@
-import { getData } from './getData.js';
+import getData from './getData.js';
 import { questionList, answerList } from './question.js';
 
 const story = document.querySelector('#story');
@@ -28,6 +28,12 @@ const result = document.querySelector('#result');
 let STORY_ORDER = 0;
 let QUESTION_NUM = 0;
 let ANSWER_NUM = 0;
+
+//데이터 불러오기 -비동기 함수(프로미스 객체)
+const foodData = getData();
+
+//선택한 값 저장하는 배열
+let getValue = [];
 
 // 스토리
 storyBtn.addEventListener('click', nextStory);
@@ -79,6 +85,7 @@ function selectPosition() {
 	});
 }
 
+//아무 것도 선택하지 않았을 때 alert가 뜨도록 함
 function preventNotSelected(array) {
 	if ([...array].filter((item) => item.checked).length === 0) {
 		alert('한 개 이상의 옵션을 선택하세요');
@@ -86,11 +93,7 @@ function preventNotSelected(array) {
 	}
 }
 
-//질문
-nextButton.addEventListener('click', () => {
-	nextQuestion();
-});
-
+//다음 질문이 뜨도록 함 만약 질문리스트가 끝나면 endquestion()가 실행되도록 함
 function nextQuestion() {
 	question.innerHTML = '';
 	answer.innerHTML = '';
@@ -105,6 +108,9 @@ function nextQuestion() {
 function endQuestion() {
 	quest.style.display = 'none';
 	loading.style.display = 'block';
+	QUESTION_NUM = 0;
+	//getValue 배열을 기반으로 food배열을 필터하고 이미지까지 띄우는 함수를 넣기
+	foodData.then((res) => filterArray(res, getValue));
 	setTimeout(() => {
 		loading.style.display = 'none';
 		result.style.display = 'block';
@@ -120,11 +126,11 @@ function questionSet() {
 	question.appendChild(item);
 	// console.log(QUESTION_NUM);
 }
-const answerName = ['random', 'country', 'ingre', 'cook', 'spicy', 'temp'];
+const answerName = ['country', 'ingre', 'cook', 'spicy', 'temp'];
 let answerNameOrder = 0;
 
 function answerSet() {
-	if (answerNameOrder === 6) {
+	if (answerNameOrder === 5) {
 		answerName = 0;
 	}
 	const { answers, multiSeleted } = answerList[ANSWER_NUM];
@@ -149,83 +155,97 @@ function answerSet() {
 	return newAnswer;
 }
 
-//데이터 불러오기 -비동기 함수(프로미스 객체)
-//수정하기 - foodData에 getData 프로미스 결과값을 바로 배열에 집어넣는 방법은???
-const food = [];
-const foodData = getData();
-foodData.then((res) => {
-	res.map(async (item) => await food.push(item));
-});
-
 // 필터함수
-
 let btn_count = 0;
-let next_parameter = [];
-let check_data = {
-	countryFood: food,
-	country: [],
-	ingredient: [],
-	cooking: [],
-	spicy: [],
-	temp: [],
-};
+let next_parameter = '';
 
+//다음 버튼을 누르면 내부 함수가 실행되도록 함
 nextButton.addEventListener('click', () => {
 	btn_parameter();
-	filter(next_parameter[0]);
-	// console.log(check_data);
-	// console.log(food);
+	selectedValue(next_parameter);
+	nextQuestion();
 });
 
-function btn_parameter() {
-	btn_count++;
-	if (btn_count === 1) {
-		next_parameter.splice('0', 0, 'country', 'countryFood');
-		console.log(next_parameter);
-	}
-	if (btn_count === 2) {
-		next_parameter.splice(0, 2);
-		next_parameter.splice('0', 0, 'ingre', 'country');
-		console.log(next_parameter);
-	}
-	if (btn_count === 3) {
-		next_parameter.splice(0, 2);
-		next_parameter.splice('0', 0, 'cook', 'ingre');
-		console.log(next_parameter);
-	}
-	if (btn_count === 4) {
-		next_parameter.splice(0, 2);
-		next_parameter.splice('0', 0, 'spicy', 'cook');
-		console.log(next_parameter);
-	}
-	if (btn_count === 5) {
-		next_parameter.splice(0, 2);
-		next_parameter.splice('0', 0, 'temp', 'spicy');
-		console.log(next_parameter);
-	}
-}
-//input에 체크하기 전에 먼저 filter함수가 도는 것 같음...😭
-async function filter(value) {
-	//value값과 동일한 name을 가진 input요소를 가져와 배열로 반환한다.
-	let check_element = document.getElementsByName(value);
+//클릭된 버튼의 value값을 getValue배열에 배열(다중선택이기 때문)로 넣음
+function selectedValue(inputName) {
+	let check_element = document.getElementsByName(inputName);
+	let selection = [];
 	for (let i = 0; i < check_element.length; i++) {
 		if (check_element[i].checked) {
-			console.log(check_element[i]);
-			// food.filter((item) => item.check_element[i].value);
-			console.log(food);
+			const checkValue = check_element[i].value;
+			selection.push(checkValue);
+		} else {
+			// console.log('not checked!');
 		}
 	}
-	return food;
+	getValue.push(selection);
+	console.log(getValue);
+}
 
-	// //배열을 순회하면서 체크된 input가 있다면
-	// for (let i = 0; i < check_element.length; i++) {
-	// 	if (check_element[i].checked) {
-	// 		for (let j = 0; j < check_data[check].length; j++) {
-	// 			if (check_element[i].value === check_data[check][j][value]) {
-	// 				check_data[value].push(check_data[check][j]);
-	// 				console.log(check_data[value]);
-	// 			}
-	// 		}
-	// 	}
-	// }
+// 각 질문마다 count하여 수집할 input의 Name을 바꿈.
+function btn_parameter() {
+	next_parameter = answerName[btn_count];
+	btn_count++;
+	if (btn_count === 5) {
+		btn_count = 0;
+	}
+	console.log(next_parameter);
+}
+
+//필터할 값을 하나의 배열 안에 담고 한 번에 함수돌려서 결과값을 얻어내는 함수를 만들어내자!
+
+// const answerName = ['country', 'ingre', 'cook', 'spicy', 'temp'];
+
+function filterArray(foodArr, valueArr) {
+	let result = foodArr;
+	for (let i = 0; i < valueArr.length; i++) {
+		let valueName = answerName[i];
+		let selectArr = valueArr[i];
+		let getResult = categorize(valueName, result, selectArr);
+		result = getResult;
+		console.log(valueName, selectArr);
+		console.log(result);
+	}
+}
+
+//country: "한식"
+function singleProperty(valueName, arr, selectArr) {
+	const result = [];
+	for (let i = 0; i < selectArr.length; i++) {
+		for (let j = 0; j < arr.length; j++) {
+			if (selectArr[i] == arr[j][valueName]) {
+				result.push(arr[j]);
+				// console.log(arr[j][valueName]);
+			}
+		}
+	}
+	return result;
+}
+
+//ingre:["쌀","육류","채소"]
+function multiProperty(valueName, arr, selectArr) {
+	let result = [];
+	result = selectArr
+		.map((selection) =>
+			arr.filter((item) => item[valueName].includes(selection))
+		)
+		.flat();
+	return result;
+}
+
+//각 질문마다 필터링 하는 방법을 나눔
+function categorize(valueName, arr, select) {
+	switch (valueName) {
+		case 'country':
+		case 'spicy':
+		case 'temp':
+			return singleProperty(valueName, arr, select);
+			break;
+		case 'ingre':
+		case 'cook':
+			return multiProperty(valueName, arr, select);
+			break;
+		default:
+			return arr;
+	}
 }
