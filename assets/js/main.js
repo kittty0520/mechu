@@ -159,16 +159,14 @@ function answerSet() {
 let btn_count = 0;
 let next_parameter = '';
 
-//다음 버튼을 누르면 질문함수가 실행되도록 함
+//다음 버튼을 누르면 내부 함수가 실행되도록 함
 nextButton.addEventListener('click', () => {
 	btn_parameter();
-	// console.log(filterFood(next_parameter));
 	selectedValue(next_parameter);
 	nextQuestion();
-	// console.log(check_data);
-	// console.log(food);
 });
 
+//클릭된 버튼의 value값을 getValue배열에 배열(다중선택이기 때문)로 넣음
 function selectedValue(inputName) {
 	let check_element = document.getElementsByName(inputName);
 	let selection = [];
@@ -184,7 +182,7 @@ function selectedValue(inputName) {
 	console.log(getValue);
 }
 
-//
+// 각 질문마다 count하여 수집할 input의 Name을 바꿈.
 function btn_parameter() {
 	next_parameter = answerName[btn_count];
 	btn_count++;
@@ -235,22 +233,17 @@ function multiProperty(valueName, arr, selectArr) {
 	return result;
 }
 
+//각 질문마다 필터링 하는 방법을 나눔
 function categorize(valueName, arr, select) {
 	switch (valueName) {
 		case 'country':
+		case 'spicy':
+		case 'temp':
 			return singleProperty(valueName, arr, select);
 			break;
 		case 'ingre':
-			return multiProperty(valueName, arr, select);
-			break;
 		case 'cook':
 			return multiProperty(valueName, arr, select);
-			break;
-		case 'spicy':
-			return singleProperty(valueName, arr, select);
-			break;
-		case 'temp':
-			return singleProperty(valueName, arr, select);
 			break;
 		default:
 			return arr;
