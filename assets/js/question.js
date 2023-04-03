@@ -21,5 +21,5 @@ export const answerList = [
 	// 5. spicy
 	{ answers: ['매움', '안매움'], multiSeleted: false },
 	// 6. temp
-	{ answers: ['따뜻함', '차가움'], multiSeleted: false },
+	{ answers: ['온', '냉'], multiSeleted: false },
 ];
