@@ -95,6 +95,7 @@ function selectPosition(positionList) {
 		}
 	});
 }
+
 //다음 버튼을 누르면 내부 함수가 실행되도록 함
 nextButton.addEventListener('click', () => {
 	getInputName();
@@ -108,20 +109,22 @@ nextButton.addEventListener('click', () => {
 	}
 	selectedValue(inputName);
 
-	nextQuestion();
 	//getValue 배열을 기반으로 food배열을 필터하고 이미지까지 띄우는 함수를 넣기
 	if (ANSWER_NUM === 5) {
 		foodData
 			.then((res) => filterArray(res, getValue))
-			.then((data) => displayResultFood(data));
+			.then((data) => displayResultFood(data))
+			.then((result) => console.log(result));
 	}
+
+	nextQuestion();
 });
 
 // 모든 질문이 끝나면 로딩창을 3초동안만 보여주다가 결과창을 띄움.
 function endQuestion() {
 	closeAndOpen(quest, loading);
 	QUESTION_NUM = 0;
-
+	ANSWER_NUM = 0;
 	setTimeout(() => {
 		closeAndOpen(loading, result);
 	}, 3000);
@@ -141,9 +144,6 @@ const answerName = ['country', 'ingre', 'cook', 'spicy', 'temp'];
 
 // 질문과 매칭되는 선택지를 띄움
 function answerSet() {
-	if (ANSWER_NUM === 5) {
-		ANSWER_NUM = 0;
-	}
 	const { answers, multiSeleted } = answerList[ANSWER_NUM];
 	const newAnswer = answers.map((item, index) => {
 		const input = document.createElement('input');
@@ -242,7 +242,6 @@ function filterArray(foodArr, valueArr) {
 		let getResult = categorize(valueName, result, selectArr);
 		result = getResult;
 		console.log(valueName, selectArr);
-		console.log(result);
 	}
 	return result;
 }
@@ -298,4 +297,5 @@ function displayResultFood(resultArr) {
 	document.getElementById('country_food').innerHTML =
 		`<p>${resultFood.name}</p>` +
 		`<img src="assets/img/food_img/${resultFood.src}.png" alt="음식이미지">`;
+	return resultArr;
 }
