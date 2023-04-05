@@ -120,7 +120,7 @@ input[type='checkbox']:checked + label {
 	height: auto;
 	margin: 0 auto;
 	margin-top: 48px;
-	border-radius: 100%;
+	/* border-radius: 100%; */
 }
 
 .cartoon__img {
