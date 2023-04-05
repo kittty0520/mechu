@@ -6,8 +6,9 @@ const story = document.querySelector('#story');
 const storyBtn = document.querySelector('.cartoon__button');
 const firstStory = document.querySelector('.cartoon-first');
 const secondStory = document.querySelector('.cartoon-second');
+const thirdStory = document.querySelector('.cartoon-third');
 const finalStory = document.querySelector('.cartoon-final');
-const storyList = [firstStory, secondStory, finalStory];
+const storyList = [firstStory, secondStory, thirdStory, finalStory];
 
 const start = document.querySelector('#start');
 const startQuestion = document.querySelector('.start__question');
@@ -39,9 +40,9 @@ let getValue = [];
 storyBtn.addEventListener('click', nextStory);
 
 function nextStory() {
-	if (STORY_ORDER === 2) {
+	if (STORY_ORDER === 3) {
 		storyList[0].style.display = 'block';
-		storyList[2].style.display = 'none';
+		storyList[3].style.display = 'none';
 		story.style.display = 'none';
 		// quest.style.display = 'block';
 		STORY_ORDER = 0;
@@ -162,6 +163,7 @@ let next_parameter = '';
 //다음 버튼을 누르면 내부 함수가 실행되도록 함
 nextButton.addEventListener('click', () => {
 	btn_parameter();
+
 	selectedValue(next_parameter);
 	nextQuestion();
 });
