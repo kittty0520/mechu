@@ -95,6 +95,8 @@ function selectPosition(positionList) {
 		}
 	});
 }
+//필터된 배열을 받는 변수
+let foodResult = [];
 
 //다음 버튼을 누르면 내부 함수가 실행되도록 함
 nextButton.addEventListener('click', () => {
@@ -114,11 +116,17 @@ nextButton.addEventListener('click', () => {
 		foodData
 			.then((res) => filterArray(res, getValue))
 			.then((data) => displayResultFood(data))
-			.then((result) => console.log(result));
+			.then((result) => getResultFood(result));
 	}
 
 	nextQuestion();
 });
+
+//필터된 배열을 받아서 Foodresult에 넣는 함수
+function getResultFood(arr) {
+	foodResult = arr;
+	console.log(foodResult);
+}
 
 // 모든 질문이 끝나면 로딩창을 3초동안만 보여주다가 결과창을 띄움.
 function endQuestion() {
@@ -290,6 +298,8 @@ function categorize(valueName, arr, select) {
 
 //***********랜덤으로 음식결과 보여주기**********
 
+//배열은 그대로 두고 랜덤한 index를 고르거나
+//혹은 배열을 랜덤하게 섞은 후 첫번째 인덱스 값을 보여주고 뒤섞인 배열을 반환함
 //"src": "ko_02"
 function displayResultFood(resultArr) {
 	let randomIndex = Math.floor(Math.random() * resultArr.length);
