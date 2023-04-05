@@ -50,15 +50,11 @@ storyBtn.addEventListener('click', nextStory);
 
 function nextStory() {
 	if (STORY_ORDER === 3) {
-		storyList[0].style.display = 'block';
-		storyList[3].style.display = 'none';
-		story.style.display = 'none';
-		// quest.style.display = 'block';
+		closeAndOpen(storyList[0], storyList[3]);
+		closeAndOpen(story, start);
 		STORY_ORDER = 0;
-		start.style.display = 'block';
 	}
-	storyList[STORY_ORDER].style.display = 'none';
-	storyList[STORY_ORDER + 1].style.display = 'block';
+	closeAndOpen(storyList[STORY_ORDER], storyList[STORY_ORDER + 1]);
 	STORY_ORDER++;
 	return STORY_ORDER;
 }
@@ -77,8 +73,7 @@ startButton.addEventListener('click', () => {
 function selectPosition(positionList) {
 	if (startAnswers.style.display === 'none') {
 		startAnswers.style.display = 'block';
-		start.style.display = 'none';
-		quest.style.display = 'block';
+		closeAndOpen(start, quest);
 		nextQuestion();
 		return;
 	}
@@ -116,19 +111,19 @@ nextButton.addEventListener('click', () => {
 	nextQuestion();
 	//getValue 배열을 기반으로 food배열을 필터하고 이미지까지 띄우는 함수를 넣기
 	if (ANSWER_NUM === 5) {
-		foodData.then((res) => filterArray(res, getValue));
+		foodData
+			.then((res) => filterArray(res, getValue))
+			.then((data) => displayResultFood(data));
 	}
 });
 
 // 모든 질문이 끝나면 로딩창을 3초동안만 보여주다가 결과창을 띄움.
 function endQuestion() {
-	quest.style.display = 'none';
-	loading.style.display = 'block';
+	closeAndOpen(quest, loading);
 	QUESTION_NUM = 0;
 
 	setTimeout(() => {
-		loading.style.display = 'none';
-		result.style.display = 'block';
+		closeAndOpen(loading, result);
 	}, 3000);
 }
 
@@ -199,6 +194,12 @@ function sequenceSet() {
 	sequenceNumber.innerHTML = ANSWER_NUM;
 	sequenceImage.style.left = `${40 * ANSWER_NUM - 12}px`;
 	sequenceSubBar.style.width = `${40 * ANSWER_NUM}px`;
+}
+
+//section을 닫고 여는 함수
+function closeAndOpen(close, open) {
+	close.style.display = 'none';
+	open.style.display = 'block';
 }
 
 //클릭된 버튼의 value값을 getValue배열에 배열(다중선택이기 때문)로 넣음
@@ -288,11 +289,13 @@ function categorize(valueName, arr, select) {
 	}
 }
 
+//***********랜덤으로 음식결과 보여주기**********
+
 //"src": "ko_02"
 function displayResultFood(resultArr) {
-	let randomIndex = Math.floor(Math.random() * filterFood.length);
+	let randomIndex = Math.floor(Math.random() * resultArr.length);
 	let resultFood = resultArr[randomIndex];
 	document.getElementById('country_food').innerHTML =
 		`<p>${resultFood.name}</p>` +
-		`<img src="img/food_img/${resultFood.image}" alt="음식이미지">`;
+		`<img src="assets/img/food_img/${resultFood.src}.png" alt="음식이미지">`;
 }
