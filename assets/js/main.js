@@ -33,12 +33,17 @@ const result = document.querySelector('#result');
 let STORY_ORDER = 0;
 let QUESTION_NUM = 0;
 let ANSWER_NUM = 0;
-
 //데이터 불러오기 -비동기 함수(프로미스 객체 반환)
 const foodData = getData();
 
 //선택한 값 저장하는 배열
 let getValue = [];
+
+// '다음으로'버튼을 누를때 수집할 input의 Name을 수집하기 위한 count
+let btn_count = 0;
+
+// input의 Name
+let inputName = '';
 
 // 스토리
 storyBtn.addEventListener('click', nextStory);
@@ -58,10 +63,10 @@ function nextStory() {
 	return STORY_ORDER;
 }
 
-//시작
+//시작버튼을 클릭할 때 이벤트
 startButton.addEventListener('click', () => {
 	const positionList = document.getElementsByName('position_chk');
-	//아무 것도 선택하지 않았을 때 alert가 뜨도록 함
+	//아무 것도 선택하지 않았을 때 alert가 뜨고 다음 질문이 뜨지 않도록 함
 	if ([...positionList].filter((item) => item.checked).length === 0) {
 		alert('한 개 이상의 옵션을 선택하세요');
 		return;
@@ -95,6 +100,75 @@ function selectPosition(positionList) {
 		}
 	});
 }
+//다음 버튼을 누르면 내부 함수가 실행되도록 함
+nextButton.addEventListener('click', () => {
+	getInputName();
+	const answerArray = document.getElementsByName(inputName);
+
+	//아무 것도 선택하지 않았을 때 alert가 뜨도록 함
+	if ([...answerArray].filter((item) => item.checked).length === 0) {
+		alert('한 개 이상의 옵션을 선택하세요');
+		btn_count--;
+		return;
+	}
+	selectedValue(inputName);
+
+	nextQuestion();
+	//getValue 배열을 기반으로 food배열을 필터하고 이미지까지 띄우는 함수를 넣기
+	if (ANSWER_NUM === 5) {
+		foodData.then((res) => filterArray(res, getValue));
+	}
+});
+
+// 모든 질문이 끝나면 로딩창을 3초동안만 보여주다가 결과창을 띄움.
+function endQuestion() {
+	quest.style.display = 'none';
+	loading.style.display = 'block';
+	QUESTION_NUM = 0;
+
+	setTimeout(() => {
+		loading.style.display = 'none';
+		result.style.display = 'block';
+	}, 3000);
+}
+
+// 순서에 맞는 질문을 띄움
+function questionSet() {
+	const item = document.createElement('div');
+	item.setAttribute('class', 'newQuestion');
+	const newQuestion = questionList[QUESTION_NUM].toString();
+	QUESTION_NUM++;
+	item.innerHTML = newQuestion;
+	question.appendChild(item);
+}
+
+const answerName = ['country', 'ingre', 'cook', 'spicy', 'temp'];
+
+// 질문과 매칭되는 선택지를 띄움
+function answerSet() {
+	if (ANSWER_NUM === 5) {
+		ANSWER_NUM = 0;
+	}
+	const { answers, multiSeleted } = answerList[ANSWER_NUM];
+	const newAnswer = answers.map((item, index) => {
+		const input = document.createElement('input');
+		if (multiSeleted === false) {
+			input.setAttribute('type', 'radio');
+		} else {
+			input.setAttribute('type', 'checkbox');
+		}
+		input.setAttribute('id', `answer${index}`);
+		input.setAttribute('value', item);
+		input.setAttribute('name', answerName[ANSWER_NUM]);
+		const answerOption = document.createElement('label');
+		answerOption.setAttribute('for', `answer${index}`);
+		answerOption.innerHTML = item;
+		answer.appendChild(input);
+		answer.appendChild(answerOption);
+	});
+	ANSWER_NUM++;
+	return newAnswer;
+}
 
 //다음 질문이 뜨도록 함 만약 질문리스트가 끝나면 endquestion()가 실행되도록 함
 function nextQuestion() {
@@ -109,59 +183,9 @@ function nextQuestion() {
 	}
 }
 
-function endQuestion() {
-	quest.style.display = 'none';
-	loading.style.display = 'block';
-	QUESTION_NUM = 0;
-	//getValue 배열을 기반으로 food배열을 필터하고 이미지까지 띄우는 함수를 넣기
-	foodData.then((res) => filterArray(res, getValue));
-	setTimeout(() => {
-		loading.style.display = 'none';
-		result.style.display = 'block';
-	}, 5000);
-}
-
-function questionSet() {
-	const item = document.createElement('div');
-	item.setAttribute('class', 'newQuestion');
-	const newQuestion = questionList[QUESTION_NUM].toString();
-	QUESTION_NUM++;
-	item.innerHTML = newQuestion;
-	question.appendChild(item);
-	// console.log(QUESTION_NUM);
-}
-const answerName = ['country', 'ingre', 'cook', 'spicy', 'temp'];
-let answerNameOrder = 0;
-
-function answerSet() {
-	if (answerNameOrder === 5) {
-		answerNameOrder = 0;
-	}
-	const { answers, multiSeleted } = answerList[ANSWER_NUM];
-	const newAnswer = answers.map((item, index) => {
-		const input = document.createElement('input');
-		if (multiSeleted === false) {
-			input.setAttribute('type', 'radio');
-		} else {
-			input.setAttribute('type', 'checkbox');
-		}
-		input.setAttribute('id', `answer${index}`);
-		input.setAttribute('value', item);
-		input.setAttribute('name', answerName[answerNameOrder]);
-		const answerOption = document.createElement('label');
-		answerOption.setAttribute('for', `answer${index}`);
-		answerOption.innerHTML = item;
-		answer.appendChild(input);
-		answer.appendChild(answerOption);
-	});
-	answerNameOrder++;
-	ANSWER_NUM++;
-	return newAnswer;
-}
-
-//질문이 어느 순서에 있는지를 나타내는 함수
+//질문 순서를 나타내고 순서에 따른 캐릭터의 위치를 바꾸는 함수
 function sequenceSet() {
-	if (answerNameOrder === 1) {
+	if (ANSWER_NUM === 1) {
 		const position = localStorage.getItem('position');
 		console.log(position);
 		const positionImg = document.createElement('img');
@@ -172,31 +196,10 @@ function sequenceSet() {
 	}
 	const sequenceImage = document.querySelector('.sequence__bar__img');
 
-	sequenceNumber.innerHTML = answerNameOrder;
-	sequenceImage.style.left = `${40 * answerNameOrder - 12}px`;
-	sequenceSubBar.style.width = `${40 * answerNameOrder}px`;
+	sequenceNumber.innerHTML = ANSWER_NUM;
+	sequenceImage.style.left = `${40 * ANSWER_NUM - 12}px`;
+	sequenceSubBar.style.width = `${40 * ANSWER_NUM}px`;
 }
-
-// 필터함수
-let btn_count = 0;
-let next_parameter = '';
-
-//다음 버튼을 누르면 내부 함수가 실행되도록 함
-nextButton.addEventListener('click', () => {
-	btn_parameter();
-
-	const answerArray = document.getElementsByName(next_parameter);
-
-	//아무 것도 선택하지 않았을 때 alert가 뜨도록 함
-	if ([...answerArray].filter((item) => item.checked).length === 0) {
-		alert('한 개 이상의 옵션을 선택하세요');
-		btn_count--;
-		return;
-	}
-	selectedValue(next_parameter);
-
-	nextQuestion();
-});
 
 //클릭된 버튼의 value값을 getValue배열에 배열(다중선택이기 때문)로 넣음
 function selectedValue(inputName) {
@@ -215,14 +218,16 @@ function selectedValue(inputName) {
 }
 
 // 각 질문마다 count하여 수집할 input의 Name을 바꿈.
-function btn_parameter() {
-	next_parameter = answerName[btn_count];
+function getInputName() {
+	inputName = answerName[btn_count];
 	btn_count++;
 	if (btn_count === 5) {
 		btn_count = 0;
 	}
-	console.log(next_parameter);
+	console.log(inputName);
 }
+
+//*******************필터영역************************
 
 //필터할 값을 하나의 배열 안에 담고 한 번에 함수돌려서 결과값을 얻어내는 함수를 만들어내자!
 
@@ -238,6 +243,7 @@ function filterArray(foodArr, valueArr) {
 		console.log(valueName, selectArr);
 		console.log(result);
 	}
+	return result;
 }
 
 //country: "한식"
@@ -280,4 +286,13 @@ function categorize(valueName, arr, select) {
 		default:
 			return arr;
 	}
+}
+
+//"src": "ko_02"
+function displayResultFood(resultArr) {
+	let randomIndex = Math.floor(Math.random() * filterFood.length);
+	let resultFood = resultArr[randomIndex];
+	document.getElementById('country_food').innerHTML =
+		`<p>${resultFood.name}</p>` +
+		`<img src="img/food_img/${resultFood.image}" alt="음식이미지">`;
 }
