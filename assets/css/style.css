@@ -120,7 +120,8 @@ input[type='checkbox']:checked + label {
 	/* height: 394px; */
 	box-sizing: border-box;
 }
-.cartoon-second {
+.cartoon-second,
+.cartoon-third {
 	display: none;
 }
 .cartoon-final {
@@ -315,8 +316,8 @@ input[type='checkbox']:checked + label {
 #footer {
 	width: 640px;
 	margin: 0 auto;
-	position: absolute;
-	bottom: 10px;
+	position: relative;
+	bottom: -20px;
 	text-align: center;
 	color: var(--color-orange);
 	font-size: var(--font-micro);
