@@ -19,6 +19,10 @@ const startButton = document.querySelector('.start__button');
 const quest = document.querySelector('#quest');
 const questionField = document.querySelector('.questions');
 const question = document.querySelector('.question__container');
+
+const sequenceNumber = document.querySelector('.sequence__counter__number');
+const sequenceBar = document.querySelector('.sequence__bar');
+const sequenceSubBar = document.querySelector('.sequence__subBar');
 const answer = document.querySelector('.answers__list');
 const nextButton = document.querySelector('.answer__button');
 
@@ -30,7 +34,7 @@ let STORY_ORDER = 0;
 let QUESTION_NUM = 0;
 let ANSWER_NUM = 0;
 
-//데이터 불러오기 -비동기 함수(프로미스 객체)
+//데이터 불러오기 -비동기 함수(프로미스 객체 반환)
 const foodData = getData();
 
 //선택한 값 저장하는 배열
@@ -84,6 +88,8 @@ function selectPosition(positionList) {
 			positionImg.setAttribute('src', `assets/img/${position.id}.png`);
 			positionImg.setAttribute('alt', position.value);
 			selectedPosition.appendChild(positionImg);
+			//localstorage에 position.value값을 가진 position객체를 set
+			localStorage.setItem('position', position.id);
 		} else {
 			return position;
 		}
@@ -97,6 +103,7 @@ function nextQuestion() {
 	if (QUESTION_NUM < questionList.length) {
 		questionSet();
 		answerSet();
+		sequenceSet();
 	} else {
 		endQuestion();
 	}
@@ -128,7 +135,7 @@ let answerNameOrder = 0;
 
 function answerSet() {
 	if (answerNameOrder === 5) {
-		answerName = 0;
+		answerNameOrder = 0;
 	}
 	const { answers, multiSeleted } = answerList[ANSWER_NUM];
 	const newAnswer = answers.map((item, index) => {
@@ -152,6 +159,24 @@ function answerSet() {
 	return newAnswer;
 }
 
+//질문이 어느 순서에 있는지를 나타내는 함수
+function sequenceSet() {
+	if (answerNameOrder === 1) {
+		const position = localStorage.getItem('position');
+		console.log(position);
+		const positionImg = document.createElement('img');
+		positionImg.setAttribute('class', 'sequence__bar__img');
+		positionImg.setAttribute('src', `assets/img/${position}.png`);
+		positionImg.setAttribute('alt', position);
+		sequenceBar.appendChild(positionImg);
+	}
+	const sequenceImage = document.querySelector('.sequence__bar__img');
+
+	sequenceNumber.innerHTML = answerNameOrder;
+	sequenceImage.style.left = `${40 * answerNameOrder - 12}px`;
+	sequenceSubBar.style.width = `${40 * answerNameOrder}px`;
+}
+
 // 필터함수
 let btn_count = 0;
 let next_parameter = '';
@@ -159,7 +184,6 @@ let next_parameter = '';
 //다음 버튼을 누르면 내부 함수가 실행되도록 함
 nextButton.addEventListener('click', () => {
 	btn_parameter();
-	selectedValue(next_parameter);
 
 	const answerArray = document.getElementsByName(next_parameter);
 
@@ -169,6 +193,7 @@ nextButton.addEventListener('click', () => {
 		btn_count--;
 		return;
 	}
+	selectedValue(next_parameter);
 
 	nextQuestion();
 });

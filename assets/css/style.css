@@ -180,6 +180,41 @@ input[type='checkbox']:checked + label {
 	flex-basis: 20%;
 	text-align: center;
 }
+.question__sequence {
+	display: flex;
+	align-items: center;
+	/* justify-content: center; */
+	margin-bottom: 40px;
+}
+.sequence__bar {
+	position: relative;
+	width: 200px;
+	height: 10px;
+	background-color: var(--color-grey);
+	border-radius: 5px;
+	margin-left: 12px;
+}
+.sequence__counter__number {
+	color: var(--color-green);
+}
+.sequence__subBar {
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	left: 0;
+	width: 40px;
+	height: 10px;
+	background-color: var(--color-green);
+	border-radius: 5px;
+}
+.sequence__bar__img {
+	position: absolute;
+	z-index: 10;
+	top: -12px;
+	left: 0px;
+	width: 24px;
+	height: auto;
+}
 .answer__container {
 	flex-basis: 50%;
 }
@@ -187,6 +222,9 @@ input[type='checkbox']:checked + label {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
+}
+.newQuestion {
+	font-weight: bold;
 }
 .answer__button {
 }
