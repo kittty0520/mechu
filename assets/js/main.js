@@ -55,9 +55,17 @@ function nextStory() {
 }
 
 //시작
-startButton.addEventListener('click', selectPosition);
+startButton.addEventListener('click', () => {
+	const positionList = document.getElementsByName('position_chk');
+	//아무 것도 선택하지 않았을 때 alert가 뜨도록 함
+	if ([...positionList].filter((item) => item.checked).length === 0) {
+		alert('한 개 이상의 옵션을 선택하세요');
+		return;
+	}
+	selectPosition(positionList);
+});
 
-function selectPosition() {
+function selectPosition(positionList) {
 	if (startAnswers.style.display === 'none') {
 		startAnswers.style.display = 'block';
 		start.style.display = 'none';
@@ -65,10 +73,6 @@ function selectPosition() {
 		nextQuestion();
 		return;
 	}
-
-	const positionList = document.getElementsByName('position_chk');
-
-	preventNotSelected(positionList);
 
 	startAnswers.style.display = 'none';
 
@@ -84,14 +88,6 @@ function selectPosition() {
 			return position;
 		}
 	});
-}
-
-//아무 것도 선택하지 않았을 때 alert가 뜨도록 함
-function preventNotSelected(array) {
-	if ([...array].filter((item) => item.checked).length === 0) {
-		alert('한 개 이상의 옵션을 선택하세요');
-		return;
-	}
 }
 
 //다음 질문이 뜨도록 함 만약 질문리스트가 끝나면 endquestion()가 실행되도록 함
@@ -163,8 +159,17 @@ let next_parameter = '';
 //다음 버튼을 누르면 내부 함수가 실행되도록 함
 nextButton.addEventListener('click', () => {
 	btn_parameter();
-
 	selectedValue(next_parameter);
+
+	const answerArray = document.getElementsByName(next_parameter);
+
+	//아무 것도 선택하지 않았을 때 alert가 뜨도록 함
+	if ([...answerArray].filter((item) => item.checked).length === 0) {
+		alert('한 개 이상의 옵션을 선택하세요');
+		btn_count--;
+		return;
+	}
+
 	nextQuestion();
 });
 
