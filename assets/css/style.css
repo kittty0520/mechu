@@ -5,6 +5,7 @@
 	--color-orange: #ff924d;
 	--color-green: #78c030;
 	--color-grey: #989797;
+	--color-light-grey: #eee;
 
 	/* Font Size */
 	--font-large: 48px;
@@ -33,8 +34,10 @@ button {
 	height: 40px;
 	cursor: pointer;
 	padding: 0.2rem 0.8rem;
+	margin: 0.5rem;
 	border-radius: 10px;
 	color: var(--color-orange);
+	background: var(--color-light-grey);
 }
 
 /* 레이아웃 */
@@ -150,6 +153,12 @@ input[type='checkbox']:checked + label {
 .start__answers {
 	flex-basis: 50%;
 }
+.start__button {
+	transition: all 0.4s ease-in-out;
+}
+.start__button--random {
+	display: none;
+}
 input.start__answers__input + label {
 	background: url('../img/Staff.png') center/contain no-repeat;
 	line-height: 200px;
@@ -254,6 +263,7 @@ input[type='radio'].start__answers__input:checked + label {
 	font-weight: bold;
 }
 .answer__button {
+	transition: all 0.4s ease-in-out;
 }
 
 /* result loading */
