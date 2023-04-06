@@ -15,6 +15,7 @@ const startQuestion = document.querySelector('.start__question');
 const startAnswers = document.querySelector('.start__answers');
 const selectedPosition = document.querySelector('.start__selectedPosition');
 const startButton = document.querySelector('.start__button');
+const startRandomButton = document.querySelector('.start__button--random');
 
 const quest = document.querySelector('#quest');
 const questionField = document.querySelector('.questions');
@@ -33,6 +34,7 @@ const result = document.querySelector('#result');
 let STORY_ORDER = 0;
 let QUESTION_NUM = 0;
 let ANSWER_NUM = 0;
+
 //데이터 불러오기 -비동기 함수(프로미스 객체 반환)
 const foodData = getData();
 
@@ -62,12 +64,19 @@ function nextStory() {
 //시작버튼을 클릭할 때 이벤트
 startButton.addEventListener('click', () => {
 	const positionList = document.getElementsByName('position_chk');
+	startRandomButton.style.display = 'block';
 	//아무 것도 선택하지 않았을 때 alert가 뜨고 다음 질문이 뜨지 않도록 함
 	if ([...positionList].filter((item) => item.checked).length === 0) {
 		alert('한 개 이상의 옵션을 선택하세요');
 		return;
 	}
 	selectPosition(positionList);
+});
+
+//바로 랜덤추천결과 보여주기
+startRandomButton.addEventListener('click', () => {
+	closeAndOpen(start, result);
+	foodData.then((res) => displayResultFood(res));
 });
 
 function selectPosition(positionList) {
@@ -80,8 +89,14 @@ function selectPosition(positionList) {
 
 	startAnswers.style.display = 'none';
 
+	//버튼의 text와 색을 바꿈
+	startButton.textContent = '시작하기';
+	startButton.style.color = 'var(--color-white)';
+	startButton.style.background = 'var(--color-orange)';
+
 	[...positionList].map((position) => {
 		if (position.checked) {
+			//수정필요 직책에 대한 강조표시 필요
 			startQuestion.textContent = `${position.labels[0].innerHTML}님! 오늘 점심 추천해 드릴게요`;
 			const positionImg = document.createElement('img');
 			positionImg.setAttribute('class', 'start__selected__img');
@@ -100,6 +115,8 @@ let foodResult = [];
 
 //다음 버튼을 누르면 내부 함수가 실행되도록 함
 nextButton.addEventListener('click', () => {
+	nextButton.style.background = 'var(--color-light-grey)';
+	nextButton.style.color = 'var(--color-orange)';
 	getInputName();
 	const answerArray = document.getElementsByName(inputName);
 
@@ -131,8 +148,10 @@ function getResultFood(arr) {
 // 모든 질문이 끝나면 로딩창을 3초동안만 보여주다가 결과창을 띄움.
 function endQuestion() {
 	closeAndOpen(quest, loading);
+	//초기값으로 변경
 	QUESTION_NUM = 0;
 	ANSWER_NUM = 0;
+	nextButton.textContent = '다음으로';
 	setTimeout(() => {
 		closeAndOpen(loading, result);
 	}, 3000);
@@ -165,6 +184,7 @@ function answerSet() {
 		input.setAttribute('name', answerName[ANSWER_NUM]);
 		const answerOption = document.createElement('label');
 		answerOption.setAttribute('for', `answer${index}`);
+		answerOption.setAttribute('class', 'answer__label');
 		answerOption.innerHTML = item;
 		answer.appendChild(input);
 		answer.appendChild(answerOption);
@@ -236,6 +256,31 @@ function getInputName() {
 	console.log(inputName);
 }
 
+//label을 한개 이상 클릭하면 '다음으로'버튼이 주황색으로 바뀌도록 함.
+document.addEventListener('click', (e) => {
+	if (e.target.nodeName === 'LABEL' || e.target.nodeName === 'INPUT') {
+		const input =
+			ANSWER_NUM === 0 ? 'position_chk' : answerName[ANSWER_NUM - 1];
+		console.log(input);
+		const answerArray = document.getElementsByName(input);
+		if ([...answerArray].filter((item) => item.checked).length > 0) {
+			ANSWER_NUM === 0
+				? changeButton(startButton, true)
+				: changeButton(nextButton, true);
+			nextButton.textContent = ANSWER_NUM === 5 ? '결과보기' : '다음으로';
+		}
+	}
+});
+
+function changeButton(button, active) {
+	if (active === true) {
+		button.style.background = 'var(--color-orange)';
+		button.style.color = 'var(--color-white)';
+	} else {
+		button.style.background = 'var(--color-grey)';
+		button.style.color = 'var(--color-orange)';
+	}
+}
 //*******************필터영역************************
 
 //필터할 값을 하나의 배열 안에 담고 한 번에 함수돌려서 결과값을 얻어내는 함수를 만들어내자!
