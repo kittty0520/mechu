@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>test08.직메추</title>
+		<title>test07.직메추</title>
         <!--페이스북
         <meta property="og:url"           content="http://mechu.dothome.co.kr/" />
         <meta property="og:type"          content="website" />
@@ -58,48 +58,11 @@
 	</head>
 
     <body>
-        <section id="quest">
-				<div class="questions">
-					<div class="question__container"></div>
-					<div class="answer__container">
-						<div class="answers__list">
-                            <div class="first">
-                                <label><input type="checkbox" value="korea" id="ko" name="country" >한식</label>    
-                                <label><input type="checkbox" value="china" id="ch" name="country" >중식</label>
-                                <label><input type="checkbox" value="america" id="ws" name="country" >양식</label>
-                                <button type="button" onclick="filter('country', 'countryFood');">다음단계</button>
-                            </div>
-                            <div class="second">
-                                <label><input type="checkbox" value="쌀" name="ingredient">쌀</label>
-                                <label><input type="checkbox" value="채소" name="ingredient">채소</label>
-                                <label><input type="checkbox" value="밀가루" name="ingredient">밀가루</label>
-                                <label><input type="checkbox" value="해산물" name="ingredient">해산물</label>
-                                <label><input type="checkbox" value="육류" name="ingredient">육류</label>
-                                <button type="button" onclick="filter('ingredient', 'country');">다음단계</button>  
-                            </div>
-                            <div class="third">
-                                <label><input type="checkbox" value="튀김" name="cooking">튀김</label>
-                                <label><input type="checkbox" value="구이" name="cooking">구이</label>
-                                <label><input type="checkbox" value="볶음" name="cooking">볶음</label>
-                                <label><input type="checkbox" value="찜" name="cooking">찜</label>
-                                <label><input type="checkbox" value="기타" name="cooking">기타</label>
-                                <button type="button" onclick="filter('cooking', 'ingredient');">다음단계</button>
-                            </div>
-                            <div class="fourth">
-                                <label><input type="radio" value="맵기" name="spicy">매움</label>
-                                <label><input type="radio" value="안맵기" name="spicy">안 매움</label>
-                                <button type="button" onclick="filter('spicy', 'cooking');">다음단계</button>
-                            </div>
-                        </div>  
-					</div>
-				</div>
-			</section>
-			<!-- Quest -->
         <section id="result">
             <div id="result_wrap">
                 <div id="country_food">
                     <!-- <p id="result_txt"></p> -->
-                    <img src="img/essential/loading.png" alt="로딩이미지">
+                    <img src="img/loading_g.png" alt="로딩이미지">
                 </div>
                 <div class="btns">
                     <button type="button" id="btn_re">결과보기</button>
@@ -111,13 +74,12 @@
                     <div class="fb-share-button" data-href="http://mechu.dothome.co.kr/" data-layout="button_count"></div>
                     <div>
                         <a id="clip-btn" href="javascript:clipboardShare()">
-                            <img src="img/essential/link_icon.png">
+                            <img src="img/link_icon.png">
                         </a>
                     </div>
                 </div>
             </div>
-            <script type="text/javascript" src="js/last03.js"></script>
+            <script type="text/javascript" src="js/last02.js"></script>
         </section>
-        <!-- Result -->
     </body>
 </html>

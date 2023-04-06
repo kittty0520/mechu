@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>test index01</title>
+		<script>
+		</script>
+		<style type="text/css">
+            body{margin:0; padding:0;}
+            .content{width:100vh; height:auto;}
+            p{font-weight:bold; font-size:36px;}
+            button{ 
+                width:150px; height:100px; border:3px solid rgb(2, 42, 26); background:rgb(131, 166, 139);
+                border-radius:30px; 
+                font-family: 'Noto Sans KR', sans-serif; font-size: 30px;
+                font-weight: bold; line-height: 150%; margin-top: 80px; margin-bottom: 80px;
+                color: #fff; text-align: center;
+            }
+            .buttons{position:absolute;}
+        </style>
+	</head>
+    <body>
+        <!--
+        <div class="content main1">
+            <p class="question">당신의 직급은 무엇입니까?</p>
+            <div class="buttons">
+                <button id="btn0"><span id="choice0">신입</span></button>
+                <button id="btn1"><span id="choice1">대리</span></button>
+                <button id="btn2"><span id="choice2">과장</span></button>
+                <button id="btn3"><span id="choice3">부장</span></button>
+                <button id="btn4"><span id="choice4">대표</span></button>
+            </div>
+        </div>
+        -->
+        <div class="content main2">
+            <p class="question">오늘 점심은 어느 나라 음식을 드시겠습니까?</p>
+            <div class="buttons">
+                <button id="btn5"><span id="choice5">한식</span></button>
+                <button id="btn6"><span id="choice6">양식</span></button>
+                <button id="btn7"><span id="choice7">중식</span></button>
+                <button id="btn8"><span id="choice8">일식</span></button>
+                <button id="btn9"><span id="choice9">기타</span></button>
+            </div>
+        </div>
+        <script>
+            var splashStart = document.querySelector('.splashStart');
+            var splashEnd = document.querySelector('.splashEnd');
+             // splashEnd.classList.add('display-none');
+
+            document.addEventListener('DOMContentLoaded', (e)=>{
+                setTimeout(()=> {
+                    splashStart.classList.add('display-none');
+                }, 5000);
+            })
+
+            function Quiz(questions) {
+                this.questions = questions;
+                this.questionIndex = 0;
+                this.result = "";
+            }
+
+            Quiz.prototype.getQuestionIndex = function() {
+                return this.questions[this.questionIndex];
+            }
+
+            Quiz.prototype.guess = function(idx) {
+                this.questionIndex++;
+                
+                this.result += idx;
+            }
+            
+            Quiz.prototype.isEnded = function() {
+                return this.questionIndex === this.questions.length;
+            }
+            
+            
+            function Question(text, choices, answer) {
+                this.text = text;
+                this.choices = choices;
+            }
+
+            
+            function populate() {
+                if(quiz.isEnded()) {
+                    setTimeout(()=> {
+                        splashEnd.classList.remove('display-none');
+                    }, 100);
+                    setTimeout(()=> {
+            //            splashEnd.classList.add('display-none');
+                        showScores();
+                    }, 2000);
+                    
+                }
+                else {
+                    // show question
+                    var element = document.getElementById("question");
+                    element.innerHTML = quiz.getQuestionIndex().text;
+            
+                    // show options
+                    var choices = quiz.getQuestionIndex().choices;
+                            
+                    for(var i = 0; i < choices.length; i++) {
+                        var element = document.getElementById("choice" + i);
+                        element.innerHTML = choices[i];
+                        guess("btn" + i, i);
+                    }
+                    
+                    showProgress();
+                    
+                }
+            };
+            
+            function guess(id, idx) {
+                var button = document.getElementById(id);
+                button.onclick = function() {
+                    quiz.guess(idx);
+                    populate();
+                    move();
+                }
+            };
+            
+            var i = 0;
+            var width = 1;
+            function move() {
+                var elem = document.getElementById("myBar");
+                var id = setInterval(frame, 10);
+                function frame() {
+                if (width >= 101) {
+                    clearInterval(id);
+                    i = 0;
+                } else {
+                    if(i <= 7) {
+                        i++;
+                        width++;
+                        elem.style.width = width + 3 + "%";
+                    }
+                }
+                }
+                i = 0;
+            } 
+
+            function showProgress() {
+                var currentQuestionNumber = quiz.questionIndex + 1;
+            //    var element = document.getElementById("progress");
+            //    element.innerHTML = currentQuestionNumber + " / " + quiz.questions.length;
+            };
+            
+            function showScores() {
+                // 1. 0, 2: E      1, 3: I
+                // 2. 0, 2: P      1, 3: J
+                // 3. 0, 3: N      1, 2: S
+                // 4. 0, 2: F      1, 3: T
+                
+                // 5. 0: F         1: T
+                // 6. 0: J         1: P
+                // 7. 0: I         1: E
+                // 8. 0: N         1: S
+                
+                // 9. 0: E         1: I
+                //10. 0: T         1: F
+                //11. 0: S         1: N
+                //12. 0: J         1: P
+                
+                
+                var e = 0, i = 0, s = 0, n = 0, t = 0, f = 0, j = 0, p = 0;
+                if(quiz.result[0] == 0) {
+                    e++;
+                } else {
+                    i++;
+                }
+                if(quiz.result[1] == 0) {
+                    j++;
+                } else {
+                    p++;
+                }
+                if(quiz.result[2] == 0) {
+                    f++;
+                } else {
+                    t++;
+                }
+                if(quiz.result[3] == 0) {
+                    s++;
+                } else {
+                    n++;
+                }
+                
+                
+                if(quiz.result[4] == 0) {
+                    s++;
+                } else {
+                    n++;
+                }
+                if(quiz.result[5] == 0) {
+                    e++;
+                } else {
+                    i++;
+                }
+                if(quiz.result[6] == 0) {
+                    j++;
+                } else {
+                    p++;
+                }
+                if(quiz.result[7] == 0) {
+                    t++;
+                } else {
+                    f++;
+                }
+                
+                
+                if(quiz.result[8] == 0) {
+                    e++;
+                } else {
+                    i++;
+                }
+                if(quiz.result[9] == 0) {
+                    s++;
+                } else {
+                    n++;
+                }
+                if(quiz.result[10] == 0) {
+                    t++;
+                } else {
+                    f++;
+                }
+                if(quiz.result[11] == 0) {
+                    p++;
+                } else {
+                    j++;
+                }
+                
+                var result = "";
+                if(e > i) {
+                    result += "E";
+                } else {
+                    result += "I";
+                }
+                if(s > n) {
+                    result += "S";
+                } else {
+                    result += "N";
+                }
+                if(t > f) {
+                    result += "T";
+                } else {
+                    result += "F";
+                }
+                if(j > p) {
+                    result += "J";
+                } else {
+                    result += "P";
+                }
+                
+            //    var gameOverHTML = "<h1>결과</h1>";
+            //    gameOverHTML += "<h2 id='score'>당신은 : " + result + "</h2>";
+            //    var element = document.getElementById("quiz");
+            //    element.innerHTML = gameOverHTML;
+                
+                var redirect = 0;
+                
+                if(result == "ISTJ") {
+                    redirect = 1;
+                } else if(result == "ISFJ") {
+                    redirect = 2;
+                } else if(result == "INFJ") {
+                    redirect = 3;
+                } else if(result == "INTJ") {
+                    redirect = 4;
+                } else if(result == "ISTP") {
+                    redirect = 5;
+                } else if(result == "ISFP") {
+                    redirect = 6;
+                } else if(result == "INFP") {
+                    redirect = 7;
+                } else if(result == "INTP") {
+                    redirect = 8;
+                } else if(result == "ESTP") {
+                    redirect = 9;
+                } else if(result == "ESFP") {
+                    redirect = 10;
+                } else if(result == "ENFP") {
+                    redirect = 11;
+                } else if(result == "ENTP") {
+                    redirect = 12;
+                } else if(result == "ESTJ") {
+                    redirect = 13;
+                } else if(result == "ESFJ") {
+                    redirect = 14;
+                } else if(result == "ENFJ") {
+                    redirect = 15;
+                } else if(result == "ENTJ") {
+                    redirect = 16;
+                }
+                console.log(result);
+                window.location.replace("http://devdory.com/entertainment/fruit_mbti/result.php?r=" + redirect);
+            };
+            
+            // create questions here
+
+            var questions = [
+                new Question("당신의 직급은 무엇입니까?", ['신입', '대리', '과장', '부장', '대표']),
+                // 직급 선택에 따른 질문말투 변경(단일 선택)
+                new Question("오늘 점심은 어느 나라 음식을 드시겠습니까?", ['한식', '양식', '중식', '일식', '기타']),
+                // 다중 선택 가능
+                new Question("어떤 식재료를 넣을까요? ", ['쌀', '밀가루', '육류', '해산물', '채소']),
+                // 다중 선택 가능
+
+            ];
+            // create quiz
+            var quiz = new Quiz(questions);
+            
+            // display quiz
+            populate();
+        </script>
+    </body>
+</html>
