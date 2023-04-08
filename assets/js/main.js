@@ -206,6 +206,8 @@ function nextQuestion() {
 	}
 }
 
+
+
 //질문 순서를 나타내고 순서에 따른 캐릭터의 위치를 바꾸는 함수
 function sequenceSet() {
 	if (ANSWER_NUM === 1) {
@@ -354,3 +356,20 @@ function displayResultFood(resultArr) {
 		`<img src="assets/img/food_img/${resultFood.src}.png" alt="음식이미지">`;
 	return resultArr;
 }
+// async function loadData() {
+// 	try {
+// 	   const data = await getData();
+// 	   check_data.countryFood = data;
+// 	   console.log(check_data);
+// 	} catch (error) {
+// 	   console.error(error);
+// 	}
+//  }
+
+//  loadData();
+document.querySelector('.answer__button').addEventListener('click',()=>{
+    btn_parameter('a', 'b');
+    filter(next_parameter[0],next_parameter[1]);
+    console.log(filter(next_parameter[0],next_parameter[1]));
+})
+
