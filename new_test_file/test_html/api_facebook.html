@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>페이스북 api 공유하기</title>
+        <meta property="og:url"           content="http://mechu.dothome.co.kr/" />
+        <meta property="og:type"          content="website" />
+        <meta property="og:title"         content="직장인 점심메뉴 추천" />
+        <meta property="og:description"   content="점심메뉴 추천" />
+        <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
+    </head>
+    <body>
+        <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <!-- Your share button code -->
+        <div class="fb-share-button" 
+        data-href="https://www.your-domain.com/your-page.html" data-layout="button_count">
+        </div>
+    </body>
+    <!-- 
+    <body>
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v15.0" nonce="bbf8CsIL">
+        </script>
+        <script>
+            // window.fbAsyncInit = function () {
+            //     FB.init({
+            //         appId: 'YOUR-APP-KEY',
+            //         autoLogAppEvents: true,
+            //         xfbml: true,
+            //         version: 'YOUR-APP-VERSION'
+            //     });
+            // };
+
+            // (function (d, s, id) {
+            //     var js, fjs = d.getElementsByTagName(s)[0];
+            //     if (d.getElementById(id)) {
+            //         return;
+            //     }
+            //     js = d.createElement(s);
+            //     js.id = id;
+            //     js.src = "https://connect.facebook.net/en_US/sdk.js";
+            //     fjs.parentNode.insertBefore(js, fjs);
+            // }(document, 'script', 'facebook-jssdk'));
+
+            // function shareFacebook(){
+            //     let currentUrl = window.document.location.href;
+            //     FB.ui({
+            //             method: 'share',
+            //             href: currentUrl
+            //         }, function (response) {
+            //             if (response && !response.error_code) {
+            //                 alert('공유 완료');
+            //             } else {
+            //                 alert('공유 실패');
+            //             }
+            //         }
+            //     );
+            // }
+        </script>
+    </body>
+    -->
+</html>    

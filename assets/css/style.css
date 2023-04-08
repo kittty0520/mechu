@@ -5,6 +5,7 @@
 	--color-orange: #ff924d;
 	--color-green: #78c030;
 	--color-grey: #989797;
+	--color-light-grey: #eee;
 
 	/* Font Size */
 	--font-large: 48px;
@@ -13,18 +14,6 @@
 	--font-small: 16px;
 	--font-micro: 12px;
 }
-
-body {
-	font-size: var(--font-small);
-}
-button {
-	width: 330px;
-	height: 40px;
-	cursor: pointer;
-	padding: 0.2rem 0.8rem;
-	border-radius: 10px;
-	color: var(--color-orange);
-}
 @font-face {
 	font-family: 'GangwonEdu_OTFBoldA';
 	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff')
@@ -32,13 +21,31 @@ button {
 	font-weight: normal;
 	font-style: normal;
 }
+
+body {
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--color-orange);
+	font-size: var(--font-small);
+	background: url('../img/bg.png') center/cover no-repeat;
+}
+button {
+	width: 330px;
+	height: 40px;
+	cursor: pointer;
+	padding: 0.2rem 0.8rem;
+	margin: 0.5rem;
+	border-radius: 10px;
+	color: var(--color-orange);
+	background: var(--color-light-grey);
+}
+
 /* 레이아웃 */
+
 .container {
-	width: 700px;
+	width: 640px;
+	height: 70vh;
 	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 }
 
 /* Input */
@@ -51,9 +58,10 @@ input[type='checkbox'] + label {
 	content: '';
 	cursor: pointer;
 	display: inline-block;
-	width: 80px;
-	height: 80px;
-	line-height: 80px;
+	width: 75px;
+	height: 75px;
+	line-height: 75px;
+	margin-right: 20px;
 	text-align: center;
 	font-size: var(--font-small);
 	color: var(--color-orange);
@@ -61,6 +69,10 @@ input[type='checkbox'] + label {
 	border: 1px solid var(--color-orange);
 	transition: all 0.3s;
 	/* vertical-align: middle; */
+}
+input[type='radio'] + label:nth-last-of-type(1),
+input[type='checkbox'] + label:nth-last-of-type(1) {
+	margin-right: 0;
 }
 input[type='radio']:checked + label,
 input[type='checkbox']:checked + label {
@@ -70,17 +82,8 @@ input[type='checkbox']:checked + label {
 
 /* Header */
 #header {
-}
-
-.start__title {
-	text-indent: -9999px;
-}
-.start__title a {
-	display: block;
-	margin: 24px auto;
-	background: url(../img/logo.png) no-repeat;
-	width: 258px;
-	height: 156px;
+	width: 640px;
+	margin: 0 auto;
 }
 
 /* Story */
@@ -95,12 +98,11 @@ input[type='checkbox']:checked + label {
 	align-items: center;
 }
 .cartoon > div {
-	height: 394px;
+	/* height: 394px; */
 	box-sizing: border-box;
 }
-.cartoon-first {
-}
-.cartoon-second {
+.cartoon-second,
+.cartoon-third {
 	display: none;
 }
 .cartoon-final {
@@ -108,11 +110,12 @@ input[type='checkbox']:checked + label {
 	text-align: center;
 }
 .cartoon-final p {
-	font-size: var(--font-regular);
+	font-size: var(--font-small);
 }
 .cartoon-final span {
 	color: var(--color-orange);
 	margin-top: 12px;
+	font-weight: bold;
 }
 .cartoon__img-final {
 	display: block;
@@ -120,14 +123,14 @@ input[type='checkbox']:checked + label {
 	height: auto;
 	margin: 0 auto;
 	margin-top: 48px;
-	border-radius: 100%;
+	/* border-radius: 100%; */
 }
 
 .cartoon__img {
 	display: block;
-	width: 330px;
-	height: 185px;
-	margin-bottom: 12px;
+	width: 350px;
+	height: 200px;
+	margin-bottom: 8px;
 	background-color: var(--color-grey);
 }
 .cartoon__button {
@@ -138,16 +141,133 @@ input[type='checkbox']:checked + label {
 #start {
 	display: none;
 }
+.start__container {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.start__question {
+	flex-basis: 20%;
+}
+.start__answers {
+	flex-basis: 50%;
+}
+.start__button {
+	transition: all 0.4s ease-in-out;
+}
+.start__button--random {
+	display: none;
+}
+input.start__answers__input + label {
+	background: url('../img/Staff.png') center/contain no-repeat;
+	line-height: 200px;
+	background-color: var(--color-grey);
+	border-color: var(--color-grey);
+}
+input.start__answers__input:nth-of-type(2) + label {
+	background: url('../img/AssistantManager.png') top/cover no-repeat;
+	background-color: var(--color-grey);
+}
+input.start__answers__input:nth-of-type(3) + label {
+	background: url('../img/Manager.png') top/cover no-repeat;
+	background-color: var(--color-grey);
+}
+input.start__answers__input:nth-of-type(4) + label {
+	background: url('../img/Director.png') top/cover no-repeat;
+	background-color: var(--color-grey);
+}
+input.start__answers__input:nth-of-type(5) + label {
+	background: url('../img/President.png') top/cover no-repeat;
+	background-color: var(--color-grey);
+}
+input[type='radio'].start__answers__input:checked + label {
+	background-color: var(--color-orange);
+	color: var(--color-orange);
+	border-color: var(--color-orange);
+}
+.start__title {
+	text-indent: -9999px;
+}
+.start__title a {
+	display: block;
+	margin: 24px auto;
+	background: url(../img/logo.png) center/cover no-repeat;
+	width: 194px;
+	height: 116px;
+}
+.start__selected__img {
+	width: 160px;
+	margin-bottom: 46px;
+}
 
 /* Quest-question */
 #quest {
 	display: none;
 }
+.questions {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.question__container {
+	flex-basis: 20%;
+	text-align: center;
+}
+.question__sequence {
+	display: flex;
+	align-items: center;
+	/* justify-content: center; */
+	margin-bottom: 40px;
+}
+.sequence__bar {
+	position: relative;
+	width: 200px;
+	height: 10px;
+	background-color: var(--color-grey);
+	border-radius: 5px;
+	margin-left: 12px;
+}
+.sequence__counter__number {
+	color: var(--color-green);
+}
+.sequence__subBar {
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	left: 0;
+	width: 40px;
+	height: 10px;
+	background-color: var(--color-green);
+	border-radius: 5px;
+}
+.sequence__bar__img {
+	position: absolute;
+	z-index: 10;
+	top: -12px;
+	left: 0px;
+	width: 24px;
+	height: auto;
+}
+.answer__container {
+	flex-basis: 50%;
+}
+.answers__list {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.newQuestion {
+	font-weight: bold;
+}
+.answer__button {
+	transition: all 0.4s ease-in-out;
+}
 
 /* result loading */
 #loading {
-	width: 250px;
-	height: 250px;
 	position: relative;
 	margin: 0 auto;
 	display: none;
@@ -162,6 +282,7 @@ input[type='checkbox']:checked + label {
 	width: 225px;
 	height: 225px;
 	padding: 25px;
+	margin: 0 auto;
 	/* border: 1px solid var(--color-orange); */
 	border-radius: 100%;
 	background-color: var(--color-orange);
@@ -177,6 +298,7 @@ input[type='checkbox']:checked + label {
 	/* left: 14px; */
 	animation: spin 5s linear infinite;
 }
+
 @keyframes spin {
 	from {
 		transform: rotate(0deg) translateX(0px);
@@ -263,4 +385,15 @@ input[type='checkbox']:checked + label {
 	display: block;
 	width: 38px;
 	height: 38px;
+}
+
+/* footer */
+#footer {
+	width: 640px;
+	margin: 0 auto;
+	position: relative;
+	bottom: -20px;
+	text-align: center;
+	color: var(--color-orange);
+	font-size: var(--font-micro);
 }
