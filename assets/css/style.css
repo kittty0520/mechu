@@ -58,7 +58,7 @@ button {
 } */
 main {
 	width: 640px;
-	height: 75%;
+	height: 70%;
 	margin: 0 auto;
 }
 /* Input */
@@ -96,7 +96,9 @@ input[type='checkbox']:checked + label {
 /* Header */
 #header {
 	width: 640px;
-	height: 20%;
+	height: 25%;
+	padding-top: 5%;
+	box-sizing: border-box;
 	margin: 0 auto;
 }
 
@@ -165,9 +167,11 @@ input[type='checkbox']:checked + label {
 }
 .start__question {
 	flex-basis: 20%;
+	padding-top: 5%;
+	box-sizing: border-box;
 }
 .start__answers {
-	flex-basis: 50%;
+	flex-basis: 45%;
 }
 .start__button {
 	transition: all 0.4s ease-in-out;
@@ -214,7 +218,7 @@ input[type='radio'].start__answers__input:checked + label {
 }
 .start__selected__img {
 	width: 160px;
-	margin-bottom: 46px;
+	margin-bottom: 15%;
 }
 
 /* Quest-question */
@@ -226,7 +230,7 @@ input[type='radio'].start__answers__input:checked + label {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	/* justify-content: center; */
 }
 .question__container {
 	flex-basis: 20%;
@@ -235,8 +239,7 @@ input[type='radio'].start__answers__input:checked + label {
 .question__sequence {
 	display: flex;
 	align-items: center;
-	/* justify-content: center; */
-	margin-bottom: 40px;
+	margin-bottom: 8%;
 }
 .sequence__bar {
 	position: relative;
@@ -268,7 +271,7 @@ input[type='radio'].start__answers__input:checked + label {
 	height: auto;
 }
 .answer__container {
-	flex-basis: 50%;
+	flex-basis: 40%;
 }
 .answers__list {
 	display: flex;
@@ -284,21 +287,33 @@ input[type='radio'].start__answers__input:checked + label {
 
 /* result loading */
 #loading {
-	position: relative;
-	margin: 0 auto;
 	display: none;
+	text-align: center;
+	position: relative;
 }
-.loading__title {
+/* .loading__title {
 	text-align: center;
 	color: var(--color-orange);
 	font-size: 16px;
+	margin-bottom: 10%;
+} */
+.loading__comment {
+	font-size: var(--font-micro);
+	padding-top: 5%;
+	margin-bottom: 2%;
+}
+.loading__explanation {
+	display: block;
+	font-size: var(--font-regular);
+	color: var(--color-orange);
+	margin-bottom: 5%;
 }
 .loading__image__container {
 	position: relative;
 	width: 225px;
 	height: 225px;
-	padding: 25px;
 	margin: 0 auto;
+	padding: 25px;
 	/* border: 1px solid var(--color-orange); */
 	border-radius: 100%;
 	background-color: var(--color-orange);
@@ -309,7 +324,6 @@ input[type='radio'].start__answers__input:checked + label {
 	left: 25px;
 	width: 225px;
 	height: 225px;
-	position: absolute;
 	/* top: 15px; */
 	/* left: 14px; */
 	animation: spin 5s linear infinite;
@@ -356,7 +370,7 @@ input[type='radio'].start__answers__input:checked + label {
 #country_food > img {
 	width: 240px;
 	height: 240px;
-	margin: 0 auto;
+	margin: 20px auto;
 	display: block;
 	object-fit: cover;
 }
