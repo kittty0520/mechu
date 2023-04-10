@@ -38,7 +38,7 @@ body {
 	background: url('../img/bg.png') center/cover no-repeat;
 }
 button {
-	width: 320px;
+	width: 300px;
 	height: 40px;
 	cursor: pointer;
 	padding: 0.2rem 0.8rem;
@@ -92,11 +92,16 @@ input[type='checkbox']:checked + label {
 #header {
 	width: 640px;
 	height: 25%;
-	padding-top: 5%;
+	padding-top: 40px;
 	box-sizing: border-box;
 	margin: 0 auto;
 }
-
+.header__img {
+	display: block;
+	margin: 24px auto;
+	width: 194px;
+	height: 116px;
+}
 /* Story */
 #story {
 	display: flex;
@@ -176,6 +181,10 @@ input[type='checkbox']:checked + label {
 .start__button--random {
 	display: none;
 }
+.start__selected__img {
+	width: 160px;
+	margin-bottom: 15%;
+}
 input.start__answers__input + label {
 	background: url('../img/Staff.png') center/contain no-repeat;
 	line-height: 200px;
@@ -202,20 +211,6 @@ input[type='radio'].start__answers__input:checked + label {
 	background-color: var(--color-orange);
 	color: var(--color-orange);
 	border-color: var(--color-orange);
-}
-.start__title {
-	text-indent: -9999px;
-}
-.start__title a {
-	display: block;
-	margin: 24px auto;
-	background: url(../img/logo.png) center/cover no-repeat;
-	width: 194px;
-	height: 116px;
-}
-.start__selected__img {
-	width: 160px;
-	margin-bottom: 15%;
 }
 
 /* Quest-question */
