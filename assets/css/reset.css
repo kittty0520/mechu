@@ -6,11 +6,19 @@ button {
 	outline: none;
 	border: none;
 }
+/* 블릿기호 초기화 */
 ul,
 li {
 	list-style: none;
 }
-
+/* a 링크 초기화 */
+a {
+	color: var(--color-text);
+	text-decoration: none;
+}
+a:hover {
+	color: var(--color-text);
+}
 /* IR기법 */
 .ir_pm {
 	display: block;
