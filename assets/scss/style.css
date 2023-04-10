@@ -1,0 +1,809 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+/* 블릿기호 초기화 */
+ul,
+li {
+  list-style: none;
+}
+
+/* a 링크 초기화 */
+a {
+  color: #777;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #777;
+}
+
+/* IR기법 */
+.ir_pm {
+  display: block;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
+
+.ir_wa {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.ir_so {
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
+
+/* Font Size */
+@font-face {
+  font-family: "GangwonEdu_OTFBoldA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GangwonEdu_OTFBoldA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@media (min-width: 421px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ff924d;
+    font-family: "GangwonEdu_OTFBoldA", sans-serif;
+    font-size: 16px;
+    background: url("../img/bg.png") center/cover no-repeat;
+  }
+  button {
+    width: 300px;
+    height: 40px;
+    cursor: pointer;
+    padding: 0.2rem 0.8rem;
+    margin: 0.5rem;
+    border-radius: 10px;
+    color: #ff924d;
+    background: #eee;
+    font-family: "GangwonEdu_OTFBoldA", sans-serif;
+  }
+  input[type=radio],
+  input[type=checkbox] {
+    display: none;
+  }
+  input[type=radio] + label,
+  input[type=checkbox] + label {
+    content: "";
+    cursor: pointer;
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    margin-right: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #ff924d;
+    border-radius: 100%;
+    border: 1px solid #ff924d;
+    transition: all 0.3s;
+    /* vertical-align: middle; */
+  }
+  input[type=radio] + label:nth-last-of-type(1),
+  input[type=checkbox] + label:nth-last-of-type(1) {
+    margin-right: 0;
+  }
+  input[type=radio]:checked + label,
+  input[type=checkbox]:checked + label {
+    background-color: #ff924d;
+    color: #ffffff;
+  }
+  /* Header */
+  #header {
+    width: 640px;
+    height: 25%;
+    padding-top: 40px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+  .header__img {
+    display: block;
+    margin: 24px auto;
+    width: 194px;
+    height: 116px;
+  }
+  /* Story */
+  #story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cartoon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cartoon > div {
+    box-sizing: border-box;
+  }
+  .cartoon-second, .cartoon-third {
+    display: none;
+  }
+  .cartoon-final {
+    display: none;
+    text-align: center;
+  }
+  .cartoon-final p {
+    font-size: 16px;
+    margin-bottom: 10%;
+    line-height: 1.6;
+  }
+  .cartoon-final span {
+    color: #ff924d;
+    font-weight: bold;
+  }
+  .cartoon__img-final {
+    display: block;
+    width: 215px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 29%;
+    margin-bottom: 10%;
+    /* border-radius: 100%; */
+  }
+  .cartoon__img {
+    display: block;
+    width: 350px;
+    height: 200px;
+    margin-bottom: 8px;
+    background-color: #989797;
+  }
+  .cartoon__button {
+    margin-top: 24px;
+  }
+  /* Start */
+  #start {
+    display: none;
+  }
+  .start__container {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .start__question {
+    flex-basis: 15%;
+    padding-top: 5%;
+    box-sizing: border-box;
+  }
+  .start__answers {
+    flex-basis: 50%;
+    padding-top: 5%;
+    box-sizing: border-box;
+  }
+  .start__button {
+    transition: all 0.4s ease-in-out;
+  }
+  .start__button--random {
+    display: none;
+  }
+  .start__selected__img {
+    width: 160px;
+    margin-bottom: 15%;
+  }
+  input.start__answers__input + label {
+    line-height: 200px;
+    border-color: #989797;
+    background: url("../img/Staff.png") top/cover no-repeat;
+    background-color: #989797;
+  }
+  input.start__answers__input:nth-of-type(2) + label {
+    background: url("../img/AssistantManager.png") top/cover no-repeat;
+    background-color: #989797;
+  }
+  input.start__answers__input:nth-of-type(3) + label {
+    background: url("../img/Manager.png") top/cover no-repeat;
+    background-color: #989797;
+  }
+  input.start__answers__input:nth-of-type(4) + label {
+    background: url("../img/Director.png") top/cover no-repeat;
+    background-color: #989797;
+  }
+  input.start__answers__input:nth-of-type(5) + label {
+    background: url("../img/President.png") top/cover no-repeat;
+    background-color: #989797;
+  }
+  input[type=radio].start__answers__input:checked + label {
+    background-color: #ff924d;
+    color: #ff924d;
+    border-color: #ff924d;
+  }
+  /* Quest-question */
+  #quest {
+    display: none;
+  }
+  .questions {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+  }
+  .question__container {
+    flex-basis: 20%;
+    text-align: center;
+  }
+  .question__sequence {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8%;
+  }
+  .sequence__bar {
+    position: relative;
+    width: 200px;
+    height: 10px;
+    background-color: #989797;
+    border-radius: 5px;
+    margin-left: 12px;
+  }
+  .sequence__counter__number {
+    color: #78c030;
+  }
+  .sequence__subBar {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 10px;
+    background-color: #78c030;
+    border-radius: 5px;
+  }
+  .sequence__bar__img {
+    position: absolute;
+    z-index: 10;
+    top: -12px;
+    left: 0px;
+    width: 24px;
+    height: auto;
+  }
+  .answer__container {
+    flex-basis: 40%;
+  }
+  .answer__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .answer__button {
+    transition: all 0.4s ease-in-out;
+  }
+  .newQuestion {
+    font-weight: bold;
+  }
+  /* loading */
+  #loading {
+    display: none;
+    text-align: center;
+    position: relative;
+  }
+  .loading__comment {
+    font-size: 12px;
+    padding-top: 5%;
+    margin-bottom: 2%;
+  }
+  .loading__explanation {
+    display: block;
+    font-size: 24px;
+    color: #ff924d;
+    margin-bottom: 5%;
+  }
+  .loading__image__container {
+    position: relative;
+    width: 225px;
+    height: 225px;
+    margin: 0 auto;
+    padding: 25px;
+    /* border: 1px solid var(--color-orange); */
+    border-radius: 100%;
+    background-color: #ff924d;
+  }
+  .loading__image {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 225px;
+    height: 225px;
+    /* top: 15px; */
+    /* left: 14px; */
+    animation: spin 5s linear infinite;
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg) translateX(0px);
+    }
+    to {
+      transform: rotate(360deg) translateX(0px);
+    }
+  }
+  /* Result */
+  #result {
+    display: none;
+    /* result_wrap */
+  }
+  #result_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+    margin: 0 auto;
+  }
+  /* result_wrap */
+  .result__title {
+    font-weight: normal;
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  .result__btns {
+    display: flex;
+    flex-direction: column;
+  }
+  .result__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24px;
+  }
+  .result__link__title {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 12px;
+  }
+  .result__link__wrap {
+    display: flex;
+    justify-content: center;
+  }
+  .result__link__wrap p {
+    font-size: 12px;
+    text-align: center;
+  }
+  #country_food {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  #country_food p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: #ff924d;
+  }
+  #country_food > img {
+    width: 240px;
+    height: 240px;
+    margin: 20px auto;
+    display: block;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #btn_re {
+    border: none;
+    background: #ff924d;
+    color: #ffffff;
+  }
+  #clip-btn img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+  }
+  /* 카카오톡 API */
+  #kakaotalk-sharing-btn {
+    /* position: absolute;
+    bottom: 50px;
+    left: 100px; */
+    margin-right: 18px;
+  }
+  #kakaotalk-sharing-btn img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+  }
+  .fb-share-button img {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 420px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    font-family: "GangwonEdu_OTFBoldA", sans-serif;
+    font-size: 16px;
+  }
+  button {
+    width: 260px;
+    height: 40px;
+    cursor: pointer;
+    padding: 0.2rem 0.8rem;
+    margin: 0.5rem;
+    border-radius: 10px;
+    color: #ff924d;
+    background: #eee;
+    font-family: "GangwonEdu_OTFBoldA", sans-serif;
+  }
+  input[type=radio],
+  input[type=checkbox] {
+    display: none;
+  }
+  input[type=radio] + label,
+  input[type=checkbox] + label {
+    content: "";
+    cursor: pointer;
+    display: inline-block;
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
+    margin-right: 20px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: #ff924d;
+    border-radius: 100%;
+    border: 1px solid #ff924d;
+    transition: all 0.3s;
+    /* vertical-align: middle; */
+  }
+  input[type=radio] + label:nth-last-of-type(1),
+  input[type=checkbox] + label:nth-last-of-type(1) {
+    margin-right: 0;
+  }
+  input[type=radio]:checked + label,
+  input[type=checkbox]:checked + label {
+    background-color: #ff924d;
+    color: #ffffff;
+  }
+  /* Header */
+  #header {
+    width: 380px;
+    height: 25%;
+    padding-top: 40px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+  .header__img {
+    display: block;
+    margin: 24px auto;
+    width: 194px;
+    height: 116px;
+  }
+  /* Story */
+  #story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cartoon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cartoon > div {
+    box-sizing: border-box;
+  }
+  .cartoon-second, .cartoon-third {
+    display: none;
+  }
+  .cartoon-final {
+    display: none;
+    text-align: center;
+  }
+  .cartoon-final p {
+    font-size: 16px;
+    margin-bottom: 7%;
+    line-height: 1.6;
+  }
+  .cartoon-final span {
+    color: #ff924d;
+    font-weight: bold;
+  }
+  .cartoon__img-final {
+    display: block;
+    width: 175px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 29%;
+    margin-bottom: 10%;
+    /* border-radius: 100%; */
+  }
+  .cartoon__img {
+    display: block;
+    width: 295px;
+    height: 165px;
+    margin-bottom: 8px;
+    background-color: #989797;
+  }
+  .cartoon__button {
+    margin-top: 24px;
+  }
+  /* Start */
+  #start {
+    display: none;
+  }
+  .start__container {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .start__question {
+    flex-basis: 15%;
+    padding-top: 5%;
+    box-sizing: border-box;
+  }
+  .start__answers {
+    width: 270px;
+    flex-basis: 50%;
+    padding-top: 5%;
+    box-sizing: border-box;
+  }
+  .start__button {
+    transition: all 0.4s ease-in-out;
+  }
+  .start__button--random {
+    display: none;
+  }
+  .start__selected__img {
+    width: 160px;
+    margin-bottom: 15%;
+  }
+  input.start__answers__input + label {
+    line-height: 200px;
+    border-color: #989797;
+    background: url("../img/Staff.png") top/cover no-repeat;
+    background-color: #989797;
+  }
+  input.start__answers__input:nth-of-type(2) + label {
+    background: url("../img/AssistantManager.png") top/cover no-repeat;
+    background-color: #989797;
+  }
+  input.start__answers__input:nth-of-type(3) + label {
+    background: url("../img/Manager.png") top/cover no-repeat;
+    background-color: #989797;
+  }
+  input.start__answers__input:nth-of-type(4) + label {
+    background: url("../img/Director.png") top/cover no-repeat;
+    background-color: #989797;
+  }
+  input.start__answers__input:nth-of-type(5) + label {
+    background: url("../img/President.png") top/cover no-repeat;
+    background-color: #989797;
+  }
+  input[type=radio].start__answers__input:checked + label {
+    background-color: #ff924d;
+    color: #ff924d;
+    border-color: #ff924d;
+  }
+  /* Quest-question */
+  #quest {
+    display: none;
+  }
+  .questions {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+  }
+  .question__container {
+    flex-basis: 20%;
+    text-align: center;
+  }
+  .question__sequence {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8%;
+  }
+  .sequence__bar {
+    position: relative;
+    width: 200px;
+    height: 10px;
+    background-color: #989797;
+    border-radius: 5px;
+    margin-left: 12px;
+  }
+  .sequence__counter__number {
+    color: #78c030;
+  }
+  .sequence__subBar {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 10px;
+    background-color: #78c030;
+    border-radius: 5px;
+  }
+  .sequence__bar__img {
+    position: absolute;
+    z-index: 10;
+    top: -12px;
+    left: 0px;
+    width: 24px;
+    height: auto;
+  }
+  .answer__container {
+    width: 310px;
+    flex-basis: 40%;
+  }
+  .answer__list {
+    flex-basis: 50%;
+    padding-top: 5%;
+    box-sizing: border-box;
+  }
+  .answer__button {
+    transition: all 0.4s ease-in-out;
+  }
+  .newQuestion {
+    font-weight: bold;
+  }
+  /* loading */
+  #loading {
+    display: none;
+    text-align: center;
+    position: relative;
+  }
+  .loading__comment {
+    font-size: 12px;
+    padding-top: 5%;
+    margin-bottom: 2%;
+  }
+  .loading__explanation {
+    display: block;
+    font-size: 24px;
+    color: #ff924d;
+    margin-bottom: 5%;
+  }
+  .loading__image__container {
+    position: relative;
+    width: 225px;
+    height: 225px;
+    margin: 0 auto;
+    padding: 25px;
+    /* border: 1px solid var(--color-orange); */
+    border-radius: 100%;
+    background-color: #ff924d;
+  }
+  .loading__image {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 225px;
+    height: 225px;
+    /* top: 15px; */
+    /* left: 14px; */
+    animation: spin 5s linear infinite;
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg) translateX(0px);
+    }
+    to {
+      transform: rotate(360deg) translateX(0px);
+    }
+  }
+  /* Result */
+  #result {
+    display: none;
+    /* result_wrap */
+  }
+  #result_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+    margin: 0 auto;
+  }
+  /* result_wrap */
+  .result__title {
+    font-weight: normal;
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  .result__btns {
+    display: flex;
+    flex-direction: column;
+  }
+  .result__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24px;
+  }
+  .result__link__title {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 12px;
+  }
+  .result__link__wrap {
+    display: flex;
+    justify-content: center;
+  }
+  .result__link__wrap p {
+    font-size: 12px;
+    text-align: center;
+  }
+  #country_food {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  #country_food p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: #ff924d;
+  }
+  #country_food > img {
+    width: 240px;
+    height: 240px;
+    margin: 20px auto;
+    display: block;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #btn_re {
+    border: none;
+    background: #ff924d;
+    color: #ffffff;
+  }
+  #clip-btn img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+  }
+  /* 카카오톡 API */
+  #kakaotalk-sharing-btn {
+    /* position: absolute;
+    bottom: 50px;
+    left: 100px; */
+    margin-right: 18px;
+  }
+  #kakaotalk-sharing-btn img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+  }
+  .fb-share-button img {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+}/*# sourceMappingURL=style.css.map */
