@@ -206,8 +206,6 @@ function nextQuestion() {
 	}
 }
 
-
-
 //질문 순서를 나타내고 순서에 따른 캐릭터의 위치를 바꾸는 함수
 function sequenceSet() {
 	if (ANSWER_NUM === 1) {
@@ -308,10 +306,10 @@ function singleProperty(valueName, arr, selectArr) {
 		for (let j = 0; j < arr.length; j++) {
 			if (selectArr[i] == arr[j][valueName]) {
 				result.push(arr[j]);
-				// console.log(arr[j][valueName]);
 			}
 		}
 	}
+	console.log(valueName, result);
 	return result;
 }
 
@@ -323,7 +321,8 @@ function multiProperty(valueName, arr, selectArr) {
 			arr.filter((item) => item[valueName].includes(selection))
 		)
 		.flat();
-	return result;
+	// 각 재료값을 핕터링하고 그대로 합쳐서 중복된 음식이 생겨남
+	return [...new Set(result)];
 }
 
 //각 질문마다 필터링 하는 방법을 나눔
@@ -356,20 +355,3 @@ function displayResultFood(resultArr) {
 		`<img src="assets/img/food_img/${resultFood.src}.png" alt="음식이미지">`;
 	return resultArr;
 }
-// async function loadData() {
-// 	try {
-// 	   const data = await getData();
-// 	   check_data.countryFood = data;
-// 	   console.log(check_data);
-// 	} catch (error) {
-// 	   console.error(error);
-// 	}
-//  }
-
-//  loadData();
-document.querySelector('.answer__button').addEventListener('click',()=>{
-    btn_parameter('a', 'b');
-    filter(next_parameter[0],next_parameter[1]);
-    console.log(filter(next_parameter[0],next_parameter[1]));
-})
-
