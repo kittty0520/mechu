@@ -166,7 +166,9 @@ input[type='checkbox']:checked + label {
 	box-sizing: border-box;
 }
 .start__answers {
-	flex-basis: 45%;
+	flex-basis: 50%;
+	padding-top: 5%;
+	box-sizing: border-box;
 }
 .start__button {
 	transition: all 0.4s ease-in-out;
