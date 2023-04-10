@@ -170,7 +170,15 @@ function questionSet() {
 	item.innerHTML = newQuestion;
 	question.appendChild(item);
 }
-
+function isMultiSelctSet() {
+	const { multiSeleted } = answerList[ANSWER_NUM];
+	if (multiSeleted) {
+		const item = document.createElement('p');
+		item.setAttribute('class', 'isMultiSelct');
+		item.innerHTML = '(중복 선택 가능)';
+		question.appendChild(item);
+	}
+}
 const answerName = ['country', 'ingre', 'cook', 'spicy', 'temp'];
 
 // 질문과 매칭되는 선택지를 띄움
@@ -203,6 +211,7 @@ function nextQuestion() {
 	answer.innerHTML = '';
 	if (QUESTION_NUM < questionList.length) {
 		questionSet();
+		isMultiSelctSet();
 		answerSet();
 		sequenceSet();
 	} else {
