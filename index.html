@@ -184,29 +184,35 @@
 			<section id="result">
 				<div class="container">
 					<div id="result_wrap">
+						<h2 class="result__title">오늘의 점심은 이 메뉴 추천드려요!</h2>
 						<div id="country_food">
 							<!-- <p id="result_txt"></p> -->
-							<img src="assets/img/loading_g.png" alt="로딩이미지" />
+							<!-- <img src="assets/img/loading_g.png" alt="로딩이미지" /> -->
 						</div>
-						<div class="btns">
-							<button type="button" id="btn_re">결과보기</button>
-							<a id="kakaotalk-sharing-btn" href="javascript:;">
-								<img
-									src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
-									alt="카카오톡 공유 보내기 버튼"
-								/>
-							</a>
+						<div class="result__btns">
+							<button id="btn_re">다시 선택하기</button>
+							<div class="result__link">
+								<h3 class="result__link__title">결과를 공유해 보세요</h3>
+								<div class="result__link__wrap">
+									<a id="kakaotalk-sharing-btn" href="javascript:;">
+										<img
+											src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
+											alt="카카오톡 공유 보내기 버튼"
+										/>
+										<p>카카오톡</p>
+									</a>
+									<a id="clip-btn" href="javascript:clipboardShare()">
+										<img src="assets/img/link_icon.png" alt="클립보드이미지" />
+										<p>링크복사</p>
+									</a>
+								</div>
+							</div>
 							<div id="fb-root"></div>
 							<div
 								class="fb-share-button"
 								data-href="http://mechu.dothome.co.kr/"
 								data-layout="button_count"
 							></div>
-							<div>
-								<a id="clip-btn" href="javascript:clipboardShare()">
-									<img src="assets/img/link_icon.png" alt="클립보드이미지" />
-								</a>
-							</div>
 						</div>
 					</div>
 				</div>
