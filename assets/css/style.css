@@ -21,16 +21,24 @@
 	font-weight: normal;
 	font-style: normal;
 }
+@font-face {
+	font-family: 'GangwonEdu_OTFBoldA';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff')
+		format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
 
 body {
 	width: 100vw;
 	height: 100vh;
 	background-color: var(--color-orange);
+	font-family: 'GangwonEdu_OTFBoldA', sans-serif;
 	font-size: var(--font-small);
 	background: url('../img/bg.png') center/cover no-repeat;
 }
 button {
-	width: 330px;
+	width: 320px;
 	height: 40px;
 	cursor: pointer;
 	padding: 0.2rem 0.8rem;
@@ -38,13 +46,13 @@ button {
 	border-radius: 10px;
 	color: var(--color-orange);
 	background: var(--color-light-grey);
+	font-family: 'GangwonEdu_OTFBoldA', sans-serif;
 }
 
 /* 레이아웃 */
-
-.container {
+#main {
 	width: 640px;
-	height: 70vh;
+	height: 70%;
 	margin: 0 auto;
 }
 
@@ -83,6 +91,9 @@ input[type='checkbox']:checked + label {
 /* Header */
 #header {
 	width: 640px;
+	height: 25%;
+	padding-top: 5%;
+	box-sizing: border-box;
 	margin: 0 auto;
 }
 
@@ -111,10 +122,11 @@ input[type='checkbox']:checked + label {
 }
 .cartoon-final p {
 	font-size: var(--font-small);
+	margin-bottom: 10%;
+	line-height: 1.6;
 }
 .cartoon-final span {
 	color: var(--color-orange);
-	margin-top: 12px;
 	font-weight: bold;
 }
 .cartoon__img-final {
@@ -122,7 +134,8 @@ input[type='checkbox']:checked + label {
 	width: 215px;
 	height: auto;
 	margin: 0 auto;
-	margin-top: 48px;
+	margin-top: 29%;
+	margin-bottom: 10%;
 	/* border-radius: 100%; */
 }
 
@@ -142,16 +155,20 @@ input[type='checkbox']:checked + label {
 	display: none;
 }
 .start__container {
-	height: 100%;
+	height: 70vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 .start__question {
-	flex-basis: 20%;
+	flex-basis: 15%;
+	padding-top: 5%;
+	box-sizing: border-box;
 }
 .start__answers {
 	flex-basis: 50%;
+	padding-top: 5%;
+	box-sizing: border-box;
 }
 .start__button {
 	transition: all 0.4s ease-in-out;
@@ -198,7 +215,7 @@ input[type='radio'].start__answers__input:checked + label {
 }
 .start__selected__img {
 	width: 160px;
-	margin-bottom: 46px;
+	margin-bottom: 15%;
 }
 
 /* Quest-question */
@@ -206,11 +223,11 @@ input[type='radio'].start__answers__input:checked + label {
 	display: none;
 }
 .questions {
-	height: 100%;
+	height: 70vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	/* justify-content: center; */
 }
 .question__container {
 	flex-basis: 20%;
@@ -219,8 +236,7 @@ input[type='radio'].start__answers__input:checked + label {
 .question__sequence {
 	display: flex;
 	align-items: center;
-	/* justify-content: center; */
-	margin-bottom: 40px;
+	margin-bottom: 8%;
 }
 .sequence__bar {
 	position: relative;
@@ -252,7 +268,7 @@ input[type='radio'].start__answers__input:checked + label {
 	height: auto;
 }
 .answer__container {
-	flex-basis: 50%;
+	flex-basis: 40%;
 }
 .answers__list {
 	display: flex;
@@ -266,23 +282,35 @@ input[type='radio'].start__answers__input:checked + label {
 	transition: all 0.4s ease-in-out;
 }
 
-/* result loading */
+/* loading */
 #loading {
-	position: relative;
-	margin: 0 auto;
 	display: none;
+	text-align: center;
+	position: relative;
 }
-.loading__title {
+/* .loading__title {
 	text-align: center;
 	color: var(--color-orange);
 	font-size: 16px;
+	margin-bottom: 10%;
+} */
+.loading__comment {
+	font-size: var(--font-micro);
+	padding-top: 5%;
+	margin-bottom: 2%;
+}
+.loading__explanation {
+	display: block;
+	font-size: var(--font-regular);
+	color: var(--color-orange);
+	margin-bottom: 5%;
 }
 .loading__image__container {
 	position: relative;
 	width: 225px;
 	height: 225px;
-	padding: 25px;
 	margin: 0 auto;
+	padding: 25px;
 	/* border: 1px solid var(--color-orange); */
 	border-radius: 100%;
 	background-color: var(--color-orange);
@@ -293,7 +321,6 @@ input[type='radio'].start__answers__input:checked + label {
 	left: 25px;
 	width: 225px;
 	height: 225px;
-	position: absolute;
 	/* top: 15px; */
 	/* left: 14px; */
 	animation: spin 5s linear infinite;
@@ -315,84 +342,97 @@ input[type='radio'].start__answers__input:checked + label {
 
 /* result_wrap */
 #result_wrap {
-	width: 300px;
-	height: 360px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 60vh;
 	margin: 0 auto;
-	padding: 20px 0px 20px 0px;
-	background: #fff;
-	position: relative;
 }
-#result_txt {
-	text-align: center;
-	font-size: 40px;
-	font-weight: bold;
-	color: #fd8e49;
-	margin: 0 auto;
+.result__title {
+	font-weight: normal;
+	font-size: var(--font-small);
+	margin-bottom: 12px;
 }
 #country_food {
-	width: 250px;
-	height: 250px;
+	width: 100%;
+	height: 100%;
 	margin: 0 auto;
 }
+#country_food p {
+	text-align: center;
+	font-weight: bold;
+	font-size: var(--font-regular);
+	color: var(--color-orange);
+}
 #country_food > img {
-	width: 250px;
-	height: 250px;
-	margin: 0 auto;
+	width: 240px;
+	height: 240px;
+	margin: 20px auto;
 	display: block;
 	object-fit: cover;
 }
+.result__btns {
+	display: flex;
+	flex-direction: column;
+}
 #btn_re {
-	width: 190px;
-	height: 40px;
-	text-align: center;
 	border: none;
-	border-radius: 5px;
-	background: #fd8e49;
-	color: #fff;
-	font-weight: bold;
-	position: absolute;
-	bottom: 80px;
-	left: 60px;
+	background: var(--color-orange);
+	color: var(--color-white);
+}
+.result__link {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 24px;
+}
+.result__link__title {
+	font-size: var(--font-small);
+	font-weight: normal;
+	margin-bottom: 12px;
+}
+.result__link__wrap {
+	display: flex;
+	justify-content: center;
+}
+.result__link__wrap p {
+	font-size: var(--font-micro);
+	text-align: center;
+}
+
+#clip-btn img {
+	display: block;
+	width: 48px;
+	height: 48px;
+	margin: 0 auto;
+	margin-bottom: 8px;
 }
 
 /* 카카오톡 API */
 #kakaotalk-sharing-btn {
-	position: absolute;
+	/* position: absolute;
 	bottom: 50px;
-	left: 100px;
+	left: 100px; */
+	margin-right: 18px;
 }
 #kakaotalk-sharing-btn img {
 	display: block;
-	width: 40px;
-	height: 40px;
-}
-.fb-share-button {
-	position: absolute;
-	bottom: -90px;
-	left: 200px;
+	width: 48px;
+	height: 48px;
+	margin: 0 auto;
+	margin-bottom: 8px;
 }
 .fb-share-button img {
 	display: block;
 	width: 40px;
 	height: 40px;
 }
-#clip-btn {
-	position: absolute;
-	bottom: 50px;
-	left: 150px;
-}
-#clip-btn img {
-	display: block;
-	width: 38px;
-	height: 38px;
-}
 
 /* footer */
 #footer {
 	width: 640px;
+	height: 5%;
 	margin: 0 auto;
-	position: relative;
-	bottom: -20px;
 	text-align: center;
 	color: var(--color-orange);
 	font-size: var(--font-micro);
