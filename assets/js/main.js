@@ -64,12 +64,13 @@ function nextStory() {
 //시작버튼을 클릭할 때 이벤트
 startButton.addEventListener('click', () => {
 	const positionList = document.getElementsByName('position_chk');
-	startRandomButton.style.display = 'block';
+
 	//아무 것도 선택하지 않았을 때 alert가 뜨고 다음 질문이 뜨지 않도록 함
 	if ([...positionList].filter((item) => item.checked).length === 0) {
 		alert('한 개 이상의 옵션을 선택하세요');
 		return;
 	}
+	startRandomButton.style.display = 'block';
 	selectPosition(positionList);
 });
 
@@ -351,7 +352,7 @@ function displayResultFood(resultArr) {
 	let randomIndex = Math.floor(Math.random() * resultArr.length);
 	let resultFood = resultArr[randomIndex];
 	document.getElementById('country_food').innerHTML =
-		`<p>${resultFood.name}</p>` +
+		`<p>'${resultFood.name}'</p>` +
 		`<img src="assets/img/food_img/${resultFood.src}.png" alt="음식이미지">`;
 	return resultArr;
 }
