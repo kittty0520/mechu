@@ -76,8 +76,11 @@ startButton.addEventListener('click', () => {
 
 //바로 랜덤추천결과 보여주기
 startRandomButton.addEventListener('click', () => {
-	closeAndOpen(start, result);
 	foodData.then((res) => displayResultFood(res));
+	closeAndOpen(start, loading);
+	setTimeout(() => {
+		closeAndOpen(loading, result);
+	}, 3000);
 });
 
 function selectPosition(positionList) {
