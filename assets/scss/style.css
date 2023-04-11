@@ -475,7 +475,25 @@ input[type=radio].start__answers__input:checked + label {
   font-size: 12px;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 768px) {
+  body {
+    background: none;
+  }
+  #header {
+    width: 100%;
+    padding-top: 20px;
+  }
+  #main {
+    width: 100%;
+  }
+  #footer {
+    width: 100%;
+  }
+  .start__answers {
+    text-align: center;
+  }
+}
+@media (max-width: 480px) {
   body {
     background-color: #ffffff;
   }
@@ -492,37 +510,28 @@ input[type=radio].start__answers__input:checked + label {
     height: 65px;
     line-height: 65px;
     margin-right: 20px;
-    margin-top: 10px;
+    margin-top: 20px;
     text-align: center;
   }
   /* Header */
   #header {
     width: 380px;
-    height: 25%;
-    padding-top: 40px;
-    box-sizing: border-box;
-    margin: 0 auto;
+    padding-top: 20px;
   }
   .header__img {
-    display: block;
     margin: 24px auto;
     width: 190px;
     height: 100px;
   }
   /* Story */
   .cartoon-final p {
-    font-size: 16px;
     margin-bottom: 7%;
     line-height: 1.6;
   }
   .cartoon__img-final {
-    display: block;
     width: 175px;
-    height: auto;
-    margin: 0 auto;
-    margin-top: 29%;
+    margin-top: 19%;
     margin-bottom: 10%;
-    /* border-radius: 100%; */
   }
   .cartoon__img {
     width: 295px;
@@ -532,32 +541,11 @@ input[type=radio].start__answers__input:checked + label {
     margin-top: 24px;
   }
   /* Start */
-  .start__container {
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .start__question {
-    flex-basis: 15%;
-    padding-top: 5%;
-    box-sizing: border-box;
-  }
   .start__answers {
     width: 270px;
-    flex-basis: 50%;
-    padding-top: 5%;
-    box-sizing: border-box;
-  }
-  .start__button {
-    transition: all 0.4s ease-in-out;
-  }
-  .start__button--random {
-    display: none;
-  }
-  .start__selected__img {
-    width: 160px;
-    margin-bottom: 15%;
+    padding-top: 0;
+    padding-bottom: 7%;
+    text-align: center;
   }
   input.start__answers__input + label {
     line-height: 200px;
@@ -567,141 +555,36 @@ input[type=radio].start__answers__input:checked + label {
     height: 60vh;
   }
   .question__container {
-    flex-basis: 20%;
-    text-align: center;
-  }
-  .question__sequence {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8%;
-  }
-  .sequence__bar {
-    position: relative;
-    width: 200px;
-    height: 10px;
-    background-color: #989797;
-    border-radius: 5px;
-    margin-left: 12px;
-  }
-  .sequence__subBar {
-    position: absolute;
-    z-index: 5;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 10px;
-    background-color: #78c030;
-    border-radius: 5px;
-  }
-  .sequence__bar__img {
-    position: absolute;
-    z-index: 10;
-    top: -12px;
-    left: 0px;
-    width: 24px;
-    height: auto;
+    flex-basis: 15%;
   }
   .answer__container {
     width: 310px;
-    flex-basis: 40%;
+    flex-basis: 50%;
   }
   .answer__list {
-    flex-basis: 50%;
-    padding-top: 5%;
-    box-sizing: border-box;
+    padding-top: 0;
+    padding-bottom: 5%;
+    justify-content: center;
   }
-  /* loading */
-  .loading__comment {
-    font-size: 12px;
-    padding-top: 5%;
-    margin-bottom: 2%;
-  }
-  .loading__explanation {
-    display: block;
-    font-size: 24px;
-    color: #ff924d;
-    margin-bottom: 5%;
-  }
-  .loading__image__container {
-    position: relative;
-    width: 225px;
-    height: 225px;
-    margin: 0 auto;
-    padding: 25px;
-    /* border: 1px solid var(--color-orange); */
-    border-radius: 100%;
-    background-color: #ff924d;
-  }
-  .loading__image {
-    position: absolute;
-    top: 25px;
-    left: 25px;
-    width: 225px;
-    height: 225px;
+  .answer__label {
+    margin-top: 5%;
   }
   /* Result */
-  #result_wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 60vh;
-    margin: 0 auto;
-  }
-  /* result_wrap */
   .result__title {
     margin-bottom: 12px;
   }
-  .result__btns {
-    display: flex;
-    flex-direction: column;
-  }
-  .result__link {
-    margin-top: 24px;
-  }
-  .result__link__title {
-    margin-bottom: 12px;
-  }
-  .result__link__wrap {
-    display: flex;
-    justify-content: center;
+  #country_food p {
+    margin-top: 20px;
   }
   #country_food {
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
+    min-height: 246px;
   }
   #country_food > img {
-    width: 240px;
-    height: 240px;
+    width: 180px;
+    height: 180px;
     margin: 20px auto;
-    display: block;
-    -o-object-fit: cover;
-       object-fit: cover;
   }
-  #clip-btn img {
-    display: block;
-    width: 48px;
-    height: 48px;
-    margin: 0 auto;
-    margin-bottom: 8px;
-  }
-  /* 카카오톡 API */
-  #kakaotalk-sharing-btn {
-    /* position: absolute;
-          bottom: 50px;
-          left: 100px; */
-    margin-right: 18px;
-  }
-  #kakaotalk-sharing-btn img {
-    display: block;
-    width: 48px;
-    height: 48px;
-    margin: 0 auto;
-    margin-bottom: 8px;
-  }
-  .fb-share-button img {
-    display: block;
-    width: 40px;
-    height: 40px;
+  .result__btns {
+    margin-bottom: 10%;
   }
 }/*# sourceMappingURL=style.css.map */
