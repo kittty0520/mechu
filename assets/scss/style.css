@@ -379,7 +379,7 @@ input[type=radio].start__answers__input:checked + label {
   font-size: 12px;
 }
 
-@media (min-width: 421px) {
+@media (max-width: 421px) {
   body {
     width: 100vw;
     height: 100vh;
