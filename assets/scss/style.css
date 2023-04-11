@@ -74,6 +74,12 @@ a:hover {
     font-size: 16px;
     background: url("../img/bg.png") center/cover no-repeat;
   }
+  /* 레이아웃 */
+  #main {
+    width: 640px;
+    height: 70%;
+    margin: 0 auto;
+  }
   button {
     width: 300px;
     height: 40px;
@@ -418,8 +424,8 @@ a:hover {
   /* 카카오톡 API */
   #kakaotalk-sharing-btn {
     /* position: absolute;
-    bottom: 50px;
-    left: 100px; */
+          bottom: 50px;
+          left: 100px; */
     margin-right: 18px;
   }
   #kakaotalk-sharing-btn img {
@@ -433,6 +439,15 @@ a:hover {
     display: block;
     width: 40px;
     height: 40px;
+  }
+  /* footer */
+  #footer {
+    width: 640px;
+    height: 5%;
+    margin: 0 auto;
+    text-align: center;
+    color: #ff924d;
+    font-size: 12px;
   }
 }
 @media (max-width: 420px) {
@@ -790,8 +805,8 @@ a:hover {
   /* 카카오톡 API */
   #kakaotalk-sharing-btn {
     /* position: absolute;
-    bottom: 50px;
-    left: 100px; */
+          bottom: 50px;
+          left: 100px; */
     margin-right: 18px;
   }
   #kakaotalk-sharing-btn img {
@@ -805,5 +820,14 @@ a:hover {
     display: block;
     width: 40px;
     height: 40px;
+  }
+  /* footer */
+  #footer {
+    width: 640px;
+    height: 5%;
+    margin: 0 auto;
+    text-align: center;
+    color: #ff924d;
+    font-size: 12px;
   }
 }/*# sourceMappingURL=style.css.map */
