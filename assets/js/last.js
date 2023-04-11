@@ -1,38 +1,56 @@
-/* 음식 이미지를 랜덤으로 보여주는 함수
-function displayRandomFood() {
-	let randomIndex = Math.floor(Math.random() * foodtype.length);
-	let randomFood = foodtype[randomIndex];
-	document.getElementById('foodtype').innerHTML =
-		'<p>' +
-		randomFood.name +
-		'</p>' +
-		"<img src='" +
-		randomFood.image +
-		"' alt='" +
-		randomFood.name +
-		" 이미지'>";
-}
-document.getElementById('btn').addEventListener('click', displayRandomFood);
-*/
+// /* 새로 생성한 배열의 인덱스를 보여줌03*/
+// let indexArr = [];
 
-/* 클릭시 필터링된 음식 이미지를 보여주는 함수 */
-function displayResultFood(){
-    let filterFood = check_data.countryFood;
-    for (let key in check_data) {
-        if (key !== "countryFood" && check_data[key].length > 0){
-            filterFood = check_data[key].filter(function(food){
-                return filterFood.includes(food);
-            });
-        }}
-    let randomIndex = Math.floor(Math.random() * filterFood.length);
-    let resultFood = filterFood[randomIndex];
-    document.getElementById("country_food").innerHTML =
-    "<p>" + resultFood.name + "</p>" +
-    "<img src='" + resultFood.image + "' alt='음식이미지'>";
-}
+// function shuffleIndex(resultArr) {
+// 	// 데이터 배열을 랜덤하게 섞음
+// 	resultArr.sort(() => Math.random() - 0.5);
+// 	// 인덱스 순서를 부여하여 새로운 배열을 생성
+// 	indexArr = resultArr.map((value, index) => [index, value]);
+// }
 
-document.getElementById("btn_re").addEventListener("click", displayResultFood);
+// function displayResultFood() {
+// 	if (indexArr.length === 0) {
+// 		// 결과값이 없는 경우 메시지를 표시
+// 		document.getElementById(
+// 			'country_food'
+// 		).innerHTML = `<p>결과값이 없습니다.</p>`;
+// 		// 다시보기 버튼을 숨김
+// 		document.getElementById('btn_re').style.display = 'none';
+// 		return null;
+// 	}
 
+// 	// 첫 번째 인덱스의 데이터를 가져와서 출력(shift로 중복제거)
+// 	const [index, resultFood] = indexArr.shift();
+// 	document.getElementById('country_food').innerHTML =
+// 		`<p>${resultFood.name}</p>` +
+// 		`<img src="assets/img/food_img/${resultFood.src}.png" alt="음식이미지">`;
+
+// 	// if (indexArr.length === 0) {
+// 	// 	// 인덱스가 다 출력된 경우 다시보기 버튼을 숨김
+// 	// 	document.getElementById('btn_re').style.display = 'none';
+// 	// } else {
+// 	// 	// 다음 인덱스가 남아있는 경우 다시보기 버튼을 활성화
+// 	// 	document.getElementById('btn_re').style.display = 'block';
+// 	// }
+
+// 	return null;
+// }
+
+// function restart() {
+// 	// 결과값을 저장한 배열을 초기화하지 않고, 인덱스 배열만 초기화함
+// 	indexArr = [];
+// 	document.getElementById('country_food').innerHTML = '';
+// 	shuffleIndex(resultArr);
+// 	displayResultFood();
+// }
+
+// shuffleIndex(resultArr);
+// displayResultFood();
+
+// // 다시보기 버튼을 클릭하면 restart() 함수를 실행하여 결과값을 다시 출력할 수 있도록 함
+// document.getElementById('btn_re').addEventListener('click', restart);
+
+//****************************공유하기****************************
 /* 카카오톡 공유하기*/
 Kakao.init('0eaa5ffe9b60880336267d180d93bed0'); // 사용하려는 앱의 JavaScript 키 입력
 Kakao.Share.createDefaultButton({

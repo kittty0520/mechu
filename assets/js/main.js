@@ -46,6 +46,9 @@ let btn_count = 0;
 // input의 Name
 let inputName = '';
 
+//필터된 배열을 받는 변수
+let foodResult = [];
+
 // 스토리
 storyBtn.addEventListener('click', nextStory);
 
@@ -75,7 +78,9 @@ startButton.addEventListener('click', () => {
 
 //바로 랜덤추천결과 보여주기
 startRandomButton.addEventListener('click', () => {
-	foodData.then((res) => displayResultFood(res));
+	foodData
+		.then((res) => shuffleIndex(res))
+		.then((data) => displayResultFood(data));
 	closeAndOpen(start, loading);
 	setTimeout(() => {
 		closeAndOpen(loading, result);
@@ -113,14 +118,10 @@ function selectPosition(positionList) {
 		}
 	});
 }
-//필터된 배열을 받는 변수
-let foodResult = [];
 
 //다음 버튼을 누르면 내부 함수가 실행되도록 함
 nextButton.addEventListener('click', () => {
 	changeButton(nextButton, false);
-	// nextButton.style.background = '$grey';
-	// nextButton.style.color = '$orange';
 	getInputName();
 	const answerArray = document.getElementsByName(inputName);
 
@@ -136,13 +137,14 @@ nextButton.addEventListener('click', () => {
 	if (ANSWER_NUM === 5) {
 		foodData
 			.then((res) => filterArray(res, getValue))
-			.then((data) => displayResultFood(data))
-			.then((result) => getResultFood(result));
+			.then((data) => shuffleIndex(data))
+			.then((result) => displayResultFood(result));
 	}
 
 	nextQuestion();
 });
 
+//배열에 담기만 하는 함수 =>필요 없음
 //필터된 배열을 받아서 Foodresult에 넣는 함수
 function getResultFood(arr) {
 	foodResult = arr;
@@ -359,12 +361,49 @@ function categorize(valueName, arr, select) {
 
 //배열은 그대로 두고 랜덤한 index를 고르거나
 //혹은 배열을 랜덤하게 섞은 후 첫번째 인덱스 값을 보여주고 뒤섞인 배열을 반환함
-//"src": "ko_02"
-function displayResultFood(resultArr) {
-	let randomIndex = Math.floor(Math.random() * resultArr.length);
-	let resultFood = resultArr[randomIndex];
-	document.getElementById('country_food').innerHTML =
-		`<p>'${resultFood.name}'</p>` +
-		`<img src="assets/img/food_img/${resultFood.src}.png" alt="음식이미지">`;
-	return resultArr;
+
+function shuffleIndex(resultArr) {
+	// 데이터 배열을 랜덤하게 섞고 반환
+	return resultArr.sort(() => Math.random() - 0.5);
+	// 인덱스 순서를 부여하여 새로운 배열을 생성
+	// foodResult = resultArr.map((value, index) => [index, value]);
 }
+
+function displayResultFood(arr) {
+	if (arr.length == 0) {
+		// 결과값이 없는 경우 메시지를 표시
+		document.getElementById(
+			'country_food'
+		).innerHTML = `<p>결과값이 없습니다.</p>`;
+		// 다시보기 버튼을 숨김
+		document.getElementById('btn_re').style.display = 'none';
+		return;
+	}
+
+	// 첫 번째 인덱스의 데이터를 가져와서 출력(shift로 중복제거)
+	// const [index, resultFood] = indexArr.shift();
+	const resultFood = arr.shift();
+	document.getElementById('country_food').innerHTML =
+		`<p>${resultFood.name}</p>` +
+		`<img src="assets/img/food_img/${resultFood.src}.png" alt="음식이미지">`;
+	console.log(arr);
+	foodResult = arr;
+	// if (indexArr.length === 0) {
+	// 	// 인덱스가 다 출력된 경우 다시보기 버튼을 숨김
+	// 	document.getElementById('btn_re').style.display = 'none';
+	// } else {
+	// 	// 다음 인덱스가 남아있는 경우 다시보기 버튼을 활성화
+	// 	document.getElementById('btn_re').style.display = 'block';
+	// }
+}
+
+function restart() {
+	// 결과값을 저장한 배열을 초기화하지 않고, 인덱스 배열만 초기화함
+	// indexArr = [];
+	document.getElementById('country_food').innerHTML = '';
+	// shuffleIndex(foodResult);
+	displayResultFood(foodResult);
+}
+
+// 다시보기 버튼을 클릭하면 restart() 함수를 실행하여 결과값을 다시 출력할 수 있도록 함
+document.getElementById('btn_re').addEventListener('click', restart);
