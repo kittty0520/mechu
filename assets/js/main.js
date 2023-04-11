@@ -18,17 +18,18 @@ const startButton = document.querySelector('.start__button');
 const startRandomButton = document.querySelector('.start__button--random');
 
 const quest = document.querySelector('#quest');
-const questionField = document.querySelector('.questions');
 const question = document.querySelector('.question__container');
 
 const sequenceNumber = document.querySelector('.sequence__counter__number');
-const sequenceBar = document.querySelector('.sequence__bar');
 const sequenceSubBar = document.querySelector('.sequence__subBar');
+const sequenceCharacter = document.querySelector('.sequence__character');
 const answer = document.querySelector('.answers__list');
 const nextButton = document.querySelector('.answer__button');
 
 const loading = document.querySelector('#loading');
 const result = document.querySelector('#result');
+const countryFood = document.querySelector('#country_food');
+const newResultBtn = document.querySelector('#btn_re');
 
 let STORY_ORDER = 0;
 let QUESTION_NUM = 0;
@@ -144,13 +145,6 @@ nextButton.addEventListener('click', () => {
 	nextQuestion();
 });
 
-//배열에 담기만 하는 함수 =>필요 없음
-//필터된 배열을 받아서 Foodresult에 넣는 함수
-function getResultFood(arr) {
-	foodResult = arr;
-	console.log(foodResult);
-}
-
 // 모든 질문이 끝나면 로딩창을 3초동안만 보여주다가 결과창을 띄움.
 function endQuestion() {
 	closeAndOpen(quest, loading);
@@ -224,13 +218,14 @@ function nextQuestion() {
 //질문 순서를 나타내고 순서에 따른 캐릭터의 위치를 바꾸는 함수
 function sequenceSet() {
 	if (ANSWER_NUM === 1) {
+		sequenceCharacter.innerHTML = '';
 		const position = localStorage.getItem('position');
 		console.log(position);
 		const positionImg = document.createElement('img');
 		positionImg.setAttribute('class', 'sequence__bar__img');
 		positionImg.setAttribute('src', `assets/img/${position}.png`);
 		positionImg.setAttribute('alt', position);
-		sequenceBar.appendChild(positionImg);
+		sequenceCharacter.appendChild(positionImg);
 	}
 	const sequenceImage = document.querySelector('.sequence__bar__img');
 
@@ -362,48 +357,43 @@ function categorize(valueName, arr, select) {
 //배열은 그대로 두고 랜덤한 index를 고르거나
 //혹은 배열을 랜덤하게 섞은 후 첫번째 인덱스 값을 보여주고 뒤섞인 배열을 반환함
 
+// 다시보기 버튼을 클릭하면 restart() 함수를 실행하여 결과값을 다시 출력할 수 있도록 함
+newResultBtn.addEventListener('click', () => {
+	if (newResultBtn.textContent === '테스트 돌아가기') {
+		closeAndOpen(result, quest);
+		newResultBtn.textContent = '다른 결과보기';
+		nextQuestion();
+		return;
+	}
+	restart();
+});
+
 function shuffleIndex(resultArr) {
 	// 데이터 배열을 랜덤하게 섞고 반환
 	return resultArr.sort(() => Math.random() - 0.5);
-	// 인덱스 순서를 부여하여 새로운 배열을 생성
-	// foodResult = resultArr.map((value, index) => [index, value]);
 }
 
 function displayResultFood(arr) {
+	// 결과값이 없는 경우 메시지를 표시하고 다시 선택하기 버튼 띄움...
 	if (arr.length == 0) {
-		// 결과값이 없는 경우 메시지를 표시
-		document.getElementById(
-			'country_food'
-		).innerHTML = `<p>결과값이 없습니다.</p>`;
-		// 다시보기 버튼을 숨김
-		document.getElementById('btn_re').style.display = 'none';
+		countryFood.innerHTML = `<p>더이상 추천해드릴 음식이 없어요.</p>`;
+		// 다른 결과보기 버튼을 숨김
+		newResultBtn.textContent = '테스트 돌아가기';
+		// setBackButton();
 		return;
 	}
 
 	// 첫 번째 인덱스의 데이터를 가져와서 출력(shift로 중복제거)
-	// const [index, resultFood] = indexArr.shift();
 	const resultFood = arr.shift();
-	document.getElementById('country_food').innerHTML =
+	countryFood.innerHTML =
 		`<p>${resultFood.name}</p>` +
 		`<img src="assets/img/food_img/${resultFood.src}.png" alt="음식이미지">`;
 	console.log(arr);
 	foodResult = arr;
-	// if (indexArr.length === 0) {
-	// 	// 인덱스가 다 출력된 경우 다시보기 버튼을 숨김
-	// 	document.getElementById('btn_re').style.display = 'none';
-	// } else {
-	// 	// 다음 인덱스가 남아있는 경우 다시보기 버튼을 활성화
-	// 	document.getElementById('btn_re').style.display = 'block';
-	// }
 }
 
 function restart() {
 	// 결과값을 저장한 배열을 초기화하지 않고, 인덱스 배열만 초기화함
-	// indexArr = [];
-	document.getElementById('country_food').innerHTML = '';
-	// shuffleIndex(foodResult);
+	countryFood.innerHTML = '';
 	displayResultFood(foodResult);
 }
-
-// 다시보기 버튼을 클릭하면 restart() 함수를 실행하여 결과값을 다시 출력할 수 있도록 함
-document.getElementById('btn_re').addEventListener('click', restart);
