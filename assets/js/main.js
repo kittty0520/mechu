@@ -23,7 +23,7 @@ const question = document.querySelector('.question__container');
 const sequenceNumber = document.querySelector('.sequence__counter__number');
 const sequenceSubBar = document.querySelector('.sequence__subBar');
 const sequenceCharacter = document.querySelector('.sequence__character');
-const answer = document.querySelector('.answers__list');
+const answer = document.querySelector('.answer__list');
 const nextButton = document.querySelector('.answer__button');
 
 const loading = document.querySelector('#loading');
