@@ -28,7 +28,6 @@ const answer = document.querySelector('.answers__list');
 const nextButton = document.querySelector('.answer__button');
 
 const loading = document.querySelector('#loading');
-
 const result = document.querySelector('#result');
 
 let STORY_ORDER = 0;
@@ -95,8 +94,8 @@ function selectPosition(positionList) {
 
 	//버튼의 text와 색을 바꿈
 	startButton.textContent = '시작하기';
-	startButton.style.color = 'var(--color-white)';
-	startButton.style.background = 'var(--color-orange)';
+	startButton.style.color = '#ffffff';
+	startButton.style.background = '#ff924d';
 
 	[...positionList].map((position) => {
 		if (position.checked) {
@@ -119,8 +118,9 @@ let foodResult = [];
 
 //다음 버튼을 누르면 내부 함수가 실행되도록 함
 nextButton.addEventListener('click', () => {
-	nextButton.style.background = 'var(--color-light-grey)';
-	nextButton.style.color = 'var(--color-orange)';
+	changeButton(nextButton, false);
+	// nextButton.style.background = '$grey';
+	// nextButton.style.color = '$orange';
 	getInputName();
 	const answerArray = document.getElementsByName(inputName);
 
@@ -287,11 +287,11 @@ document.addEventListener('click', (e) => {
 
 function changeButton(button, active) {
 	if (active === true) {
-		button.style.background = 'var(--color-orange)';
-		button.style.color = 'var(--color-white)';
+		button.style.background = '#ff924d';
+		button.style.color = '#ffffff';
 	} else {
-		button.style.background = 'var(--color-grey)';
-		button.style.color = 'var(--color-orange)';
+		button.style.background = '#eee';
+		button.style.color = '#ff924d';
 	}
 }
 //*******************필터영역************************
