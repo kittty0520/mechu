@@ -113,7 +113,6 @@ input[type=checkbox] + label {
   border-radius: 100%;
   border: 1px solid #ff924d;
   transition: all 0.3s;
-  /* vertical-align: middle; */
 }
 
 input[type=radio] + label:nth-last-of-type(1),
@@ -181,7 +180,6 @@ input[type=checkbox]:checked + label {
   margin: 0 auto;
   margin-top: 29%;
   margin-bottom: 10%;
-  /* border-radius: 100%; */
 }
 .cartoon__img {
   display: block;
@@ -269,7 +267,6 @@ input[type=radio].start__answers__input:checked + label {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
 }
 
 .question__container {
@@ -353,7 +350,6 @@ input[type=radio].start__answers__input:checked + label {
   height: 225px;
   margin: 0 auto;
   padding: 25px;
-  /* border: 1px solid var(--color-orange); */
   border-radius: 100%;
   background-color: #ff924d;
 }
@@ -454,9 +450,6 @@ input[type=radio].start__answers__input:checked + label {
 
 /* 카카오톡 API */
 #kakaotalk-sharing-btn {
-  /* position: absolute;
-         bottom: 50px;
-         left: 100px; */
   margin-right: 18px;
 }
 #kakaotalk-sharing-btn img {
