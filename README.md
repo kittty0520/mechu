@@ -162,16 +162,18 @@
 
 </br>
 
-|<p align="center">회원가입</p>|<p align="center">로그인</p>|
+|<p align="center">랜덤 추천</p>|<p align="center">맞춤추천</p>|
 |------|------|
-|<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147063248-fb45f859-9e1a-4411-97d6-ca01b8683dc7.gif" width=60%/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147056861-8213b6f0-7643-4de4-a14e-05219d4afd86.gif" width=60%/></p> |
+|<p align="center"><img src="https://user-images.githubusercontent.com/.gif" width=60%/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/.gif" width=60%/></p> |
 
-|<p align="center">회원정보 수정</p>|<p align="center">회원정보 수정_이미지</p>|
+|<p align="center">재추천</p>|<p align="center">테스트 돌아가기</p>|
 |------|------|
-|<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147057497-91ff8b68-5f4f-41a7-b697-1272d5fe137a.gif" width=60%/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147057510-2b428dc2-704c-44e3-908a-62376086094b.gif" width=60%/></p> |
-
+|<p align="center"><img src="https://user-images.githubusercontent.com/.gif" width=60%/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/.gif" width=60%/></p> |
 
 <br>
+
+### 기능 구현 영상 <br>
+![전체기능](https://user-images.githubusercontent.com/.gif) <br>
 
 ## ✔ 코드설명
 ### ⭐ 노션 링크(상세설명)
