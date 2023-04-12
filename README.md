@@ -78,11 +78,13 @@
  
 <br>
 
-## ✔ 스택
+## ✔ 스택(Stacks)
 
-### 바닐라 자바스크립트로 완성!!!
+### : 프로젝트를 바닐라 자바스크립트로 완성
 
 <br>
+
+### Environment&Development
 
 ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=GitHub&logoColor=white)
 ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-007ACC?style=for-the-badge&logo=visual%20studio&logoColor=white)
@@ -90,6 +92,8 @@
 ![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)
 
 <br>
+
+### Config&Communication
 
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 ![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
