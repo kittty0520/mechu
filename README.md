@@ -2,6 +2,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 도메인(배포)
 =======
 <br><br>
@@ -33,6 +34,8 @@
  <br>  
  
 =======
+=======
+>>>>>>> bab9adc3bc0685d9388afba254c50237095b0d89
 <br><br>
 <div align="center">
 <img width="329" alt="image" src="https://user-images.githubusercontent.com/119913471/231360601-cff9578f-46e2-4a0a-a402-6daced3ad5e5.png">
@@ -45,10 +48,16 @@
 
 <br><br>
 
+<<<<<<< HEAD
 >>>>>>> 4eeb49e171a0e5c87672b596f5d726a096eb8768
  <div align = "center">
  
  <table>
+=======
+ <div align = "center">
+ 
+ <table width="480px">
+>>>>>>> bab9adc3bc0685d9388afba254c50237095b0d89
 
   <tr align="center">
     <td><a href="https://github.com/kittty0520">이지영(@kittty0520)</a></td>
@@ -58,6 +67,7 @@
   </tr>
 
   <tr align="center">
+<<<<<<< HEAD
 <<<<<<< HEAD
     <td><img src="https://user-images.githubusercontent.com/119913471/231390504-4a4aa67f-de3f-4bc2-9ce8-87939f951933.png" width="100px"/></td>
     <td><img src="https://user-images.githubusercontent.com/119913471/231390489-8bf61734-d6c8-4bad-a2fe-0f07f41d95e7.png"  width="100px"/></td>
@@ -83,10 +93,24 @@
   <td><ul><li>팀원</li><li>Design 기획, 개발</li></ul></td>
   <td><ul><li>팀원</li><li>UI, Design</li></ul></td>
 >>>>>>> 4eeb49e171a0e5c87672b596f5d726a096eb8768
+=======
+    <td><img src="https://user-images.githubusercontent.com/119913471/231390504-4a4aa67f-de3f-4bc2-9ce8-87939f951933.png" align="center" /></td>
+    <td><img src="https://user-images.githubusercontent.com/119913471/231390489-8bf61734-d6c8-4bad-a2fe-0f07f41d95e7.png" align="center"/></td>
+    <td><img src="https://user-images.githubusercontent.com/119913471/231390503-516d69a1-54af-4e36-b951-7db9b93569c1.png" align="center"/></td>
+    <td><img src="https://user-images.githubusercontent.com/119913471/231403186-4eef34be-facd-41e3-9668-b96ee27f3b95.png" align="center"/></td>
+  </tr>
+
+  <tr align="left">
+  <td><ul><li>팀장</li><li> 개발 총괄책임 </li></ul></td>
+  <td><ul><li>팀원</li><li> 개발, 세부기획 </li></ul></td>
+  <td><ul><li>팀원</li><li> 개발, 디자인기획 </li></ul></td>
+  <td><ul><li>팀원</li><li> 메인 디자이너 </li></ul></td>
+>>>>>>> bab9adc3bc0685d9388afba254c50237095b0d89
   </tr>
 
 </table>
    
+<<<<<<< HEAD
 <<<<<<< HEAD
 </div>   
 
@@ -94,6 +118,8 @@
 
 ### ✔ 디렉토리 구조
 =======
+=======
+>>>>>>> bab9adc3bc0685d9388afba254c50237095b0d89
 </div>  
 
 <br><br>
@@ -153,15 +179,25 @@
 <br>
 
 ### ⭐ 랜덤추천 바로가기
+<<<<<<< HEAD
 * 
 *
+=======
+
+* 데이터 값을 랜덤함수를 통해 반환
+>>>>>>> bab9adc3bc0685d9388afba254c50237095b0d89
 <br>
 
 ### ⭐ 데이터 필터링을 통한 맞춤추천
 
+<<<<<<< HEAD
 * 사용자가 누른 선택사항들을 필터함수로 배열에 누적시켜준다
 
 * 음식 데이터 JSON 파일을 Promise 함수로 불러와서<br> 배열안에 누적된 값과 동일한 음식 데이터를 추출한다
+=======
+* JSON 파일을 
+* 데이터 값을 받아 사용자 선택에 따른 필터링을 통해 해당 값을 누적
+>>>>>>> bab9adc3bc0685d9388afba254c50237095b0d89
 
 <br>
 
@@ -171,7 +207,10 @@
 <br>
 
 ## ✔ 디렉토리 구조
+<<<<<<< HEAD
 >>>>>>> 4eeb49e171a0e5c87672b596f5d726a096eb8768
+=======
+>>>>>>> bab9adc3bc0685d9388afba254c50237095b0d89
 
 <br>
    
@@ -193,6 +232,7 @@
     └─test
 
    ````
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 # 📝 2. 프로젝트 정보
@@ -227,6 +267,8 @@
 http://mechu.dothome.co.kr/
 <br><br>
 =======
+=======
+>>>>>>> bab9adc3bc0685d9388afba254c50237095b0d89
 <br><br> 
 
 ---
@@ -249,12 +291,18 @@ http://mechu.dothome.co.kr/
 
 ### 도메인 http://mechu.dothome.co.kr/
 <br>
+<<<<<<< HEAD
 >>>>>>> 4eeb49e171a0e5c87672b596f5d726a096eb8768
+=======
+>>>>>>> bab9adc3bc0685d9388afba254c50237095b0d89
 <img width="329" alt="image" src="https://user-images.githubusercontent.com/119913471/231413106-794e0044-d761-43c1-9c30-e4541fe28863.jpg">
 </div>
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 4eeb49e171a0e5c87672b596f5d726a096eb8768
+=======
+>>>>>>> bab9adc3bc0685d9388afba254c50237095b0d89
