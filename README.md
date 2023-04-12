@@ -94,6 +94,13 @@
 
 
 # 5. 외부리소스 
+
+<div align="center">
 <br>
 도메인
 http://mechu.dothome.co.kr/
+<br><br>
+<img width="329" alt="image" src="https://user-images.githubusercontent.com/119913471/231413106-794e0044-d761-43c1-9c30-e4541fe28863.jpg">
+</div>
+
+
