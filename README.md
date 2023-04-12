@@ -178,17 +178,6 @@
 |------|------|
 |<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147057874-2d571f01-83b0-4006-a4f0-e5a171245d0b.gif" width=60%/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147057902-5740b63d-f916-4647-8ff3-3b71562e30f5.gif" width=60%/></p> |
 
-|<p align="center">루틴, 미션 삭제<p>| <p align="center">루틴 진행<p>|
-|------|------|
-| <p align="center"><img src="https://user-images.githubusercontent.com/85148549/147058496-d293beee-f983-4cb8-82c1-8f373e0cf240.gif" width=60%/></p> | <p align="center"><img src="https://user-images.githubusercontent.com/85148549/147058483-f5965a24-0ae0-459f-b9ff-ed2dd6378f3b.gif" width=60%/></p> |
-
-|<p align="center">커뮤니티 포스팅 가져오기</p>|<p align="center">나의 루틴 포스팅 하기</p>|
-|------|------|
-|<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147063260-c8b51dea-e3e3-408f-9237-93876f29b344.gif" width=60%/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147063279-9a7fd0ed-c148-48f6-8521-ac12e1d6b0f3.gif" width=60%/></p> |
-
-|<p align="center">댓글 작성하기</p>|<p align="center">포스팅, 댓글 좋아요</p>|
-|------|------|
-|<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147064180-81f11ee4-12bf-4352-b66f-314922fccc26.gif" width=60%/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147064248-7fdbb41f-b04b-43d6-8336-4cfdb8157a14.gif" width=60%/></p> |
 
 <br>
 
