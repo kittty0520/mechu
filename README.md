@@ -14,7 +14,7 @@
 
  <div align = "center">
  
- <table>
+ <table width="480px">
 
   <tr align="center">
     <td><a href="https://github.com/kittty0520">이지영(@kittty0520)</a></td>
@@ -24,17 +24,17 @@
   </tr>
 
   <tr align="center">
-    <td><img src="https://user-images.githubusercontent.com/119913471/231390504-4a4aa67f-de3f-4bc2-9ce8-87939f951933.png" width="64px" align="center" /></td>
-    <td><img src="https://user-images.githubusercontent.com/119913471/231390489-8bf61734-d6c8-4bad-a2fe-0f07f41d95e7.png"  width="64px" align="center"/></td>
-    <td><img src="https://user-images.githubusercontent.com/119913471/231390503-516d69a1-54af-4e36-b951-7db9b93569c1.png" width="64px" align="center"/></td>
-    <td><img src="https://user-images.githubusercontent.com/119913471/231403186-4eef34be-facd-41e3-9668-b96ee27f3b95.png" width="64px" align="center"/></td>
+    <td><img src="https://user-images.githubusercontent.com/119913471/231390504-4a4aa67f-de3f-4bc2-9ce8-87939f951933.png" align="center" /></td>
+    <td><img src="https://user-images.githubusercontent.com/119913471/231390489-8bf61734-d6c8-4bad-a2fe-0f07f41d95e7.png" align="center"/></td>
+    <td><img src="https://user-images.githubusercontent.com/119913471/231390503-516d69a1-54af-4e36-b951-7db9b93569c1.png" align="center"/></td>
+    <td><img src="https://user-images.githubusercontent.com/119913471/231403186-4eef34be-facd-41e3-9668-b96ee27f3b95.png" align="center"/></td>
   </tr>
 
-  <tr>
-  <td><ul><li>팀장</li><li>총괄 기획 및 개발</li></ul></td>
-  <td><ul><li>팀원</li><li>아이디어 기획, 개발</li></ul></td>
-  <td><ul><li>팀원</li><li>Design 기획, 개발</li></ul></td>
-  <td><ul><li>팀원</li><li>UI, Design</li></ul></td>
+  <tr align="left">
+  <td><ul><li>팀장</li><li> 개발 총괄책임 </li></ul></td>
+  <td><ul><li>팀원</li><li> 개발, 세부기획 </li></ul></td>
+  <td><ul><li>팀원</li><li> 개발, 디자인기획 </li></ul></td>
+  <td><ul><li>팀원</li><li> 메인 디자이너 </li></ul></td>
   </tr>
 
 </table>
