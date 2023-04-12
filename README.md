@@ -24,17 +24,17 @@
   </tr>
 
   <tr align="center">
-    <td><img src="https://user-images.githubusercontent.com/119913471/231390504-4a4aa67f-de3f-4bc2-9ce8-87939f951933.png" width="100px"/></td>
-    <td><img src="https://user-images.githubusercontent.com/119913471/231390489-8bf61734-d6c8-4bad-a2fe-0f07f41d95e7.png"  width="100px"/></td>
-    <td><img src="https://user-images.githubusercontent.com/119913471/231390503-516d69a1-54af-4e36-b951-7db9b93569c1.png" width="100px"/></td>
-    <td><img src="https://user-images.githubusercontent.com/119913471/231403186-4eef34be-facd-41e3-9668-b96ee27f3b95.png" width="100px"/></td>
+    <td><img src="https://user-images.githubusercontent.com/119913471/231390504-4a4aa67f-de3f-4bc2-9ce8-87939f951933.png" width="64px" align="center" /></td>
+    <td><img src="https://user-images.githubusercontent.com/119913471/231390489-8bf61734-d6c8-4bad-a2fe-0f07f41d95e7.png"  width="64px" align="center"/></td>
+    <td><img src="https://user-images.githubusercontent.com/119913471/231390503-516d69a1-54af-4e36-b951-7db9b93569c1.png" width="64px" align="center"/></td>
+    <td><img src="https://user-images.githubusercontent.com/119913471/231403186-4eef34be-facd-41e3-9668-b96ee27f3b95.png" width="64px" align="center"/></td>
   </tr>
 
   <tr>
-  <td><ul><li>팀장</li><li>총괄 기획 및 개발</li><li> 역할 공란 </li></ul></td>
-  <td><ul><li>팀원</li><li>아이디어 기획, 개발</li><li> 역할 공란 </li></ul></td>
-  <td><ul><li>팀원</li><li>Design 기획, 개발</li><li> 역할 공란 </li></ul></td>
-  <td><ul><li>팀원</li><li>UI, Design</li><li> 역할 공란 </li></ul></td>
+  <td><ul><li>팀장</li><li>총괄 기획 및 개발</li></ul></td>
+  <td><ul><li>팀원</li><li>아이디어 기획, 개발</li></ul></td>
+  <td><ul><li>팀원</li><li>Design 기획, 개발</li></ul></td>
+  <td><ul><li>팀원</li><li>UI, Design</li></ul></td>
   </tr>
 
 </table>
@@ -73,12 +73,17 @@
 
 ## ✔ 스택
 
+### 바닐라 자바스크립트로 완성!!!
+
+<br>
 
 ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=GitHub&logoColor=white)
 ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-007ACC?style=for-the-badge&logo=visual%20studio&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)
+
 <br>
+
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 ![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
 ![Google Sheets](https://img.shields.io/badge/Google_Sheets-0F9D58?style=for-the-badge&logo=google-sheets&logoColor=white)
