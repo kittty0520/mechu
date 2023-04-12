@@ -1,10 +1,11 @@
 // 미디어쿼리 화면
 // $deskTop : 1020px;
 $mobile: 420px;
+$tablet : 768px;
 
-@mixin deskTop {
-	@media (min-width : #{$mobile + 1px }) {
-		// 최소크기 480px 최대크기 1020px
+@mixin tablet {
+	@media (max-width : #{$tablet}) {
+		// 최대크기 768px
 		@content;
 	}
 }
