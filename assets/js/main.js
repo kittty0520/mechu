@@ -380,6 +380,8 @@ function displayResultFood(arr) {
 		// 다른 결과보기 버튼을 숨김
 		newResultBtn.textContent = '테스트 돌아가기';
 		// setBackButton();
+	getValue=[];
+
 		return;
 	}
 
