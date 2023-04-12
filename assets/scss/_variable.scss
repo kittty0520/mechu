@@ -1,7 +1,12 @@
 // 미디어쿼리 화면
 // $deskTop : 1020px;
+<<<<<<< HEAD
 $mobile: 480px;
 $tablet: 768px;
+=======
+$mobile: 420px;
+$tablet : 768px;
+>>>>>>> jang
 
 @mixin tablet {
 	@media (max-width : #{$tablet}) {
