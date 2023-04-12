@@ -170,14 +170,6 @@
 |------|------|
 |<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147057497-91ff8b68-5f4f-41a7-b697-1272d5fe137a.gif" width=60%/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147057510-2b428dc2-704c-44e3-908a-62376086094b.gif" width=60%/></p> |
 
-|<p align="center">루틴 생성</p>|<p align="center">미션 생성</p>|
-|------|------|
-|<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147057650-d2097c1f-45ae-4b93-a662-05dd80928c79.gif" width=60%/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147057660-e5fcfdae-c5c9-4f07-93e0-a9b0c0a9ac39.gif" width=60%/></p> |
-
-|<p align="center">루틴 수정(요일)</p>|<p align="center">미션 순서 변경</p>|
-|------|------|
-|<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147057874-2d571f01-83b0-4006-a4f0-e5a171245d0b.gif" width=60%/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147057902-5740b63d-f916-4647-8ff3-3b71562e30f5.gif" width=60%/></p> |
-
 
 <br>
 
