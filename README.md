@@ -176,9 +176,6 @@
 
 <br>
 
-### 기능 구현 영상 <br>
-![전체기능](https://user-images.githubusercontent.com/.gif) <br>
-
 ## ✔ 코드설명
 ### ⭐ 노션 링크(상세설명)
 * https://north-nebula-d88.notion.site/c0ba553b89e4457f8c6a3dbb89386230
