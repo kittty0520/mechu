@@ -28,6 +28,8 @@
   
  <br>  
  
+ <div align = "center">
+ 
  <table>
 
   <tr align="center">
@@ -52,6 +54,8 @@
   </tr>
 
 </table>
+   
+</div>   
 
 <br>
 
