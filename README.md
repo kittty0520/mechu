@@ -160,6 +160,38 @@
 
 <br>
 
+</br>
+
+|<p align="center">회원가입</p>|<p align="center">로그인</p>|
+|------|------|
+|<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147063248-fb45f859-9e1a-4411-97d6-ca01b8683dc7.gif" width=60%/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147056861-8213b6f0-7643-4de4-a14e-05219d4afd86.gif" width=60%/></p> |
+
+|<p align="center">회원정보 수정</p>|<p align="center">회원정보 수정_이미지</p>|
+|------|------|
+|<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147057497-91ff8b68-5f4f-41a7-b697-1272d5fe137a.gif" width=60%/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147057510-2b428dc2-704c-44e3-908a-62376086094b.gif" width=60%/></p> |
+
+|<p align="center">루틴 생성</p>|<p align="center">미션 생성</p>|
+|------|------|
+|<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147057650-d2097c1f-45ae-4b93-a662-05dd80928c79.gif" width=60%/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147057660-e5fcfdae-c5c9-4f07-93e0-a9b0c0a9ac39.gif" width=60%/></p> |
+
+|<p align="center">루틴 수정(요일)</p>|<p align="center">미션 순서 변경</p>|
+|------|------|
+|<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147057874-2d571f01-83b0-4006-a4f0-e5a171245d0b.gif" width=60%/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147057902-5740b63d-f916-4647-8ff3-3b71562e30f5.gif" width=60%/></p> |
+
+|<p align="center">루틴, 미션 삭제<p>| <p align="center">루틴 진행<p>|
+|------|------|
+| <p align="center"><img src="https://user-images.githubusercontent.com/85148549/147058496-d293beee-f983-4cb8-82c1-8f373e0cf240.gif" width=60%/></p> | <p align="center"><img src="https://user-images.githubusercontent.com/85148549/147058483-f5965a24-0ae0-459f-b9ff-ed2dd6378f3b.gif" width=60%/></p> |
+
+|<p align="center">커뮤니티 포스팅 가져오기</p>|<p align="center">나의 루틴 포스팅 하기</p>|
+|------|------|
+|<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147063260-c8b51dea-e3e3-408f-9237-93876f29b344.gif" width=60%/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147063279-9a7fd0ed-c148-48f6-8521-ac12e1d6b0f3.gif" width=60%/></p> |
+
+|<p align="center">댓글 작성하기</p>|<p align="center">포스팅, 댓글 좋아요</p>|
+|------|------|
+|<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147064180-81f11ee4-12bf-4352-b66f-314922fccc26.gif" width=60%/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/85148549/147064248-7fdbb41f-b04b-43d6-8336-4cfdb8157a14.gif" width=60%/></p> |
+
+<br>
+
 ## ✔ 코드설명
 ### ⭐ 노션 링크(상세설명)
 * https://north-nebula-d88.notion.site/c0ba553b89e4457f8c6a3dbb89386230
