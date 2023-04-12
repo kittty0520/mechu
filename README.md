@@ -154,6 +154,8 @@
 <br>
 
 ## ✔ 코드설명
+### ⭐ 노션 링크(상세설명)
+* https://north-nebula-d88.notion.site/c0ba553b89e4457f8c6a3dbb89386230
 
 <br><br>
 
