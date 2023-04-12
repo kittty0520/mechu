@@ -170,7 +170,7 @@
 
 |<p align="center">재추천</p>|<p align="center">테스트 돌아가기</p>|
 |------|------|
-|<p align="center"><img src="https://user-images.githubusercontent.com/121416269/231568937-7e25eb8c-8610-42a2-8c98-1e2c3dc5bbcf.gif" width="250px"/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/.gif" width=60%/></p> |
+|<p align="center"><img src="https://user-images.githubusercontent.com/121416269/231568937-7e25eb8c-8610-42a2-8c98-1e2c3dc5bbcf.gif" width="250px"/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/121416269/231570382-edad46fa-ce46-405f-9a62-6cb58f6b21bd.gif" width="250px"/></p> |
 
 </div>
 
