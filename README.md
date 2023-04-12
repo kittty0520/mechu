@@ -1,7 +1,8 @@
 # project1 직메추
 
-
-![logo_removebg](https://user-images.githubusercontent.com/119913471/231360601-cff9578f-46e2-4a0a-a402-6daced3ad5e5.png)
+<div align="center">
+<img width="329" alt="image" src="https://user-images.githubusercontent.com/119913471/231360601-cff9578f-46e2-4a0a-a402-6daced3ad5e5.png">
+</div>
 
 (직장인들의 점심메뉴를 추천해드립니다)
 
