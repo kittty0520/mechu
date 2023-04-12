@@ -1,5 +1,6 @@
 # project1 직메추
 
+<br><br>
 <div align="center">
 <img width="329" alt="image" src="https://user-images.githubusercontent.com/119913471/231360601-cff9578f-46e2-4a0a-a402-6daced3ad5e5.png">
 <br>
@@ -23,7 +24,7 @@
 |      이지영       |          장혜원         |       김유진         |       전지혜         |                                                                                                               
 | :------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: |
 |   <img width="64px" src="https://user-images.githubusercontent.com/119913471/231390504-4a4aa67f-de3f-4bc2-9ce8-87939f951933.png" />    |                      <img width="64px" src="https://user-images.githubusercontent.com/119913471/231390489-8bf61734-d6c8-4bad-a2fe-0f07f41d95e7.png" />    |                   <img width="64px" src="https://user-images.githubusercontent.com/119913471/231390503-516d69a1-54af-4e36-b951-7db9b93569c1.png"/>   |<img width="64px" src="https://user-images.githubusercontent.com/119913471/231403186-4eef34be-facd-41e3-9668-b96ee27f3b95.png"/>   |
-|   [@깃허브아이디](깃허브주소)   |    [@sunonepage](https://github.com/sunonepage)  | [@깃허브아이디](깃허브주소)  |   |
+|   [@kittty0520](https://github.com/kittty0520)   |    [@sunonepage](https://github.com/sunonepage)  | [@jin-grace](https://github.com/jin-grace)  |   |
 | 역할 | 역할 | 역할 | 역할 |
 </div>
    
@@ -43,32 +44,6 @@
     ├─new_test_file
     │  ├─test_html
     │  └─test_js
-    ├─node_modules
-    │  ├─bignumber.js
-    │  │  └─doc
-    │  ├─core-util-is
-    │  │  └─lib
-    │  ├─inherits
-    │  ├─isarray
-    │  ├─mysql
-    │  │  └─lib
-    │  │      └─protocol
-    │  │          ├─constants
-    │  │          ├─packets
-    │  │          └─sequences
-    │  ├─process-nextick-args
-    │  ├─readable-stream
-    │  │  ├─doc
-    │  │  │  └─wg-meetings
-    │  │  └─lib
-    │  │      └─internal
-    │  │          └─streams
-    │  ├─safe-buffer
-    │  ├─sqlstring
-    │  │  └─lib
-    │  ├─string_decoder
-    │  │  └─lib
-    │  └─util-deprecate
     ├─QR code
     └─test
 
