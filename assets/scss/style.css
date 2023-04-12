@@ -137,9 +137,9 @@ input[type=checkbox]:checked + label {
 
 .header__img {
   display: block;
-  margin: 24px auto;
-  width: 194px;
-  height: 116px;
+  margin: 20px auto;
+  width: 190px;
+  height: 100px;
 }
 
 /* Story */
@@ -519,9 +519,9 @@ input[type=radio].start__answers__input:checked + label {
     padding-top: 20px;
   }
   .header__img {
-    margin: 24px auto;
-    width: 190px;
-    height: 100px;
+    margin: 20px auto;
+    width: 180px;
+    height: 90px;
   }
   /* Story */
   .cartoon-final p {
