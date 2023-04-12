@@ -93,18 +93,21 @@
 <br>
 
 ### ⭐ 랜덤추천 바로가기
-*
+* 
 *
 <br>
 
 ### ⭐ 데이터 필터링을 통한 맞춤추천
-*
-*
+
+* 사용자가 누른 선택사항들을 필터함수로 배열에 누적시켜준다
+
+* 음식 데이터 JSON 파일을 Promise 함수로 불러와서<br> 배열안에 누적된 값과 동일한 음식 데이터를 추출한다
+
 <br>
 
 ### ⭐ 다시추천 및 돌아가기
-*
-*
+* 
+* 
 <br>
 
 ## ✔ 디렉토리 구조
@@ -144,13 +147,13 @@
 <br><br>
 
 ---
-# 4. 외부리소스 
+# 4. 외부 리소스 
 
 <div align="center">
 <br>
-도메인
-http://mechu.dothome.co.kr/
-<br><br>
+
+### 도메인 http://mechu.dothome.co.kr/
+<br>
 <img width="329" alt="image" src="https://user-images.githubusercontent.com/119913471/231413106-794e0044-d761-43c1-9c30-e4541fe28863.jpg">
 </div>
 
