@@ -164,7 +164,7 @@
 
 |<p align="center">랜덤 추천</p>|<p align="center">맞춤추천</p>|
 |------|------|
-|<p align="center"><img src="https://user-images.githubusercontent.com/121416269/231562536-bdd4cbfe-4912-4ae3-b89a-e50e6afe4fae.gif" width=60%/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/.gif" width=60%/></p> |
+|<p align="center"><img src="https://user-images.githubusercontent.com/121416269/231562536-bdd4cbfe-4912-4ae3-b89a-e50e6afe4fae.gif" width=60%/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/121416269/231565170-72bfafb0-12c6-4bb9-8726-20c4d230737a.gif" width=60%/></p> |
 
 |<p align="center">재추천</p>|<p align="center">테스트 돌아가기</p>|
 |------|------|
