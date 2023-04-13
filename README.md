@@ -58,7 +58,7 @@
  ## ✔ 프로젝트 주제
  <br>
    
- > 직장인을 위한 메뉴추천
+ > 직장인을 위한 메뉴 추천
  
  <br> 
    
@@ -131,7 +131,7 @@
 
 ### ⭐ 카카오톡 공유하기 및 클립보드 복사
 
-* avaScript SDK의 Kakao.Share 모듈을 이용하여 카카오톡 공유(api 사용)
+* JavaScript SDK의 Kakao.Share 모듈을 이용하여 카카오톡 공유(api 사용)
 * execCommand()를 사용하여 텍스트를 클립보드에 복사
 
 <br>
