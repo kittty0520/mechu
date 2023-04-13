@@ -106,7 +106,7 @@ input[type='checkbox']:checked + label {
 #header {
 	width: 640px;
 	height: 25%;
-	padding-top: 40px;
+	padding-top: 20px;
 	box-sizing: border-box;
 	margin: 0 auto;
 }
@@ -379,8 +379,8 @@ input[type='radio'].start__answers__input:checked + label {
 	}
 }
 #country_food > img {
-	width: 240px;
-	height: 240px;
+	width: 200px;
+	height: 200px;
 	margin: 20px auto;
 	display: block;
 	object-fit: cover;

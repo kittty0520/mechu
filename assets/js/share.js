@@ -1,56 +1,6 @@
-// /* 새로 생성한 배열의 인덱스를 보여줌03*/
-// let indexArr = [];
-
-// function shuffleIndex(resultArr) {
-// 	// 데이터 배열을 랜덤하게 섞음
-// 	resultArr.sort(() => Math.random() - 0.5);
-// 	// 인덱스 순서를 부여하여 새로운 배열을 생성
-// 	indexArr = resultArr.map((value, index) => [index, value]);
-// }
-
-// function displayResultFood() {
-// 	if (indexArr.length === 0) {
-// 		// 결과값이 없는 경우 메시지를 표시
-// 		document.getElementById(
-// 			'country_food'
-// 		).innerHTML = `<p>결과값이 없습니다.</p>`;
-// 		// 다시보기 버튼을 숨김
-// 		document.getElementById('btn_re').style.display = 'none';
-// 		return null;
-// 	}
-
-// 	// 첫 번째 인덱스의 데이터를 가져와서 출력(shift로 중복제거)
-// 	const [index, resultFood] = indexArr.shift();
-// 	document.getElementById('country_food').innerHTML =
-// 		`<p>${resultFood.name}</p>` +
-// 		`<img src="assets/img/food_img/${resultFood.src}.png" alt="음식이미지">`;
-
-// 	// if (indexArr.length === 0) {
-// 	// 	// 인덱스가 다 출력된 경우 다시보기 버튼을 숨김
-// 	// 	document.getElementById('btn_re').style.display = 'none';
-// 	// } else {
-// 	// 	// 다음 인덱스가 남아있는 경우 다시보기 버튼을 활성화
-// 	// 	document.getElementById('btn_re').style.display = 'block';
-// 	// }
-
-// 	return null;
-// }
-
-// function restart() {
-// 	// 결과값을 저장한 배열을 초기화하지 않고, 인덱스 배열만 초기화함
-// 	indexArr = [];
-// 	document.getElementById('country_food').innerHTML = '';
-// 	shuffleIndex(resultArr);
-// 	displayResultFood();
-// }
-
-// shuffleIndex(resultArr);
-// displayResultFood();
-
-// // 다시보기 버튼을 클릭하면 restart() 함수를 실행하여 결과값을 다시 출력할 수 있도록 함
-// document.getElementById('btn_re').addEventListener('click', restart);
 
 //****************************공유하기****************************
+
 /* 카카오톡 공유하기*/
 Kakao.init('0eaa5ffe9b60880336267d180d93bed0'); // 사용하려는 앱의 JavaScript 키 입력
 Kakao.Share.createDefaultButton({

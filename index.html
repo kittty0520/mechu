@@ -3,12 +3,33 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="viewport"
+			content="user-scalable=no,width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+		/>
+		<meta name="author" content="mechu" />
+		<meta name="description" content="직장인의 점심메뉴를 랜덤추천해드립니다!" />
+		<meta name="keywords" content="점심메뉴, 랜덤추천, 직장인, 메뉴추천" />
+
+		<!-- open graph -->
+		<meta name="og:url" content="http://mechu.dothome.co.kr/" />
+		<meta name="og:title" content="직메추" />
+		<meta
+			name="og:description"
+			content="직장인의 점심메뉴를 랜덤추천해드립니다!"
+		/>
+		<meta name="og:type" content="website" />
+		<meta
+			property="og:image"
+			content="https://user-images.githubusercontent.com/119913471/231360601-cff9578f-46e2-4a0a-a402-6daced3ad5e5.png"
+		/>
+		<meta name="og:site_name" content="직메추" />
+
+
 		<title>직메추</title>
 
 		<!-- CSS -->
 		<link rel="stylesheet" href="./assets/scss/style.css" />
-		<!-- <link rel="stylesheet" href="./assets/css/reset.css" /> -->
 
 		<!--페이스북 API-->
 		<!-- <meta property="og:url" content="http://mechu.dothome.co.kr/" />
@@ -25,16 +46,9 @@
 			defer
 		></script>
 
-		<!-- 제이쿼리 -->
-		<script
-			src="https://code.jquery.com/jquery-3.6.1.min.js"
-			integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
-			crossorigin="anonymous"
-			defer
-		></script>
-
 		<!-- 자바스크립트 -->
 		<script type="module" src="./assets/js/main.js" defer></script>
+		<script src="./assets/js/share.js" defer></script>
 	</head>
 	<body>
 		<header id="header">
@@ -185,8 +199,6 @@
 				<div id="result_wrap">
 					<h2 class="result__title">오늘의 점심은 이 메뉴 추천드려요!</h2>
 					<div id="country_food">
-						<!-- <p id="result_txt"></p> -->
-						<!-- <img src="assets/img/loading_g.png" alt="로딩이미지" /> -->
 					</div>
 					<div class="result__btns">
 						<button id="btn_re">다른 결과보기</button>
