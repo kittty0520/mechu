@@ -58,7 +58,7 @@
  ## ✔ 프로젝트 주제
  <br>
    
- > 직장인을 위한 메뉴추천
+ > 직장인을 위한 메뉴 추천
  
  <br> 
    
@@ -89,6 +89,7 @@
 ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=GitHub&logoColor=white)
 ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-007ACC?style=for-the-badge&logo=visual%20studio&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=SASS&logoColor=white)
 
 <br>
@@ -108,24 +109,32 @@
 
 <br>
 
-### ⭐ 랜덤추천 바로가기
+### ⭐ 랜덤추천 바로가기(빠른 추천)
 
-* 데이터 값을 랜덤함수를 통해 반환
+* 데이터를 random()로 즉시 반환
 
 <br>
 
 ### ⭐ 데이터 필터링을 통한 맞춤추천
 
-* 사용자 선택에 의한 값을 필터링함수를 통해 배열로 누적
-* JSON 파일의 데이터를 프로미스함수로 받아 누적된 결과를 출력
+* 사용자가 선택한 값을 filter()로 걸러 배열로 누적
+* json파일의 데이터를 promise()를 통해 결과로 출력
 
 <br>
 
 ### ⭐ 재추천 및 테스트 돌아가기
 
-* 소트메서드를 통해 출력된 값을 혼합
-* 쉬프트메서드로 결과값의 중복 출력을 방지하여 재추천 
+* random()를 통해 출력된 값을 혼합하고, sort()로 리스트 정렬
+* shift()로 결과값의 중복 출력을 방지하여 재추천 
 * 재출력할 값이 더이상 없을 경우 테스트 시작점으로 복귀
+
+<br>
+
+### ⭐ 카카오톡 공유하기 및 클립보드 복사
+
+* JavaScript SDK의 Kakao.Share 모듈을 이용하여 카카오톡 공유(api 사용)
+* execCommand()를 사용하여 텍스트를 클립보드에 복사
+
 <br>
 
 ## ✔ 디렉토리 구조
@@ -171,6 +180,10 @@
 |<p align="center">재추천</p>|<p align="center">테스트 돌아가기</p>|
 |------|------|
 |<p align="center"><img src="https://user-images.githubusercontent.com/121416269/231568937-7e25eb8c-8610-42a2-8c98-1e2c3dc5bbcf.gif" width="250px"/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/121416269/231570382-edad46fa-ce46-405f-9a62-6cb58f6b21bd.gif" width="250px"/></p> |
+
+|<p align="center">카카오톡API</p>|<p align="center">클립보드 복사</p>|
+|------|------|
+|<p align="center"><img src="https://user-images.githubusercontent.com/121416269/231824338-dbd912ff-d467-45ad-a3cf-e16c7abe1d3c.gif" width="250px"/></p> |<p align="center"><img src="https://user-images.githubusercontent.com/121416269/231827463-742a656d-9a46-4362-80d0-0409193b8e9f.gif" width="250px"/></p> |
 
 </div>
 
