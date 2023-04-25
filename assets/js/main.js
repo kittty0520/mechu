@@ -269,8 +269,7 @@ function getInputName() {
 //label을 한개 이상 클릭하면 '다음으로'버튼이 주황색으로 바뀌도록 함.
 document.addEventListener('click', (e) => {
 	if (e.target.nodeName === 'LABEL' || e.target.nodeName === 'INPUT') {
-		const input =
-			ANSWER_NUM === 0 ? 'position_chk' : answerName[ANSWER_NUM - 1];
+		const input = ANSWER_NUM === 0 ? 'position_chk' : answerName[ANSWER_NUM - 1];
 		console.log(input);
 		const answerArray = document.getElementsByName(input);
 		if ([...answerArray].filter((item) => item.checked).length > 0) {
@@ -327,9 +326,7 @@ function singleProperty(valueName, arr, selectArr) {
 function multiProperty(valueName, arr, selectArr) {
 	let result = [];
 	result = selectArr
-		.map((selection) =>
-			arr.filter((item) => item[valueName].includes(selection))
-		)
+		.map((selection) => arr.filter((item) => item[valueName].includes(selection)))
 		.flat();
 	// 각 재료값을 핕터링하고 그대로 합쳐서 중복된 음식이 생겨남
 	return [...new Set(result)];
@@ -358,6 +355,8 @@ function categorize(valueName, arr, select) {
 //혹은 배열을 랜덤하게 섞은 후 첫번째 인덱스 값을 보여주고 뒤섞인 배열을 반환함
 
 // 다시보기 버튼을 클릭하면 restart() 함수를 실행하여 결과값을 다시 출력할 수 있도록 함
+const scrapImageUrl = null;
+
 newResultBtn.addEventListener('click', () => {
 	if (newResultBtn.textContent === '테스트 돌아가기') {
 		closeAndOpen(result, quest);
@@ -380,7 +379,7 @@ function displayResultFood(arr) {
 		// 다른 결과보기 버튼을 숨김
 		newResultBtn.textContent = '테스트 돌아가기';
 		// setBackButton();
-	getValue=[];
+		getValue = [];
 
 		return;
 	}
@@ -391,6 +390,7 @@ function displayResultFood(arr) {
 		`<p>${resultFood.name}</p>` +
 		`<img src="assets/img/food_img/${resultFood.src}.png" alt="음식이미지">`;
 	console.log(arr);
+	scrapImageUrl = `assets/img/food_img/${resultFood.src}`;
 	foodResult = arr;
 }
 

@@ -1,7 +1,7 @@
-
 //****************************공유하기****************************
 
 /* 카카오톡 공유하기*/
+
 Kakao.init('0eaa5ffe9b60880336267d180d93bed0'); // 사용하려는 앱의 JavaScript 키 입력
 Kakao.Share.createDefaultButton({
 	container: '#kakaotalk-sharing-btn',
@@ -10,6 +10,7 @@ Kakao.Share.createDefaultButton({
 		title: '점심메뉴',
 		description: '#점심 #점심메뉴 #점심메뉴추천',
 		imageUrl:
+			uploadImageUrl ||
 			'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
 		link: {
 			// [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
@@ -79,4 +80,17 @@ function clipboardShare() {
 	} else {
 		alert('클립보드에 복사가 완료되었습니다.');
 	}
+}
+
+function scrapLinkImage(url) {
+	Kakao.Share.scrapImage({
+		imageUrl: url,
+	})
+		.then(function (response) {
+			console.log(response.infos.original.url);
+			uploadImageUrl = response.infos.original.url;
+		})
+		.catch(function (error) {
+			console.log(error);
+		});
 }
