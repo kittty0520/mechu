@@ -15,7 +15,6 @@ export default async function getData() {
 }
 
 const food = getData();
-console.log(food);
 
 // *********Mysql************
 // var mysql = require('mysql');
