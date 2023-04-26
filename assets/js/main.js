@@ -371,7 +371,8 @@ function shuffleIndex(resultArr) {
 	// 데이터 배열을 랜덤하게 섞고 반환
 	return resultArr.sort(() => Math.random() - 0.5);
 }
-let shareImageUrl = '';
+let scrapImageUrl = null;
+
 function displayResultFood(arr) {
 	// 결과값이 없는 경우 메시지를 표시하고 다시 선택하기 버튼 띄움...
 	if (arr.length == 0) {
@@ -399,10 +400,11 @@ function restart() {
 	countryFood.innerHTML = '';
 	displayResultFood(foodResult);
 }
-// 카카오 공유하기
-shareKaKao(shareImageUrl);
 
+// 카카오 공유하기
+shareKaKao(scrapImageUrl);
+
+//클립보드 복사하기
 document.querySelector('#clip-btn img').addEventListener('click', () => {
-	//클립보드 복사하기
 	clipboardShare();
 });
