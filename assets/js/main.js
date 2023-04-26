@@ -1,5 +1,6 @@
 import getData from './getData.js';
 import { questionList, answerList } from './question.js';
+import { scrapImageUrl, scrapLinkImage } from './share.js';
 
 const story = document.querySelector('#story');
 
@@ -355,7 +356,6 @@ function categorize(valueName, arr, select) {
 //혹은 배열을 랜덤하게 섞은 후 첫번째 인덱스 값을 보여주고 뒤섞인 배열을 반환함
 
 // 다시보기 버튼을 클릭하면 restart() 함수를 실행하여 결과값을 다시 출력할 수 있도록 함
-const scrapImageUrl = null;
 
 newResultBtn.addEventListener('click', () => {
 	if (newResultBtn.textContent === '테스트 돌아가기') {
@@ -389,8 +389,8 @@ function displayResultFood(arr) {
 	countryFood.innerHTML =
 		`<p>${resultFood.name}</p>` +
 		`<img src="assets/img/food_img/${resultFood.src}.png" alt="음식이미지">`;
-	console.log(arr);
-	scrapImageUrl = `assets/img/food_img/${resultFood.src}`;
+	let imageUrl = `assets/img/food_img/${resultFood.src}`;
+	scrapLinkImage(imageUrl);
 	foodResult = arr;
 }
 
