@@ -1,6 +1,6 @@
 import getData from './getData.js';
 import { questionList, answerList } from './question.js';
-import { scrapImageUrl, scrapLinkImage } from './share.js';
+import { clipboardShare, scrapLinkImage, shareKaKao } from './share.js';
 
 const story = document.querySelector('#story');
 
@@ -371,7 +371,7 @@ function shuffleIndex(resultArr) {
 	// 데이터 배열을 랜덤하게 섞고 반환
 	return resultArr.sort(() => Math.random() - 0.5);
 }
-
+let shareImageUrl = '';
 function displayResultFood(arr) {
 	// 결과값이 없는 경우 메시지를 표시하고 다시 선택하기 버튼 띄움...
 	if (arr.length == 0) {
@@ -390,7 +390,7 @@ function displayResultFood(arr) {
 		`<p>${resultFood.name}</p>` +
 		`<img src="assets/img/food_img/${resultFood.src}.png" alt="음식이미지">`;
 	let imageUrl = `assets/img/food_img/${resultFood.src}`;
-	scrapLinkImage(imageUrl);
+	shareImageUrl = scrapLinkImage(imageUrl);
 	foodResult = arr;
 }
 
@@ -399,3 +399,10 @@ function restart() {
 	countryFood.innerHTML = '';
 	displayResultFood(foodResult);
 }
+// 카카오 공유하기
+shareKaKao(shareImageUrl);
+
+document.querySelector('#clip-btn img').addEventListener('click', () => {
+	//클립보드 복사하기
+	clipboardShare();
+});

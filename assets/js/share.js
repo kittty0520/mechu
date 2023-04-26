@@ -3,44 +3,46 @@
 /* 카카오톡 공유하기*/
 export let scrapImageUrl = null;
 
-Kakao.init('0eaa5ffe9b60880336267d180d93bed0'); // 사용하려는 앱의 JavaScript 키 입력
-Kakao.Share.createDefaultButton({
-	container: '#kakaotalk-sharing-btn',
-	objectType: 'feed',
-	content: {
-		title: '점심메뉴',
-		description: '#점심 #점심메뉴 #점심메뉴추천',
-		imageUrl:
-			scrapImageUrl ||
-			'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
-		link: {
-			// [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
-			mobileWebUrl: 'http://mechu.dothome.co.kr',
-			webUrl: 'http://mechu.dothome.co.kr',
-		},
-	},
-	social: {
-		likeCount: 286,
-		commentCount: 45,
-		sharedCount: 845,
-	},
-	buttons: [
-		{
-			title: '웹으로 보기',
+export function shareKaKao(scrapImageUrl) {
+	Kakao.init('0eaa5ffe9b60880336267d180d93bed0'); // 사용하려는 앱의 JavaScript 키 입력
+	Kakao.Share.createDefaultButton({
+		container: '#kakaotalk-sharing-btn',
+		objectType: 'feed',
+		content: {
+			title: '점심메뉴',
+			description: '#점심 #점심메뉴 #점심메뉴추천',
+			imageUrl:
+				scrapImageUrl ||
+				'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
 			link: {
-				mobileWebUrl: 'https://developers.kakao.com',
-				webUrl: 'https://developers.kakao.com',
+				// [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
+				mobileWebUrl: 'http://mechu.dothome.co.kr',
+				webUrl: 'http://mechu.dothome.co.kr',
 			},
 		},
-		// {
-		//     title: '앱으로 보기',
-		//     link: {
-		//     mobileWebUrl: 'https://developers.kakao.com',
-		//     webUrl: 'https://developers.kakao.com',
-		//     },
-		// },
-	],
-});
+		social: {
+			likeCount: 286,
+			commentCount: 45,
+			sharedCount: 845,
+		},
+		buttons: [
+			{
+				title: '웹으로 보기',
+				link: {
+					mobileWebUrl: 'https://developers.kakao.com',
+					webUrl: 'https://developers.kakao.com',
+				},
+			},
+			// {
+			//     title: '앱으로 보기',
+			//     link: {
+			//     mobileWebUrl: 'https://developers.kakao.com',
+			//     webUrl: 'https://developers.kakao.com',
+			//     },
+			// },
+		],
+	});
+}
 
 /* 페이스북 공유하기 */
 (function (d, s, id) {
@@ -54,7 +56,7 @@ Kakao.Share.createDefaultButton({
 })(document, 'script', 'facebook-jssdk');
 
 /* 클립보드 복사하기 */
-function clipboardShare() {
+export function clipboardShare() {
 	// 1. 새로운 element 생성
 	var tmpTextarea = document.createElement('textarea');
 
@@ -89,7 +91,7 @@ export function scrapLinkImage(url) {
 	})
 		.then(function (response) {
 			console.log(response.infos.original.url);
-			scrapImageUrl = response.infos.original.url;
+			return response.infos.original.url;
 		})
 		.catch(function (error) {
 			console.log(error);
