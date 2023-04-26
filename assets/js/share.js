@@ -1,9 +1,8 @@
 //****************************공유하기****************************
 
 /* 카카오톡 공유하기*/
-export let scrapImageUrl = null;
 
-export function shareKaKao(scrapImageUrl) {
+function shareKaKao(scrapImageUrl) {
 	Kakao.init('0eaa5ffe9b60880336267d180d93bed0'); // 사용하려는 앱의 JavaScript 키 입력
 	Kakao.Share.createDefaultButton({
 		container: '#kakaotalk-sharing-btn',
@@ -56,7 +55,7 @@ export function shareKaKao(scrapImageUrl) {
 })(document, 'script', 'facebook-jssdk');
 
 /* 클립보드 복사하기 */
-export function clipboardShare() {
+function clipboardShare() {
 	// 1. 새로운 element 생성
 	var tmpTextarea = document.createElement('textarea');
 
@@ -85,7 +84,7 @@ export function clipboardShare() {
 	}
 }
 
-export function scrapLinkImage(url) {
+function scrapLinkImage(url) {
 	Kakao.Share.scrapImage({
 		imageUrl: url,
 	})
@@ -97,3 +96,5 @@ export function scrapLinkImage(url) {
 			console.log(error);
 		});
 }
+
+export { shareKaKao, clipboardShare, scrapLinkImage };
