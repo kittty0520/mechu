@@ -1,6 +1,6 @@
 import getData from './getData.js';
 import { questionList, answerList } from './question.js';
-import { clipboardShare, scrapLinkImage, shareKaKao } from './share.js';
+import { clipboardShare, shareKaKao } from './share.js';
 
 const story = document.querySelector('#story');
 
@@ -271,7 +271,6 @@ function getInputName() {
 document.addEventListener('click', (e) => {
 	if (e.target.nodeName === 'LABEL' || e.target.nodeName === 'INPUT') {
 		const input = ANSWER_NUM === 0 ? 'position_chk' : answerName[ANSWER_NUM - 1];
-		console.log(input);
 		const answerArray = document.getElementsByName(input);
 		if ([...answerArray].filter((item) => item.checked).length > 0) {
 			ANSWER_NUM === 0
@@ -356,7 +355,8 @@ function categorize(valueName, arr, select) {
 //혹은 배열을 랜덤하게 섞은 후 첫번째 인덱스 값을 보여주고 뒤섞인 배열을 반환함
 
 // 다시보기 버튼을 클릭하면 restart() 함수를 실행하여 결과값을 다시 출력할 수 있도록 함
-
+let shareLink = '';
+let shareName = '';
 newResultBtn.addEventListener('click', () => {
 	if (newResultBtn.textContent === '테스트 돌아가기') {
 		closeAndOpen(result, quest);
@@ -367,11 +367,26 @@ newResultBtn.addEventListener('click', () => {
 	restart();
 });
 
+// const kakaoButton = document.querySelector('#kakaotalk-sharing-btn');
+
+// kakaoButton.addEventListener('click', () => {
+// 	shareKaKao(shareLink, shareName);
+// });
+
+//클립보드 복사하기
+
+const clipButton = document.querySelector('#clip-btn');
+clipButton.addEventListener('click', () => {
+	const clipboard = () => {
+		clipboardShare();
+	};
+	clipboard();
+});
+
 function shuffleIndex(resultArr) {
 	// 데이터 배열을 랜덤하게 섞고 반환
 	return resultArr.sort(() => Math.random() - 0.5);
 }
-let scrapImageUrl = null;
 
 function displayResultFood(arr) {
 	// 결과값이 없는 경우 메시지를 표시하고 다시 선택하기 버튼 띄움...
@@ -390,9 +405,17 @@ function displayResultFood(arr) {
 	countryFood.innerHTML =
 		`<p>${resultFood.name}</p>` +
 		`<img src="assets/img/food_img/${resultFood.src}.png" alt="음식이미지">`;
-	let imageUrl = `assets/img/food_img/${resultFood.src}`;
-	shareImageUrl = scrapLinkImage(imageUrl);
+
 	foodResult = arr;
+
+	shareLink =
+		`http://mechu.dothome.co.kr/assets/img/food_img/${resultFood.src}.png`.toString();
+	shareName = resultFood.name;
+
+	// 카카오 공유하기
+	let imageUrl =
+		`http://mechu.dothome.co.kr/assets/img/food_img/${resultFood.src}.png`.toString();
+	shareKaKao(imageUrl, resultFood.name);
 }
 
 function restart() {
@@ -400,11 +423,3 @@ function restart() {
 	countryFood.innerHTML = '';
 	displayResultFood(foodResult);
 }
-
-// 카카오 공유하기
-shareKaKao(scrapImageUrl);
-
-//클립보드 복사하기
-document.querySelector('#clip-btn img').addEventListener('click', () => {
-	clipboardShare();
-});
