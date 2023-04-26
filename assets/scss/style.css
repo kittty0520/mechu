@@ -440,6 +440,13 @@ input[type=radio].start__answers__input:checked + label {
   color: #ffffff;
 }
 
+#clip-btn {
+  width: 100%;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
 #clip-btn img {
   display: block;
   width: 48px;
