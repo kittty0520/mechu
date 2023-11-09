@@ -1,5 +1,5 @@
 //****************************공유하기****************************
-Kakao.init('0eaa5ffe9b60880336267d180d93bed0');
+Kakao.init(process.env.KAKAO_API_KEY);
 /* 카카오톡 공유하기*/
 function shareKaKao(ImageUrl, name) {
 	// 사용하려는 앱의 JavaScript 키 입력
