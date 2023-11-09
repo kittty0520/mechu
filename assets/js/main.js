@@ -1,7 +1,7 @@
 import getData from './getData.js';
 import { questionList, answerList } from './question.js';
 import { clipboardShare, shareKaKao } from './share.js';
-import dotenv from 'dotenv';
+import * as dotenv from 'dotenv';
 dotenv.config();
 
 const story = document.querySelector('#story');
