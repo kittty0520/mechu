@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/kittty0520/project1#readme",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "mysql": "^2.18.1"
   }
 }

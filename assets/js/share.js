@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 //****************************공유하기****************************
 Kakao.init(process.env.KAKAO_API_KEY);
 /* 카카오톡 공유하기*/
