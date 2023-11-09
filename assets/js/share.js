@@ -1,9 +1,7 @@
-
-
 //****************************공유하기****************************
-Kakao.init(process.env.KAKAO_API_KEY);
 /* 카카오톡 공유하기*/
 function shareKaKao(ImageUrl, name) {
+	Kakao.init(process.env.KAKAO_API_KEY);
 	// 사용하려는 앱의 JavaScript 키 입력
 	Kakao.Share.createDefaultButton({
 		container: '#kakaotalk-sharing-btn',
