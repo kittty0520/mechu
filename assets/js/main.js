@@ -1,6 +1,8 @@
 import getData from './getData.js';
 import { questionList, answerList } from './question.js';
 import { clipboardShare, shareKaKao } from './share.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const story = document.querySelector('#story');
 
@@ -366,7 +368,6 @@ newResultBtn.addEventListener('click', () => {
 	}
 	restart();
 });
-
 
 //클립보드 복사하기
 
