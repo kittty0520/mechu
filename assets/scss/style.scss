@@ -23,6 +23,7 @@ $font-micro: 12px;
 		format('woff');
 	font-weight: normal;
 	font-style: normal;
+	font-display: swap;
 }
 @font-face {
 	font-family: 'GangwonEdu_OTFBoldA';
@@ -30,6 +31,7 @@ $font-micro: 12px;
 		format('woff');
 	font-weight: bold;
 	font-style: normal;
+	font-display: swap;
 }
 
 // flex 세로 배치
