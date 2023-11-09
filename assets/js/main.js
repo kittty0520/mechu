@@ -367,11 +367,6 @@ newResultBtn.addEventListener('click', () => {
 	restart();
 });
 
-// const kakaoButton = document.querySelector('#kakaotalk-sharing-btn');
-
-// kakaoButton.addEventListener('click', () => {
-// 	shareKaKao(shareLink, shareName);
-// });
 
 //클립보드 복사하기
 
