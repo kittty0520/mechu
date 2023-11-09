@@ -42,17 +42,6 @@ function shareKaKao(ImageUrl, name) {
 	});
 }
 
-/* 페이스북 공유하기 */
-(function (d, s, id) {
-	var js,
-		fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return;
-	js = d.createElement(s);
-	js.id = id;
-	js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
-	fjs.parentNode.insertBefore(js, fjs);
-})(document, 'script', 'facebook-jssdk');
-
 /* 클립보드 복사하기 */
 function clipboardShare() {
 	// 1. 새로운 element 생성
