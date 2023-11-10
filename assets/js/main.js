@@ -1,10 +1,6 @@
-import { configDotenv } from 'dotenv';
 import getData from './getData.js';
 import { questionList, answerList } from './question.js';
 import { clipboardShare, shareKaKao } from './share.js';
-// import * as dotenv from 'dotenv';
-// dotenv.config();
-configDotenv();
 
 const story = document.querySelector('#story');
 
